@@ -74,7 +74,7 @@ def get_raw_c12880_data(fruit: str = "tomato", data_type: str = "data") -> pd.Da
     data.columns = ["sample", "spot"] + list(data.columns[2:])
     # fill in sample numbers down the column, they were not entered during data collection
     # and fix that read_excels converts ints to floats
-    data["sample"] = data["sample"].fillna(method="ffill").astype(int)
+    data["sample"] = data["sample"].ffill().astype(int)
     if data_type == "reference":
         data = data[data["spot"] == "White"]
     elif data_type == "dark":
