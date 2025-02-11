@@ -13,18 +13,20 @@ from pathlib import Path
 import pandas as pd
 
 DATA_FOLDER = Path(__file__).parent.parent.parent / "data"
-pd.set_option('display.max_rows', 10)
+# pd.set_option('display.max_rows', 10)
 
 
 # def get_data(sensor: str, fruit: str):
 #     filename = DATA_FOLDER / f"{fruit}_{sensor}_data.csv"
 
 
-def get_raw_c12880_data(fruit: str = "tomato", data_type: str = "data") -> pd.DataFrame:
+def get_raw_c12880_data(fruit: str = "tomato",
+                        data_type: str = "data",
+                        wavelength_range: tuple[float, float] = (412, 691)) -> pd.DataFrame:
     """
     Load raw spectrometer from C12880 on tomatoes and mangos.
 
-    This function reads an dataset for a given fruit and filters the data based
+    This function reads a dataset for a given fruit and filters the data based
     on the specified `data_type`.
 
     Parameters
@@ -38,6 +40,10 @@ def get_raw_c12880_data(fruit: str = "tomato", data_type: str = "data") -> pd.Da
         - `"dark"` : Returns only dark calibration measurements.
         - `"data"` : Returns spectral data from fruit.
         Default is `"data"`.
+
+    wavelength_range : list[float]
+        Specifies the range of wavelengths (inclusive) to keep in the dataset.
+        Default is `[412, 619]`. If an empty list `[]` is provided, the full spectrum is retained.
 
     Returns
     -------
@@ -55,7 +61,8 @@ def get_raw_c12880_data(fruit: str = "tomato", data_type: str = "data") -> pd.Da
     Notes
     -----
     - The `sample` column is forward-filled because it was not fully entered during data collection.
-
+    - Wavelengths outside the specified `wavelength_range` are removed.
+    - Duplicate columns are dropped.
     Example
     -------
     >>> df = get_raw_c12880_data(fruit="tomato", data_type="data")
@@ -68,9 +75,10 @@ def get_raw_c12880_data(fruit: str = "tomato", data_type: str = "data") -> pd.Da
     4       2   2.1   463.0   449.0   540.0   541.0
     """
     data_path = DATA_FOLDER / fruit / f"{fruit.capitalize()}_fulldata.xlsx"
-    # the excel file has 2 top rows merged, remove the first one
+    # the Excel file has 2 top rows merged, remove the first one
     data = pd.read_excel(data_path, skiprows=1)
     # then add in the names that were removed with skiprows=1
+
     data.columns = ["sample", "spot"] + list(data.columns[2:])
     # fill in sample numbers down the column, they were not entered during data collection
     # and fix that read_excels converts ints to floats
@@ -85,6 +93,12 @@ def get_raw_c12880_data(fruit: str = "tomato", data_type: str = "data") -> pd.Da
         raise ValueError(f"data_type = {data_type} is not valid, data_type must be in "
                          f"['reference', 'dark', 'data']")
 
+    if wavelength_range:
+        filtered_columns = [
+            wl for wl in data.columns
+            if isinstance(wl, (int, float)) and wavelength_range[0] < wl < wavelength_range[1]
+        ]
+        data = data[["sample", "spot"]+filtered_columns]
     return data
 
 
