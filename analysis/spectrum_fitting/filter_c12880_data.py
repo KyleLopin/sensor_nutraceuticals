@@ -159,7 +159,8 @@ def plot_spectrum_with_threshold(data_type: str, wavelength: float) -> None:
         raise ValueError("data_type must be either 'reference' or 'dark'.")
 
     # Retrieve spectral data
-    data = get_raw_c12880_data(fruit="tomato", data_type=data_type)
+    data = get_raw_c12880_data(fruit="tomato", data_type=data_type,
+                               wavelength_range=None)
 
     # Drop non-spectral columns
     x = data.drop(columns=["sample", "spot"])
@@ -181,12 +182,12 @@ def plot_spectrum_with_threshold(data_type: str, wavelength: float) -> None:
     selected_data = x_values[:, valid_indices]  # Select columns with wavelengths < threshold
     mean_intensity = np.mean(selected_data)
     std_intensity = np.std(selected_data)
-    threshold_intensity = mean_intensity + 10 * std_intensity
+    threshold_intensity = mean_intensity + 20 * std_intensity
 
     # Print statistics
     print(f"Mean Intensity for λ < {wavelength} nm: {mean_intensity:.2f}")
     print(f"Standard Deviation for λ < {wavelength} nm: {std_intensity:.2f}")
-    print(f"Threshold (Mean + 10d*Std): {threshold_intensity:.2f}")
+    print(f"Threshold (Mean + 20d*Std): {threshold_intensity:.2f}")
 
     # Find wavelengths where intensity exceeds threshold
     high_intensity_wavelengths = []
@@ -195,11 +196,11 @@ def plot_spectrum_with_threshold(data_type: str, wavelength: float) -> None:
             high_intensity_wavelengths.append(wl)
 
     # Split into left and right based on the vertical threshold wavelength
-    left_side = [wl for wl in high_intensity_wavelengths if wl < wavelength]
-    right_side = [wl for wl in high_intensity_wavelengths if wl > wavelength]
+    # left_side = [wl for wl in high_intensity_wavelengths if wl < wavelength]
+    # right_side = [wl for wl in high_intensity_wavelengths if wl > wavelength]
 
-    print(f"Wavelengths exceeding threshold on LEFT side (λ < {wavelength}): {left_side}")
-    print(f"Wavelengths exceeding threshold on RIGHT side (λ > {wavelength}): {right_side}")
+    print(f"Wavelengths exceeding threshold on LEFT side (λ < {wavelength}): {high_intensity_wavelengths[0]}")
+    print(f"Wavelengths exceeding threshold on RIGHT side (λ > {wavelength}): {high_intensity_wavelengths[-1]}")
 
     # Plot spectral data
     plt.figure(figsize=(8, 5))
@@ -207,10 +208,15 @@ def plot_spectrum_with_threshold(data_type: str, wavelength: float) -> None:
         plt.plot(wavelengths, spectrum, alpha=0.3, color="blue")  # Plot all spectra lightly
 
     # Vertical threshold line
-    plt.axvline(wavelength, color='red', linestyle='dashed', linewidth=2, label=f"Threshold λ = {wavelength} nm")
+    plt.axvline(wavelength, color='red', linestyle='dashed', linewidth=2,
+                label=f"Threshold λ = {wavelength} nm")
 
     # Horizontal threshold line
-    plt.axhline(threshold_intensity, color='green', linestyle='dotted', linewidth=2, label=f"Threshold = {threshold_intensity:.2f}")
+    plt.axhline(threshold_intensity, color='green', linestyle='dotted', linewidth=2,
+                label=f"Threshold = {threshold_intensity:.2f}")
+    plt.axvline(412, color='blue', linestyle='dotted', linewidth=2)
+
+    plt.axvline(691, color='blue', linestyle='dotted', linewidth=2)
 
     # Labels and title
     plt.xlabel("Wavelength (nm)")
@@ -218,11 +224,13 @@ def plot_spectrum_with_threshold(data_type: str, wavelength: float) -> None:
     plt.title(f"Spectrum Data with Threshold at {wavelength} nm")
     plt.legend()
     plt.grid(True)
+    # plt.xlim([390, 420])
+    print("what?")
+    plt.ylim([500, 750])
     plt.show()
 
 
 if __name__ == '__main__':
-    # vis_data_and_fourier_transform("reference", range(5))
+    vis_data_and_fourier_transform("reference", range(50))
     # plot_spectrum_histogram("reference", threshold=425+5*8.5)
-    plot_spectrum_with_threshold("reference", 380)
-
+    # plot_spectrum_with_threshold("reference", 380)
