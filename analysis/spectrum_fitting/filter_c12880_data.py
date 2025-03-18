@@ -16,10 +16,53 @@ from scipy.signal import savgol_filter
 # local files
 from get_data import get_raw_c12880_data
 
+FRUIT_COLOR = "red"
 
-def vis_data_and_fourier_transform(data_type: str, spectra_indices: list[int] = [0]) -> None:
+
+def fourier_ring_correlation(fft1: np.ndarray, fft2: np.ndarray) -> np.ndarray:
     """
-    Visualize raw spectral data, and it Fourier Transform.
+    Compute Fourier Ring Correlation (FRC) between two 1D spectra across frequency bins.
+
+    FRC measures the similarity between two spectra in the frequency domain.
+    It is commonly used to assess signal smoothing effectiveness.
+
+    Parameters:
+    -----------
+    fft1 : np.ndarray
+        FFT of the first spectrum (original signal).
+    fft2 : np.ndarray
+        FFT of the second spectrum (filtered signal).
+
+    Returns:
+    --------
+    np.ndarray
+        A 1D array of FRC values for each frequency bin.
+
+    Notes:
+    ------
+    - The FRC values range from 0 (no correlation) to 1 (perfect correlation).
+    - Uses only the first half of the FFT spectrum (positive frequencies).
+    - The first frequency bin (DC component) is excluded to avoid bias.
+
+    Reference:
+    ----------
+    - https://nirpyresearch.com/optimal-spectra-smoothing-fourier-ring-correlation/
+    """
+    frc = np.zeros(fft1.shape[0] // 2 - 1).astype('complex128')
+    for i in range(1, fft1.shape[0] // 2, 1):
+        frc_num = fft1[i] * np.conjugate(fft2[i])
+        norm1 = np.abs(fft1[i]) ** 2
+        norm2 = np.abs(fft2[i]) ** 2
+        frc[i - 1] = frc_num / np.sqrt(norm1 * norm2)
+    print(frc.shape)
+    return np.real(frc)
+
+
+def vis_data_and_fourier_transform(data_type: str,
+                                   spectra_indices: list[int] = [0],
+                                   sg_filter_params: dict[str: int] = None) -> None:
+    """
+    Visualize raw spectral data, its Fourier Transform, and Fourier Ring Correlation (FRC).
 
     Based on: https://nirpyresearch.com/optimal-spectra-smoothing-fourier-ring-correlation/
 
@@ -29,6 +72,11 @@ def vis_data_and_fourier_transform(data_type: str, spectra_indices: list[int] = 
         Type of spectral data to fetch ("reference", "data", "dark").
     spectra_indices : list[int]
         Indices of data to show
+    sg_filter_params : dict[str, int] | None
+        If provided, applies a Savitzky-Golay filter to smooth the signal.
+        Expected keys:
+        - "window_length": int (must be odd)
+        - "polyorder": int (polynomial order)
 
     Steps:
     ------
@@ -37,6 +85,9 @@ def vis_data_and_fourier_transform(data_type: str, spectra_indices: list[int] = 
     - Cleans wavelength labels, converting them to floats if needed.
     - Computes the Fast Fourier Transform (FFT) along the wavelength axis.
     - Plots the original spectrum and its FFT power spectrum.
+    - If `sg_filter_params` is provided, overlays the smoothed signal and its FFT.
+    - Computes and plots Fourier Ring Correlation (FRC) between original and filtered spectra.
+
 
     Returns:
     --------
@@ -48,19 +99,76 @@ def vis_data_and_fourier_transform(data_type: str, spectra_indices: list[int] = 
     # wavelengths = x.columns
     # Clean the wavelength column names
     wavelengths = [float(wl[:-2]) if isinstance(wl, str) else wl for wl in x.columns]
-    x_fourier = np.fft.fft(x, axis=1)
+    # x_fourier = np.fft.fft(x, axis=1)
 
-    fig, axs = plt.subplots(2, 1, figsize=(6, 6))
+    fig, axs = plt.subplots(3, 1, figsize=(6, 9))
     x = x.values
-
+    frc_values = []
     for i in spectra_indices:
-        axs[0].plot(wavelengths, x[i, :])
-        axs[1].semilogy(np.abs(x_fourier[i, :len(wavelengths)//2])**2)
+        original_spectrum= x[i, :]
+        # Compute FFT of original spectrum
+        original_fft = np.fft.fft(original_spectrum)
+
+        axs[0].plot(wavelengths, original_spectrum, color='black')
+        axs[0].set_title("Original Spectrum")
+        axs[1].semilogy(np.abs(original_fft[:len(wavelengths)//2])**2, color='black',
+                        label="Original data")
+        axs[1].set_title("Fourier Transform of Spectral Data")
+        if sg_filter_params:
+            filtered_spectrum = savgol_filter(original_spectrum, **sg_filter_params)
+            # Compute FFT of filtered spectrum
+            filtered_fft = np.fft.fft(filtered_spectrum)
+
+            # Overlay filtered signal on original plot
+            axs[0].plot(wavelengths, filtered_spectrum, linestyle="dashed", c=FRUIT_COLOR)
+            # Plot filtered FFT
+            axs[1].semilogy(np.abs(filtered_fft[:len(wavelengths) // 2]) ** 2,
+                            linestyle="dashed", color=FRUIT_COLOR, label="Filtered data")
+            # Compute Fourier Ring Correlation (FRC)
+            # frc_values = fourier_ring_correlation(original_fft[:len(wavelengths)],
+            #                                       filtered_fft[:len(wavelengths)])
+            frc_values.append(fourier_ring_correlation(original_fft[:len(wavelengths)],
+                                                       filtered_fft[:len(wavelengths)]))
+            # # Plot FRC
+            # axs[2].plot(frc_values, color='red')
+
+    # Store FRC values for multiple original spectra
+    unfiltered_frc_values = []
+
+    for spectra_index in spectra_indices[:-1]:
+        spectrum_1_fft = np.fft.fft(x[spectra_index, :])  # Compute FFT of each spectrum
+        spectrum_2_fft = np.fft.fft(x[spectra_index+1, :])  # Compute FFT of each spectrum
+
+        unfiltered_frc = fourier_ring_correlation(spectrum_1_fft[:len(wavelengths)],
+                                                  spectrum_2_fft[:len(wavelengths)])
+        unfiltered_frc_values.append(unfiltered_frc)
+
+    # Convert to NumPy array and compute the mean
+    unfiltered_frc_values = np.array(unfiltered_frc_values)
+    mean_unfiltered_frc = np.mean(unfiltered_frc_values, axis=0)
+
+    # Plot both unfiltered and filtered FRC
+    axs[2].plot(mean_unfiltered_frc, color='black', linestyle='dashed', label="Unfiltered FRC")
+
+    print(len(frc_values))
+    # Convert list to NumPy array for easier averaging
+    frc_values = np.array(frc_values)  # Shape: (num_spectra, num_frequencies)
+
+    # Compute mean FRC across all spectra
+    mean_frc = np.mean(frc_values, axis=0)
+
+    axs[2].plot(mean_frc, color=FRUIT_COLOR)
+    axs[2].set_title("Fourier Ring Correlation (FRC) Between\nOriginal and Filtered Spectrum")
+    axs[2].set_xlabel("Fourier Coordinates")
+    axs[2].set_ylabel("FRC (Correlation strength)")
+
     axs[0].set_xlabel("Wavelength (nm)")
     axs[0].set_ylabel("Counts")
 
     axs[1].set_xlabel("Fourier coordinate")
-
+    axs[1].set_ylabel("Spectral Intensity (Fourier Domain)")
+    plt.tight_layout()
+    plt.savefig("FRC_reference.jpeg")
     plt.show()
 
 
@@ -209,7 +317,7 @@ def plot_spectrum_with_threshold(data_type: str, wavelength: float) -> None:
 
     # Vertical threshold line
     plt.axvline(wavelength, color='red', linestyle='dashed', linewidth=2,
-                label=f"Threshold λ = {wavelength} nm")
+                label=f"λ = {wavelength} nm for background calculation")
 
     # Horizontal threshold line
     plt.axhline(threshold_intensity, color='green', linestyle='dotted', linewidth=2,
@@ -227,10 +335,13 @@ def plot_spectrum_with_threshold(data_type: str, wavelength: float) -> None:
     # plt.xlim([390, 420])
     print("what?")
     plt.ylim([500, 750])
+    plt.savefig(f"tomato_reference_window.jpeg")
     plt.show()
 
 
 if __name__ == '__main__':
-    vis_data_and_fourier_transform("reference", range(50))
+    sg_params = {"window_length": 7, "polyorder": 2}
+    # vis_data_and_fourier_transform("reference", range(60), sg_filter_params=sg_params)
+
     # plot_spectrum_histogram("reference", threshold=425+5*8.5)
-    # plot_spectrum_with_threshold("reference", 380)
+    plot_spectrum_with_threshold("reference", 360)
