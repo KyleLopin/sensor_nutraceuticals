@@ -15,6 +15,7 @@ import pandas as pd
 
 DATA_FOLDER = Path(__file__).parent.parent.parent / "data"
 pd.set_option('display.max_rows', 10)
+pd.set_option('display.width', None)
 
 
 # def get_data(sensor: str, fruit: str):
@@ -155,23 +156,96 @@ def get_raw_c12880_data(fruit: str = "tomato",
     return data
 
 
+def _get_c12880_data(fruit: str = "tomato",
+                     measurement_mode: str = "reflectance",
+                     use_individual_refl: bool = False,
+                     mean_spot: bool = False,
+                     target: str = "lycopene (DW)",
+                     wavelength_range: tuple[float, float] = (412, 691),
+                     **kwargs):
+    print("getting c12880")
+    if measurement_mode == "raw":
+        data = get_raw_c12880_data(fruit=fruit,
+                                   data_type="data",
+                                   **kwargs)
+        # TODO: get this part working if needed
+    elif measurement_mode == "reflectance":
+        data_folder = DATA_FOLDER / fruit / "reflectance"
+        data_file = data_folder / "tomato_reflectance_single.csv"
+        if use_individual_refl:
+            data_file = data_folder / "tomato_reflectance_individual.csv"
+        data = pd.read_csv(data_file)
+        print(data)
+        print(data.columns)
+        # get Y from the other datasets
+        print('kwarg: ', kwargs)
+
+    data["spot_group"] = data["spot"].astype(str).str.split(".").str[0].astype(int)
+    agg_dict = {col: 'mean' for col in data.columns}
+    agg_dict["sample"] = "first"
+    agg_dict["spot"] = "first"
+    if mean_spot:
+        data = data.groupby(by=["sample", "spot_group"]).mean()
+        print("mean data")
+        print(data)
+    invalid_columns = [col for col in data.columns
+                       if not is_float(col)]
+    x = data.drop(columns=invalid_columns)
+    x.columns = [float(col) for col in x.columns]
+    if wavelength_range:
+        filtered_columns = [
+            wl for wl in x.columns
+            if isinstance(wl, (int, float)) and wavelength_range[0] < wl < wavelength_range[1]
+        ]
+        print("fc: ", filtered_columns, x.columns)
+        x = x[filtered_columns]
+    print(x)
+    # get y from as7262 data
+    y_data_df = pd.read_csv(data_folder / "tomato_as7262_ref_data.csv")
+    y = y_data_df.groupby(by=["Fruit"]).agg({target: "first"})
+    y.index.name = "sample"
+    print(y)
+    groups = data.index.to_frame(index=False)
+    print(groups)
+    df_merge =groups.merge(y.reset_index(), on="sample", how="left")
+    y = df_merge[target]
+    print(df_merge)
+    print(x.shape, y.shape, groups.shape, df_merge.shape)
+    return x, y, groups
+
+
 def get_data(sensor: str,
              measurement_mode: str = "reflectance",
              fruit: str = "tomato",
              target_column="lycopene (DW)",
-             sensor_settings: dict=None):
+             split_x_y_groups: bool = True,
+             mean_spot: bool = False,
+             **kwargs):
+    if sensor == "c12880":
+        print('bb')
+        return _get_c12880_data(fruit=fruit,
+                                measurement_mode=measurement_mode,
+                                mean_spot=mean_spot,
+                                target=target_column,
+                                **kwargs)
+        # TODO; GET Y
+        groups = data[["sample", "spot"]]
+        x = data.drop(columns=["sample", "spot"])
+
     fruit_folder = DATA_FOLDER / fruit
     if measurement_mode == "raw":
         data_folder = fruit_folder / "raw"
+        mid = "_"
     elif measurement_mode in ["reflectance", "absorbance"]:
         data_folder = fruit_folder / "reflectance"
+        mid = "_ref_"
     else:
         raise ValueError(f"measurement mode; '{measurement_mode}' is not valid\n"
                           "Use 'raw', 'reflectance', or 'absorbance")
 
-    data = pd.read_csv(data_folder / f"{fruit}_{sensor}_data.csv")
-
+    data = pd.read_csv(data_folder / f"{fruit}_{sensor}{mid}data.csv")
     print(data)
+
     # get spectral columns
     x_columns = []
     for column in data.columns:
@@ -181,9 +255,18 @@ def get_data(sensor: str,
     if target_column not in data.columns:
         raise ValueError(f"{target_column} is not in DataFrame, valid columns are: {data.columns}")
 
-    if sensor_settings:
-        for sensor_setting, sensor_value in sensor_settings.items():
+    if kwargs:
+        print("got sensor settings:", kwargs)
+        for sensor_setting, sensor_value in kwargs.items():
             data = data.loc[data[sensor_setting] == sensor_value]
+
+    if mean_spot:
+        agg_dict = {col: "mean" for col in x_columns}
+        for new_col in ["Fruit", "Fruit number", "spot", "Read number", target_column]:
+            agg_dict[new_col] = "first"
+        data = data.groupby(by=["Fruit number"]).agg(agg_dict)
+        print("mean data")
+        print(data)
 
     x = data[x_columns]
     if measurement_mode == "absorbance":
@@ -191,7 +274,9 @@ def get_data(sensor: str,
     print(data.columns)
 
     print(data)
-    return x, data[target_column], data["Fruit", "spot", "Read number"]
+    if split_x_y_groups:
+        return x, data[target_column], data[["Fruit", "spot", "Read number"]]
+    return data
 
 
 if __name__ == '__main__':
@@ -199,13 +284,20 @@ if __name__ == '__main__':
     sensor_settings = {"led current": "12.5 mA",
                        "integration time": 50}
     x, y, groups = get_data("as7262", measurement_mode="raw",
-                            sensor_settings=sensor_settings)
+                            mean_spot=True,
+                            **sensor_settings)
+
+    # print(x)
+    # print(y)
+    # print(groups)
+    plt.plot(x.T)
+    plt.show()
 
     data = get_raw_c12880_data(data_type="data",
                                dark_current_cutoff=360,
                                wavelength_range=None)
-    print(data.columns)
-    print(data)
+    # print(data.columns)
+    # print(data)
     # data = get_raw_c12880_data(data_type="data", wavelength_range=None)
     plt.plot(data.drop(columns=["spot", "sample"]).T)
     plt.show()
