@@ -60,7 +60,8 @@ def fourier_ring_correlation(fft1: np.ndarray, fft2: np.ndarray) -> np.ndarray:
 
 def vis_data_and_fourier_transform(data_type: str,
                                    spectra_indices: list[int] = [0],
-                                   sg_filter_params: dict[str: int] = None) -> None:
+                                   sg_filter_params: dict[str: int] = None,
+                                   x=None) -> None:
     """
     Visualize raw spectral data, its Fourier Transform, and Fourier Ring Correlation (FRC).
 
@@ -77,6 +78,8 @@ def vis_data_and_fourier_transform(data_type: str,
         Expected keys:
         - "window_length": int (must be odd)
         - "polyorder": int (polynomial order)
+    x : pd.DataFrame | None
+        If provided, use as data to iterate through instead of importing
 
     Steps:
     ------
@@ -88,27 +91,28 @@ def vis_data_and_fourier_transform(data_type: str,
     - If `sg_filter_params` is provided, overlays the smoothed signal and its FFT.
     - Computes and plots Fourier Ring Correlation (FRC) between original and filtered spectra.
 
-
     Returns:
     --------
     None (displays plots).
     """
-    data = get_raw_c12880_data(fruit="tomato", data_type=data_type)
-    print(data.columns)
-    x = data.drop(columns=["sample", "spot"])
+    if x is None:
+        data = get_raw_c12880_data(fruit="tomato", data_type=data_type)
+        print(data.columns)
+        x = data.drop(columns=["sample", "spot"])
     # wavelengths = x.columns
     # Clean the wavelength column names
-    wavelengths = [float(wl[:-2]) if isinstance(wl, str) else wl for wl in x.columns]
+    print(x.columns)
+    # wavelengths = [float(wl[:-2]) if isinstance(wl, str) else wl for wl in x.columns]
+    wavelengths = [float(wl) for wl in x.columns]
     # x_fourier = np.fft.fft(x, axis=1)
 
     fig, axs = plt.subplots(3, 1, figsize=(6, 9))
     x = x.values
     frc_values = []
     for i in spectra_indices:
-        original_spectrum= x[i, :]
+        original_spectrum = x[i, :]
         # Compute FFT of original spectrum
         original_fft = np.fft.fft(original_spectrum)
-
         axs[0].plot(wavelengths, original_spectrum, color='black')
         axs[0].set_title("Original Spectrum")
         axs[1].semilogy(np.abs(original_fft[:len(wavelengths)//2])**2, color='black',
@@ -168,8 +172,105 @@ def vis_data_and_fourier_transform(data_type: str,
     axs[1].set_xlabel("Fourier coordinate")
     axs[1].set_ylabel("Spectral Intensity (Fourier Domain)")
     plt.tight_layout()
-    plt.savefig("FRC_reference.jpeg")
+    # plt.savefig("FRC_reference.jpeg")
     plt.show()
+
+
+def make_c12880_refl_data(fruit: str="tomato",
+                          sg_params_ref={"window_length": 7, "polyorder": 2},
+                          sg_params_data={"window_length": 7, "polyorder": 2},
+                          filter_type: str="Outer"):
+    # get the reference data
+    ref_data = get_raw_c12880_data(fruit="tomato",
+                                   dark_current_cutoff=360,
+                                   data_type="reference",
+                                   wavelength_range=None)
+    # print('=====')
+    # print(ref_data)
+    # plt.plot(ref_data.drop(columns=["sample", "spot"]).T)
+    # plt.show()
+    non_numeric_cols = ref_data[["sample", "spot"]]  # Keep sample & spot columns
+    x = ref_data.drop(columns=["sample", "spot"])
+    # print(ref_data)
+    if sg_params_ref:
+        # Apply Savitzky-Golay filtering to each column and keep as DataFrame
+        filtered_reference = pd.DataFrame(
+            savgol_filter(x, **sg_params_ref),  # Apply filter
+            columns=x.columns,  # Preserve column names
+            index=x.index  # Preserve original row indices
+        )
+        # add back the data for sample and spot
+        filtered_reference[["sample", "spot"]] = non_numeric_cols
+
+    full_data = get_raw_c12880_data(fruit=fruit,
+                                    dark_current_cutoff=360,
+                                    data_type="data",
+                                    wavelength_range=None)
+    # print(full_data)
+    # print('===++')
+    # plt.plot(full_data.drop(columns=["sample", "spot"]).T)
+    # plt.show()
+
+    # Separate numeric columns from "sample" and "spot"
+    numeric_cols = filtered_reference.drop(columns=["sample", "spot"]).columns
+
+    # if "Outer" then just use first and last reference reads
+    if filter_type == "Outer":  # just use first and last reference data points
+
+        ref_data = (filtered_reference[numeric_cols].iloc[0] +
+                    filtered_reference[numeric_cols].iloc[-1]) / 2
+
+        # Divide only numeric columns of full_data by ref_data
+        reflectance = full_data[numeric_cols].div(ref_data)
+
+        # Transfer the "sample" and "spot" columns from full_data
+        reflectance[["sample", "spot"]] = full_data[["sample", "spot"]]
+
+        # save data
+        reflectance.to_csv(f"{fruit}_reflectance_single.csv")
+    elif filter_type == "individual":
+        # for each reading use the reflectance reading from just before
+        # reflectance = full_data / x
+        # Create an empty list to store reflectance data
+        reflectance_list = []
+        for sample in filtered_reference['sample'].unique():
+
+            # Select the reference spectrum for this sample (1 row)
+            ref_spectrum = filtered_reference.loc[
+                filtered_reference["sample"] == sample
+            ].drop(columns=["sample", "spot"])
+
+            # print(ref_spectrum)
+            # print("ref spectrums")
+            # Select all spectra for this sample in spectra_df (16 rows)
+            sample_spectra = full_data.loc[
+                full_data["sample"] == sample
+            ].drop(columns=["sample", "spot"])
+
+            # Get reflectance, divide the spectra by the corresponding reference spectrum
+            reflectance = sample_spectra.div(
+                ref_spectrum.values)  # `values` ensures correct broadcasting
+
+            # Add back "sample" and "spot" columns
+            reflectance[["sample", "spot"]] = full_data.loc[
+                full_data["sample"] == sample,
+                ["sample", "spot"]
+            ]
+            # Store in list
+            reflectance_list.append(reflectance)
+
+        # Combine all processed data back into a DataFrame
+        reflectance_df = pd.concat(reflectance_list, ignore_index=True)
+
+        # Print or return final DataFrame
+        print(reflectance_df)
+        reflectance_df.to_csv(f"{fruit}_reflectance_individual.csv")
+        # plt.plot(reflectance_df.drop(columns=["spot", "sample"]).T)
+        # plt.ylim([0, 1])
+        # plt.show()
+
+    else:
+        raise ValueError("Incorrect 'filter_type', use 'Outer' or 'individual'")
 
 
 def plot_spectrum_histogram(data_type: str, threshold: float = None) -> None:
@@ -340,8 +441,24 @@ def plot_spectrum_with_threshold(data_type: str, wavelength: float) -> None:
 
 
 if __name__ == '__main__':
-    sg_params = {"window_length": 7, "polyorder": 2}
-    # vis_data_and_fourier_transform("reference", range(60), sg_filter_params=sg_params)
+    sg_params = {"window_length": 9, "polyorder": 2}
 
+    # make_c12880_refl_data(filter_type="Outer")
+    # vis_data_and_fourier_transform("reference", range(60), sg_filter_params=sg_params)
+    # visualize reflectance data of tomato
+    data = pd.read_csv("../../data/tomato/reflectance/tomato_reflectance_single.csv")
+    print(data.shape)
+    print(data)
+    y = data.drop(columns=["Unnamed: 0", "spot", "sample"])
+    print(y.columns)
+    left, right = 412, 691
+    keep_columns = [wl for wl in y.columns if left < float(wl) < right]
+    print(keep_columns)
+
+    vis_data_and_fourier_transform("foobar", x=y[keep_columns],
+                                   sg_filter_params=sg_params,
+                                   spectra_indices=range(0, 950, 30))
+    plt.plot([float(x) for x in keep_columns], y[keep_columns].T)
+    plt.show()
     # plot_spectrum_histogram("reference", threshold=425+5*8.5)
-    plot_spectrum_with_threshold("reference", 360)
+    # plot_spectrum_with_threshold("reference", 360)
