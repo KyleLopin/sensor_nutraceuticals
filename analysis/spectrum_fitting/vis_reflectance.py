@@ -24,7 +24,7 @@ pd.set_option('display.width', None)
 
 
 @lru_cache()  # this gets called 5-7 times so just memorize it instead of making a class
-def make_color_map(color_min: float, color_max: float, target: str="lycopene"
+def make_color_map(color_min: float, color_max: float, target: str = "lycopene"
                    ) -> tuple[mpl.colors.LinearSegmentedColormap,
                               mpl.colors.Normalize]:
     """ Make a linear segment color map from a list
@@ -32,6 +32,8 @@ def make_color_map(color_min: float, color_max: float, target: str="lycopene"
     Args:
         color_min (float): Minimum value for colormap normalization.
         color_max (float): Maximum value for colormap normalization.
+        target (str): Name of the component to visualize, lycopene or carotene,
+        The color will be selected by the target
 
     Returns:
         tuple: A tuple containing:
@@ -44,7 +46,7 @@ def make_color_map(color_min: float, color_max: float, target: str="lycopene"
             color_map, map_norm = make_color_map(y["Avg Total Chlorophyll (µg/cm2)"].min(),
                                                  y["Avg Total Chlorophyll (µg/cm2)"].max())
             for i, line in enumerate(lines):  # type: int, mpl.lines.Line2D
-                line.set_color(tuple(color_map(map_norm(y["Avg Total Chlorophyll (µg/cm2)"]))[i]))
+                line.set_color(color_map(map_norm(y.iloc[i])))
 
     """
 
@@ -52,6 +54,8 @@ def make_color_map(color_min: float, color_max: float, target: str="lycopene"
         color_map = COLOR_MAP_LYCOPENE
     elif "carotene" in target:
         color_map = COLOR_MAP_BETA
+    else:
+        raise ValueError(f"Color map needs 'lycopene' or 'carotene', '{target}' is not valid")
 
     color_map = mpl.colors.LinearSegmentedColormap.from_list(
         "", color_map)
@@ -69,7 +73,7 @@ def vis_single_sensor(ax: plt.Axes = None,
 
     if ax is None:  # for testing
         _, ax = plt.subplots(1, 1)
-    if sensor == "as7265x":  # set the led
+    if sensor == "as7265x":  # set the LED
         kwargs["led"] = led
     x, y, groups = get_data.get_data(sensor=sensor,
                                      fruit=fruit,
@@ -90,7 +94,7 @@ def vis_single_sensor(ax: plt.Axes = None,
     print(x.shape)
     print(kwargs)
     lines = ax.plot(x.T, alpha=0.3)
-    for i, line in enumerate(lines):  # type: int, Line2D
+    for i, line in enumerate(lines):  # type: int, mpl.lines.Line2D
         line.set_color(color_map(map_norm(y.iloc[i])))
     plt.show()
 
