@@ -111,7 +111,7 @@ def get_raw_c12880_data(fruit: str = "tomato",
         raise ValueError(f"data_type = {data_type} is not valid, data_type must be in "
                          f"['reference', 'dark', 'data']")
 
-    # because the sensor has to be programmed with wavelenghts, some numbers are repeated
+    # because the sensor has to be programmed with wavelengths, some numbers are repeated
     # remove the invalid columns that are repeated with .1 at the end
     invalid_columns = [col for col in data.columns
                        if not is_float(col)]
@@ -126,25 +126,17 @@ def get_raw_c12880_data(fruit: str = "tomato",
 
     # Apply dark current subtraction if cutoff is provided
     if dark_current_cutoff is not None:
-        # get the dark current, take mean of every wavelenght
+        # get the dark current, take mean of every wavelength
         # less than the dark current cutoff
-        dark_current_levels = data[
-            [wl for wl in spectral_columns
-             if wl < dark_current_cutoff]
-        ]
         dark_current_cols = [wl for wl in spectral_columns
                              if wl < dark_current_cutoff]
-        # print(dark_current_cols)
 
         # Compute a **single** dark current value per sample (mean across all dark current columns)
         dark_current_levels = data[dark_current_cols].mean(axis=1)
         # print(dark_current_levels)
 
         # Subtract the sample-specific dark current from the corresponding data rows
-        # data = data.merge(dark_current_levels, on="sample")  # Merge to align by sample
-        # print(data)
         data[spectral_columns] = data[spectral_columns].sub(dark_current_levels, axis=0)
-        # data = data.drop(columns=["dark_current"])
 
     # Apply wavelength range filter
     if wavelength_range:
@@ -207,7 +199,7 @@ def _get_c12880_data(fruit: str = "tomato",
     print(y)
     groups = data.index.to_frame(index=False)
     print(groups)
-    df_merge =groups.merge(y.reset_index(), on="sample", how="left")
+    df_merge = groups.merge(y.reset_index(), on="sample", how="left")
     y = df_merge[target]
     print(df_merge)
     print(x.shape, y.shape, groups.shape, df_merge.shape)
@@ -228,9 +220,6 @@ def get_data(sensor: str,
                                 mean_spot=mean_spot,
                                 target=target_column,
                                 **kwargs)
-        # TODO; GET Y
-        groups = data[["sample", "spot"]]
-        x = data.drop(columns=["sample", "spot"])
 
     fruit_folder = DATA_FOLDER / fruit
     if measurement_mode == "raw":
@@ -241,7 +230,7 @@ def get_data(sensor: str,
         mid = "_ref_"
     else:
         raise ValueError(f"measurement mode; '{measurement_mode}' is not valid\n"
-                          "Use 'raw', 'reflectance', or 'absorbance")
+                         "Use 'raw', 'reflectance', or 'absorbance")
 
     data = pd.read_csv(data_folder / f"{fruit}_{sensor}{mid}data.csv")
     print(data)
@@ -283,21 +272,21 @@ if __name__ == '__main__':
     import matplotlib.pyplot as plt
     sensor_settings = {"led current": "12.5 mA",
                        "integration time": 50}
-    x, y, groups = get_data("as7262", measurement_mode="raw",
-                            mean_spot=True,
-                            **sensor_settings)
+    _x, _y, groups = get_data("as7262", measurement_mode="raw",
+                              mean_spot=True,
+                              **sensor_settings)
 
     # print(x)
     # print(y)
     # print(groups)
-    plt.plot(x.T)
+    plt.plot(_x.T)
     plt.show()
 
-    data = get_raw_c12880_data(data_type="data",
-                               dark_current_cutoff=360,
-                               wavelength_range=None)
+    _data = get_raw_c12880_data(data_type="data",
+                                dark_current_cutoff=360,
+                                wavelength_range=None)
     # print(data.columns)
     # print(data)
     # data = get_raw_c12880_data(data_type="data", wavelength_range=None)
-    plt.plot(data.drop(columns=["spot", "sample"]).T)
+    plt.plot(_data.drop(columns=["spot", "sample"]).T)
     plt.show()
