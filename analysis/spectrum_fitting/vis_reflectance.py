@@ -10,15 +10,28 @@ __author__ = "Kyle Vitautas Lopin"
 from functools import lru_cache
 
 # installed libraries
+from matplotlib.colors import to_rgb, to_hex
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import pandas as pd
-
+# plt.style.use('seaborn-v0_8-dark')
 # local files
 import get_data
 
+
+def darken_color(hex_color, amount=30):
+    rgb = [int(c * 255) for c in to_rgb(hex_color)]
+    darker_rgb = [max(c - amount, 0) for c in rgb]
+    return to_hex([c / 255 for c in darker_rgb])
+
+
 COLOR_MAP_LYCOPENE = ["palegreen", "red"]
-COLOR_MAP_BETA = ["palegreen", "goldenrod"]
+# COLOR_MAP_BETA = ["#fffcc9", "#ffe066", "#ff9900", "#cc3300"]
+COLOR_MAP_BETA_START = ["#f0f0c0", "#ffe066", "#ff9900", "#cc3300"]
+COLOR_MAP_BETA = [darken_color(c, amount=15) for c in COLOR_MAP_BETA_START]
+
+ALPHA = 0.5
+
 pd.set_option('display.max_columns', None)
 pd.set_option('display.width', None)
 
@@ -68,7 +81,7 @@ def vis_single_sensor(ax: plt.Axes = None,
                       fruit: str = "tomato",
                       measurement_type: str = "reflectance",
                       target="lycopene (DW)",
-                      led: str = "b'White IR'",
+                      led: str = "b'White",
                       **kwargs):
 
     if ax is None:  # for testing
@@ -81,21 +94,48 @@ def vis_single_sensor(ax: plt.Axes = None,
                                      target_column=target,
                                      mean_spot=True,
                                      **kwargs)
-    # data = get_data.get_data(sensor=sensor,
-    #                          fruit=fruit,
-    #                          measurement_mode=measurement_type,
-    #                          target_column=target,
-    #                          mean_spot=True,
-    #                          split_x_y_groups=False,
-    #                          **kwargs)
 
     color_map, map_norm = make_color_map(y.min(), y.max(), target=target)
-    # print(data)
-    print(x.shape)
-    print(kwargs)
-    lines = ax.plot(x.T, alpha=0.3)
+    print(x.columns)
+    if x.columns.dtype != "float64":
+        x_values = [float(col.split(' ')[0]) for col in x.columns]
+    else:
+        x_values = x.columns
+    print(x_values)
+    lines = ax.plot(x_values, x.T, alpha=ALPHA, lw=1.5)
     for i, line in enumerate(lines):  # type: int, mpl.lines.Line2D
         line.set_color(color_map(map_norm(y.iloc[i])))
+    return mpl.cm.ScalarMappable(norm=map_norm, cmap=color_map)
+
+
+def vis_4_sensors(fruit: str, target: str, sensor_settings: dict):
+    figure, axes = plt.subplots(4, 1, figsize=(5, 7), sharex=True)
+    for i, sensor in enumerate(["as7262", "as7263", "as7265x", "c12880"]):
+        print(i, sensor)
+        color_map = vis_single_sensor(ax=axes[i], sensor=sensor,
+                                      target=target, fruit=fruit,
+                                      led="b'White'",
+                                      **sensor_settings)
+    plt.subplots_adjust(right=0.83)
+    COLOR_BAR_AXIS = [.89, .13, 0.02, 0.8]
+    color_bar_axis = figure.add_axes(COLOR_BAR_AXIS)
+    if fruit == "tomato":
+        color_bar_label = "Total Lycopene (mg/100 g)"
+    elif fruit == "mango":
+        color_bar_label = "Beta Carotene (mg/100 g)"
+    else:
+        raise ValueError(f"Choose a fruit mango or tomato, {fruit} is not valid")
+
+    figure.colorbar(color_map, cax=color_bar_axis, orientation="vertical",
+                    label=color_bar_label, fraction=0.08)
+    # make x axis label at bottom of graph
+    axes[3].set_xlabel("Wavelength (nm)")
+    # make y-axis label in the middle to cover all graphs
+    figure.text(0.03, 0.5, 'Normalized Reflectance',
+                ha='center', va='center', rotation='vertical', fontsize=12)
+    figure.suptitle(f"{fruit.capitalize()} Reflectance")
+    # figure.tight_layout()
+    figure.subplots_adjust(left=0.11, right=0.87, wspace=0.19, top=0.95)
     plt.show()
 
 
@@ -104,5 +144,14 @@ if __name__ == '__main__':
                        "integration time": 50}
     # vis_single_sensor(sensor="as7262", target="beta-carotene (DW)",
     #                   **sensor_settings)
-    vis_single_sensor(sensor="c12880", target="beta-carotene (DW)",
-                      **sensor_settings)
+    # vis_single_sensor(sensor="c12880", target="beta-carotene (DW)",
+    #                   **sensor_settings)
+    # vis_single_sensor(
+    #     sensor="as7265x", target="lycopene (FW)",
+    #     fruit='tomato', led="b'White'",
+    #     **sensor_settings)
+    # plt.show()
+    vis_4_sensors("mango", "carotene (FW)",
+                  sensor_settings)
+    # vis_4_sensors("tomato", "lycopene (FW)",
+    #               sensor_settings)
