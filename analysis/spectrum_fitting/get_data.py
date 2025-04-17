@@ -156,6 +156,7 @@ def _get_c12880_data(fruit: str = "tomato",
                      wavelength_range: tuple[float, float] = (412, 691),
                      **kwargs):
     print("getting c12880")
+    print("Function arguments:", locals())
     if measurement_mode == "raw":
         data = get_raw_c12880_data(fruit=fruit,
                                    data_type="data",
@@ -163,23 +164,33 @@ def _get_c12880_data(fruit: str = "tomato",
         # TODO: get this part working if needed
     elif measurement_mode == "reflectance":
         data_folder = DATA_FOLDER / fruit / "reflectance"
-        data_file = data_folder / "tomato_reflectance_single.csv"
-        if use_individual_refl:
-            data_file = data_folder / "tomato_reflectance_individual.csv"
+        data_file = data_folder / f"{fruit}_reflectance.csv"
         data = pd.read_csv(data_file)
-        print(data)
-        print(data.columns)
+        # print(data)
+        # print(data.columns)
         # get Y from the other datasets
-        print('kwarg: ', kwargs)
-
+        # print('kwarg: ', kwargs)
+    # print('wtf')
+    # print(data)
     data["spot_group"] = data["spot"].astype(str).str.split(".").str[0].astype(int)
     agg_dict = {col: 'mean' for col in data.columns}
     agg_dict["sample"] = "first"
     agg_dict["spot"] = "first"
     if mean_spot:
-        data = data.groupby(by=["sample", "spot_group"]).mean()
-        print("mean data")
-        print(data)
+        data[["spot", "Read number"]] = (
+            data["spot"].astype(str).str.extract(r"(\d+)\.(\d+)").astype(int))
+        # Select groups before averaging
+        groups = data[['sample', 'spot', 'Read number']].rename(columns={"sample": "Fruit"})
+        spectral_cols = [col for col in data.columns if is_float(col)]
+        data = data.groupby(by=["sample", "spot"])[spectral_cols].mean()
+        # print("mean data")
+        # print(data)
+    else:
+        data[["spot", "Read number"]] = (
+            data["spot"].astype(str).str.extract(r"(\d+)\.(\d+)").astype(int))
+        groups = data[['sample', 'spot', 'Read number']].rename(columns={"sample": "Fruit"})
+        # print("not mean data")
+        # print(data)
     invalid_columns = [col for col in data.columns
                        if not is_float(col)]
     x = data.drop(columns=invalid_columns)
@@ -189,20 +200,23 @@ def _get_c12880_data(fruit: str = "tomato",
             wl for wl in x.columns
             if isinstance(wl, (int, float)) and wavelength_range[0] < wl < wavelength_range[1]
         ]
-        print("fc: ", filtered_columns, x.columns)
+        # print("fc: ", filtered_columns, x.columns)
         x = x[filtered_columns]
-    print(x)
+    # print(x)
     # get y from as7262 data
-    y_data_df = pd.read_csv(data_folder / "tomato_as7262_ref_data.csv")
+    y_data_df = pd.read_csv(data_folder / f"{fruit}_as7262_ref_data.csv")
     y = y_data_df.groupby(by=["Fruit"]).agg({target: "first"})
-    y.index.name = "sample"
-    print(y)
-    groups = data.index.to_frame(index=False)
+    y.index.name = "Fruit"
+    # print(y)
+    print(data.index)
+    # groups = data.index.to_frame(index=False)
+    print("GROUPS: C1880")
     print(groups)
-    df_merge = groups.merge(y.reset_index(), on="sample", how="left")
+    print(y)
+    df_merge = groups.merge(y.reset_index(), on="Fruit", how="left")
     y = df_merge[target]
-    print(df_merge)
-    print(x.shape, y.shape, groups.shape, df_merge.shape)
+    # print(df_merge)
+    # print(x.shape, y.shape, groups.shape, df_merge.shape)
     return x, y, groups
 
 
@@ -233,7 +247,7 @@ def get_data(sensor: str,
                          "Use 'raw', 'reflectance', or 'absorbance")
 
     data = pd.read_csv(data_folder / f"{fruit}_{sensor}{mid}data.csv")
-    print(data)
+    # print(data)
 
     # get spectral columns
     x_columns = []
@@ -254,14 +268,14 @@ def get_data(sensor: str,
         for new_col in ["Fruit", "Fruit number", "spot", "Read number", target_column]:
             agg_dict[new_col] = "first"
         data = data.groupby(by=["Fruit number"]).agg(agg_dict)
-        print("mean data")
-        print(data)
+        # print("mean data")
+        # print(data)
 
     x = data[x_columns]
     if measurement_mode == "absorbance":
         x = -np.log10(x)
-    print(data.columns)
-
+    # print(data.columns)
+    #
     print(data)
     if split_x_y_groups:
         return x, data[target_column], data[["Fruit", "spot", "Read number"]]
@@ -274,6 +288,7 @@ if __name__ == '__main__':
                        "integration time": 50}
     _x, _y, groups = get_data("as7262", measurement_mode="raw",
                               mean_spot=True,
+                              target_column="%DM",
                               **sensor_settings)
 
     # print(x)
