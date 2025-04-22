@@ -14,15 +14,20 @@ import numpy as np
 import pandas as pd
 
 DATA_FOLDER = Path(__file__).parent.parent.parent / "data"
-pd.set_option('display.max_rows', 10)
-pd.set_option('display.width', None)
-
-
-# def get_data(sensor: str, fruit: str):
-#     filename = DATA_FOLDER / f"{fruit}_{sensor}_data.csv"
+pd.set_option('display.max_rows', 10)  # noqa
+pd.set_option('display.width', None)  # noqa
 
 
 def is_float(value):
+    """
+    Check if a value can be converted to a float.
+
+    Parameters:
+        value: The input value to check (typically a string or number).
+
+    Returns:
+        bool: True if the value can be converted to a float, False otherwise.
+    """
     try:
         float(value)
         return True
@@ -92,7 +97,7 @@ def get_raw_c12880_data(fruit: str = "tomato",
     """
     data_path = DATA_FOLDER / fruit / f"{fruit.capitalize()}_fulldata.xlsx"
     # the Excel file has 2 top rows merged, remove the first one
-    data = pd.read_excel(data_path, skiprows=1)
+    data = pd.read_excel(data_path, skiprows=1)  # noqa
 
     # then add in the names that were removed with skiprows=1
     data.columns = ["sample", "spot"] + list(data.columns[2:])
@@ -150,47 +155,58 @@ def get_raw_c12880_data(fruit: str = "tomato",
 
 def _get_c12880_data(fruit: str = "tomato",
                      measurement_mode: str = "reflectance",
-                     use_individual_refl: bool = False,
                      mean_spot: bool = False,
                      target: str = "lycopene (DW)",
                      wavelength_range: tuple[float, float] = (412, 691),
                      **kwargs):
-    print("getting c12880")
-    print("Function arguments:", locals())
+    """
+    Load and process spectral data from the C12880 sensor.
+
+    Parameters:
+        fruit (str): Name of the fruit to load data for (used to locate files).
+        measurement_mode (str): Either "raw" to use unprocessed sensor data, or
+                                "reflectance" to use preprocessed reflectance data.
+        mean_spot (bool): Whether to average all spectra from the same spot.
+        target (str): Target column name from the AS7262 sensor to use as y-label.
+        wavelength_range (tuple): Range of wavelengths to include in the x data.
+        **kwargs: Additional keyword arguments passed to the raw data loader.
+
+    Returns:
+        x (pd.DataFrame): Spectral data with wavelengths as columns.
+        y (pd.Series): Target values aligned with the x data.
+        groups (pd.DataFrame): Metadata (e.g., fruit, spot) for grouping samples.
+    """
     if measurement_mode == "raw":
+        # Load raw sensor data using a separate function
         data = get_raw_c12880_data(fruit=fruit,
                                    data_type="data",
                                    **kwargs)
-        # TODO: get this part working if needed
     elif measurement_mode == "reflectance":
+        # Load reflectance data from a CSV file
         data_folder = DATA_FOLDER / fruit / "reflectance"
         data_file = data_folder / f"{fruit}_reflectance.csv"
         data = pd.read_csv(data_file)
-        # print(data)
-        # print(data.columns)
-        # get Y from the other datasets
-        # print('kwarg: ', kwargs)
-    # print('wtf')
-    # print(data)
-    data["spot_group"] = data["spot"].astype(str).str.split(".").str[0].astype(int)
+    else:
+        raise ValueError(f"measurement_mode needs to be in ['raw', 'reflectance'], "
+                         f"{measurement_mode} is not valid")
+
+    # Extract numeric spot group ID from spot column
+    # data["spot_group"] = data["spot"].astype(str).str.split(".").str[0].astype(int)
     agg_dict = {col: 'mean' for col in data.columns}
     agg_dict["sample"] = "first"
     agg_dict["spot"] = "first"
     if mean_spot:
-        data[["spot", "Read number"]] = (
-            data["spot"].astype(str).str.extract(r"(\d+)\.(\d+)").astype(int))
-        # Select groups before averaging
-        groups = data[['sample', 'spot', 'Read number']].rename(columns={"sample": "Fruit"})
+        # Don't need "Read number" as this means nothing after averaging
+        data["spot"] = data["spot"].astype(str).str.extract(r"(\d+)\.").astype(int)
         spectral_cols = [col for col in data.columns if is_float(col)]
-        data = data.groupby(by=["sample", "spot"])[spectral_cols].mean()
-        # print("mean data")
-        # print(data)
+        data.rename(columns={"sample": "Fruit"}, inplace=True)
+        data = data.groupby(by=["Fruit", "spot"])[spectral_cols].mean()
+        groups = data.index.to_frame(index=True)
     else:
         data[["spot", "Read number"]] = (
             data["spot"].astype(str).str.extract(r"(\d+)\.(\d+)").astype(int))
         groups = data[['sample', 'spot', 'Read number']].rename(columns={"sample": "Fruit"})
-        # print("not mean data")
-        # print(data)
+
     invalid_columns = [col for col in data.columns
                        if not is_float(col)]
     x = data.drop(columns=invalid_columns)
@@ -206,17 +222,12 @@ def _get_c12880_data(fruit: str = "tomato",
     # get y from as7262 data
     y_data_df = pd.read_csv(data_folder / f"{fruit}_as7262_ref_data.csv")
     y = y_data_df.groupby(by=["Fruit"]).agg({target: "first"})
-    y.index.name = "Fruit"
-    # print(y)
-    print(data.index)
-    # groups = data.index.to_frame(index=False)
-    print("GROUPS: C1880")
-    print(groups)
-    print(y)
+    x = x.reset_index()
+
+    groups = groups.reset_index(drop=True)
+    y = y.reset_index()
     df_merge = groups.merge(y.reset_index(), on="Fruit", how="left")
     y = df_merge[target]
-    # print(df_merge)
-    # print(x.shape, y.shape, groups.shape, df_merge.shape)
     return x, y, groups
 
 
@@ -228,7 +239,6 @@ def get_data(sensor: str,
              mean_spot: bool = False,
              **kwargs):
     if sensor == "c12880":
-        print('bb')
         return _get_c12880_data(fruit=fruit,
                                 measurement_mode=measurement_mode,
                                 mean_spot=mean_spot,
@@ -265,7 +275,8 @@ def get_data(sensor: str,
 
     if mean_spot:
         agg_dict = {col: "mean" for col in x_columns}
-        for new_col in ["Fruit", "Fruit number", "spot", "Read number", target_column]:
+        for new_col in ["Fruit", "Fruit number", "spot", target_column]:
+
             agg_dict[new_col] = "first"
         data = data.groupby(by=["Fruit number"]).agg(agg_dict)
         # print("mean data")
@@ -274,11 +285,12 @@ def get_data(sensor: str,
     x = data[x_columns]
     if measurement_mode == "absorbance":
         x = -np.log10(x)
-    # print(data.columns)
-    #
-    print(data)
+
     if split_x_y_groups:
-        return x, data[target_column], data[["Fruit", "spot", "Read number"]]
+        if mean_spot:
+            return x, data[target_column], data[["Fruit", "spot"]]
+        else:
+            return x, data[target_column], data[["Fruit", "spot", "Read number"]]
     return data
 
 
@@ -286,22 +298,15 @@ if __name__ == '__main__':
     import matplotlib.pyplot as plt
     sensor_settings = {"led current": "12.5 mA",
                        "integration time": 50}
-    _x, _y, groups = get_data("as7262", measurement_mode="raw",
-                              mean_spot=True,
-                              target_column="%DM",
-                              **sensor_settings)
+    _x, _y, _groups = get_data("as7262", measurement_mode="raw",
+                               mean_spot=True,
+                               target_column="%DM",
+                               **sensor_settings)
 
-    # print(x)
-    # print(y)
-    # print(groups)
     plt.plot(_x.T)
     plt.show()
-
     _data = get_raw_c12880_data(data_type="data",
                                 dark_current_cutoff=360,
                                 wavelength_range=None)
-    # print(data.columns)
-    # print(data)
-    # data = get_raw_c12880_data(data_type="data", wavelength_range=None)
     plt.plot(_data.drop(columns=["spot", "sample"]).T)
     plt.show()
