@@ -13,7 +13,7 @@ import unittest
 import pandas as pd
 
 # local files for tests
-import context  # noqa
+from analysis.tests import context  # noqa
 from analysis.spectrum_fitting import get_data
 
 
@@ -150,7 +150,7 @@ class TestGetDataIndexConsistency(unittest.TestCase):
                 expected_columns = ['Fruit', 'spot']
                 self.assertListEqual(list(groups.columns), expected_columns,
                                      "groups columns do not match expected order "
-                                     "and names for meaned data")
+                                     "and names for averaged data")
                 _, _, groups = self._load_data(mean_spot=False)
                 # print(groups.columns)
                 expected_columns = ['Fruit', 'spot', 'Read number']
