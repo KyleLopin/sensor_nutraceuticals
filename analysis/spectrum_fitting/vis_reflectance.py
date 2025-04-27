@@ -1,7 +1,24 @@
 # Copyright (c) 2025 Kyle Lopin (Naresuan University) <kylel@nu.ac.th>
 
 """
+Visualization utilities for plotting reflectance spectra from multiple sensors.
 
+This module provides functions to visualize spectral data collected from sensors
+such as AS7262, C12880, AS7263, and AS7265x. Spectra are color-coded based on
+target analyte concentrations (e.g., lycopene or beta-carotene).
+
+Functions:
+    - vis_4_sensors(fruit, target, sensor_settings):
+        Create a 4-panel stacked plot showing reflectance data from four sensors,
+        colored by the target concentration.
+
+    - vis_single_sensor(ax, sensor, fruit, measurement_type, target, led, **kwargs):
+        Plot reflectance spectra for a single sensor on a specified axis.
+
+    - make_color_map(color_min, color_max, target):
+        Create a colormap and normalization object for mapping target values to colors.
+
+Intended for use in exploratory data analysis and figure generation for sensor-based studies.
 """
 
 __author__ = "Kyle Vitautas Lopin"
@@ -53,14 +70,13 @@ def make_color_map(color_min: float, color_max: float, target: str = "lycopene"
             - mpl.colors.LinearSegmentedColormap: Linear segmented colormap object.
             - mpl.colors.Normalize: Normalization object for the colormap.
 
-        Examples:
-            x, y = get_data.get_x_y(sensor="as7262", leaf="mango", measurement_type="reflectance")
-            lines = plt.plot(x, y)
-            color_map, map_norm = make_color_map(y["Avg Total Chlorophyll (µg/cm2)"].min(),
-                                                 y["Avg Total Chlorophyll (µg/cm2)"].max())
-            for i, line in enumerate(lines):  # type: int, mpl.lines.Line2D
-                line.set_color(color_map(map_norm(y.iloc[i])))
-
+    Examples:
+        x, y = get_data.get_x_y(sensor="as7262", leaf="mango", measurement_type="reflectance")
+        lines = plt.plot(x, y)
+        color_map, map_norm = make_color_map(y["Avg Total Chlorophyll (µg/cm2)"].min(),
+                                             y["Avg Total Chlorophyll (µg/cm2)"].max())
+        for i, line in enumerate(lines):  # type: int, mpl.lines.Line2D
+            line.set_color(color_map(map_norm(y.iloc[i])))
     """
 
     if "lycopene" in target:
@@ -76,14 +92,32 @@ def make_color_map(color_min: float, color_max: float, target: str = "lycopene"
     return color_map, map_norm
 
 
-def vis_single_sensor(ax: plt.Axes = None,
-                      sensor: str = "as7262",
-                      fruit: str = "tomato",
-                      measurement_type: str = "reflectance",
-                      target="lycopene (DW)",
-                      led: str = "b'White",
-                      **kwargs):
+def vis_single_sensor(ax: plt.Axes = None, sensor: str = "as7262",
+                      fruit: str = "tomato", measurement_type: str = "reflectance",
+                      target="lycopene (DW)", led: str = "b'White", **kwargs):
+    """
+    Plot reflectance spectra for a single sensor and color lines by target values, on an Axis
+    if provided.
 
+    This function plots normalized reflectance spectra for one sensor on the given axis.
+    Each spectrum is colored according to the associated target variable (e.g., lycopene content).
+    If no axis is provided, a new figure and axis are created automatically.
+
+    Parameters:
+        ax (plt.Axes, optional): Matplotlib axis to plot on. Creates a new one if None.
+        sensor (str): Name of the sensor ("as7262", "c12880", "as7263", or "as7265x").
+        fruit (str): The fruit type to load data for (e.g., "tomato" or "mango").
+        measurement_type (str): Type of measurement to load ("reflectance" or "raw").
+        target (str): Target column to use for color mapping (default "lycopene (DW)").
+        led (str): LED setting for AS7265x sensor (only used if sensor is AS7265x).
+        **kwargs: Additional keyword arguments passed to the data loading function.
+
+    Returns:
+        mpl.cm.ScalarMappable: A colorbar mappable object for adding a colorbar to the figure.
+
+    Raises:
+        None
+    """
     if ax is None:  # for testing
         _, ax = plt.subplots(1, 1)
     if sensor == "as7265x":  # set the LED
@@ -108,17 +142,35 @@ def vis_single_sensor(ax: plt.Axes = None,
     return mpl.cm.ScalarMappable(norm=map_norm, cmap=color_map)
 
 
-def vis_4_sensors(fruit: str, target: str, sensor_settings: dict):
+def vis_4_sensors(fruit: str, target: str, sensor_settings: dict) -> None:
+    """
+    Visualize reflectance data for four different sensors for a given fruit.
+
+    This function creates a stacked plot (4 subplots) showing normalized reflectance
+    spectra from four sensors: AS7262, C12880, AS7263, and AS7265x. A shared colorbar
+    is added to indicate the target quantity (e.g., total lycopene or beta-carotene).
+
+    Parameters:
+        fruit (str): The fruit type being analyzed ("tomato" or "mango").
+        target (str): The target variable name to use for color mapping.
+        sensor_settings (dict): Dictionary of sensor-specific settings (e.g., integration time, LED current).
+
+    Raises:
+        ValueError: If the fruit provided is not "tomato" or "mango".
+
+    Returns:
+        None: Displays the plots using matplotlib.
+    """
     figure, axes = plt.subplots(4, 1, figsize=(5, 7), sharex=True)
-    for i, sensor in enumerate(["as7262", "as7263", "as7265x", "c12880"]):
+    for i, sensor in enumerate(["as7262", "c12880", "as7263", "as7265x"]):
         print(i, sensor)
         color_map = vis_single_sensor(ax=axes[i], sensor=sensor,
                                       target=target, fruit=fruit,
                                       led="b'White'",
                                       **sensor_settings)
     plt.subplots_adjust(right=0.83)
-    COLOR_BAR_AXIS = [.89, .13, 0.02, 0.8]
-    color_bar_axis = figure.add_axes(COLOR_BAR_AXIS)
+    color_bar_coords = [.89, .13, 0.02, 0.8]
+    color_bar_axis = figure.add_axes(color_bar_coords)
     if fruit == "tomato":
         color_bar_label = "Total Lycopene (mg/100 g)"
     elif fruit == "mango":
@@ -128,7 +180,7 @@ def vis_4_sensors(fruit: str, target: str, sensor_settings: dict):
 
     figure.colorbar(color_map, cax=color_bar_axis, orientation="vertical",
                     label=color_bar_label, fraction=0.08)
-    # make x axis label at bottom of graph
+    # make x-axis label at bottom of graph
     axes[3].set_xlabel("Wavelength (nm)")
     # make y-axis label in the middle to cover all graphs
     figure.text(0.03, 0.5, 'Normalized Reflectance',
@@ -140,8 +192,8 @@ def vis_4_sensors(fruit: str, target: str, sensor_settings: dict):
 
 
 if __name__ == '__main__':
-    sensor_settings = {"led current": "12.5 mA",
-                       "integration time": 50}
+    sensor_settings_ = {"led current": "12.5 mA",
+                        "integration time": 50}
     # vis_single_sensor(sensor="as7262", target="beta-carotene (DW)",
     #                   **sensor_settings)
     # vis_single_sensor(sensor="c12880", target="beta-carotene (DW)",
@@ -151,7 +203,7 @@ if __name__ == '__main__':
     #     fruit='tomato', led="b'White'",
     #     **sensor_settings)
     # plt.show()
-    vis_4_sensors("mango", "carotene (FW)",
-                  sensor_settings)
-    # vis_4_sensors("tomato", "lycopene (FW)",
+    # vis_4_sensors("mango", "carotene (FW)",
     #               sensor_settings)
+    vis_4_sensors("tomato", "lycopene (FW)",
+                  sensor_settings_)
