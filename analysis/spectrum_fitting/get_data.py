@@ -269,7 +269,7 @@ def get_data(sensor: str,
         raise ValueError(f"{target_column} is not in DataFrame, valid columns are: {data.columns}")
 
     if kwargs:
-        print("got sensor settings:", kwargs)
+        # print("got sensor settings:", kwargs)
         for sensor_setting, sensor_value in kwargs.items():
             data = data.loc[data[sensor_setting] == sensor_value]
 
@@ -294,19 +294,45 @@ def get_data(sensor: str,
     return data
 
 
-if __name__ == '__main__':
-    import matplotlib.pyplot as plt
-    sensor_settings = {"led current": "12.5 mA",
-                       "integration time": 50}
-    _x, _y, _groups = get_data("as7262", measurement_mode="raw",
-                               mean_spot=True,
-                               target_column="%DM",
-                               **sensor_settings)
+def get_targets(fruit: str) -> list[str]:
+    """
+        Retrieve target columns related to fruit composition from AS7262 sensor data by
+        extracting columns  related to fresh weight (FW),
+        dry weight (DW), or percent dry matter (%DM).
 
-    plt.plot(_x.T)
-    plt.show()
-    _data = get_raw_c12880_data(data_type="data",
-                                dark_current_cutoff=360,
-                                wavelength_range=None)
-    plt.plot(_data.drop(columns=["spot", "sample"]).T)
-    plt.show()
+        Parameters:
+            fruit (str): Name of the fruit to load data for (e.g., "tomato", "mango").
+
+        Returns:
+            list[str]: A list of column names corresponding to target variables.
+
+        Notes:
+            - Currently matches columns containing "(FW)", "(DW)", or "%DM".
+        """
+    data = pd.read_csv(DATA_FOLDER / fruit / "raw" / f"{fruit}_as7262_data.csv")
+    targets = []
+    for column in data.columns:
+        if "FW" in column or "(DW)" in column:
+            targets.append(column)
+        if "%DM" in column:  # is in both, but if add fruits later who knows
+            targets.append(column)
+    return targets
+
+
+if __name__ == '__main__':
+    print(get_targets("tomato"))
+    # import matplotlib.pyplot as plt
+    # sensor_settings = {"led current": "12.5 mA",
+    #                    "integration time": 50}
+    # _x, _y, _groups = get_data("as7262", measurement_mode="raw",
+    #                            mean_spot=True,
+    #                            target_column="%DM",
+    #                            **sensor_settings)
+    #
+    # plt.plot(_x.T)
+    # plt.show()
+    # _data = get_raw_c12880_data(data_type="data",
+    #                             dark_current_cutoff=360,
+    #                             wavelength_range=None)
+    # plt.plot(_data.drop(columns=["spot", "sample"]).T)
+    # plt.show()
