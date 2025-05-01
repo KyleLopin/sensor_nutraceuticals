@@ -35,7 +35,7 @@ The project leverages machine learning models trained on spectral data collected
 - **Type**: 6-channel near-infrared sensor  
 - **Wavelengths**: 610nm, 680nm, 730nm, 760nm, 810nm, 860nm  
 - **Features**: I²C interface, LED drivers  
-- **Datasheet**: [AS7263 Datasheet](https://ams-osram.com/products/sensor-solutions/ambient-light-color-spectral-proximity-sensors/ams-as7263-consumer-grade-smart-6-channel-nir-sensor)
+- **Datasheet**: [AS7263 Datasheet](https://cdn.sparkfun.com/assets/1/b/7/3/b/AS7263.pdf)
 
 ---
 
