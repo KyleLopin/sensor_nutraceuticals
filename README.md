@@ -72,3 +72,15 @@ The **Hamamatsu C12880MA** MEMS spectrometer was tested using the breakout board
 Analog signal conditioning and communication were implemented using a **PSoC 5LP** on the **CY8CKIT-059** board.  
 The firmware and GUI program for the PSoC are available here:  
 🔗 [KyleLopin/C12880_GUI](https://github.com/KyleLopin/C12880_GUI)
+
+### 🧫 Data Collection
+
+Tomatoes were collected from a local market (Makro) and a nearby farm to ensure a range of ripeness levels. Each of the 60 tomatoes was measured using all four spectroscopic devices.
+
+To improve model accuracy, each tomato was scanned at four positions around its circumference (every 90 degrees). Measurements were taken under varying **integration times** and **LED currents** to capture a broader spectral profile.
+
+After optical measurements, the tomatoes were **freeze-dried**, ground into powder, and analyzed for **lycopene** and **beta-carotene** content using **HPLC** (High Performance Liquid Chromatography). For each sample, five HPLC measurements were taken from the homogenized powder.
+
+In addition to tomatoes, **mangos** were analyzed in a similar manner. For mangos, **total phenol levels** were quantified via HPLC, with three replicate measurements taken per fruit (totaling 180 HPLC measurements).
+
+This dataset includes both raw and processed optical measurements (reflectance and absorbance) aligned with chemical reference values for model training and evaluation.
