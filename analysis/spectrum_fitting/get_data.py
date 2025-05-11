@@ -7,6 +7,7 @@ Load spectral data sets for tomato and mango fruit.
 __author__ = "Kyle Vitautas Lopin"
 
 # standard libraries
+from functools import lru_cache
 from pathlib import Path
 
 # installed libraries
@@ -176,11 +177,13 @@ def _get_c12880_data(fruit: str = "tomato",
         y (pd.Series): Target values aligned with the x data.
         groups (pd.DataFrame): Metadata (e.g., fruit, spot) for grouping samples.
     """
-    if measurement_mode == "raw":
+    if measurement_mode == "raw":  # NOT WORKING
         # Load raw sensor data using a separate function
         data = get_raw_c12880_data(fruit=fruit,
                                    data_type="data",
                                    **kwargs)
+        raise ValueError("Raw values not working for C12880 now")
+        # data_folder = DATA_FOLDER / fruit / measurement_mode
     elif measurement_mode == "reflectance":
         # Load reflectance data from a CSV file
         data_folder = DATA_FOLDER / fruit / "reflectance"
@@ -197,14 +200,18 @@ def _get_c12880_data(fruit: str = "tomato",
     agg_dict["spot"] = "first"
     if mean_spot:
         # Don't need "Read number" as this means nothing after averaging
-        data["spot"] = data["spot"].astype(str).str.extract(r"(\d+)\.").astype(int)
+        # THIS line is not needed after converting files
+        # data["spot"] = data["spot"].astype(str).str.extract(r"(\d+)\.").astype(int)
         spectral_cols = [col for col in data.columns if is_float(col)]
         data.rename(columns={"sample": "Fruit"}, inplace=True)
         data = data.groupby(by=["Fruit", "spot"])[spectral_cols].mean()
+        # print(data)
         groups = data.index.to_frame(index=True)
-    else:
-        data[["spot", "Read number"]] = (
-            data["spot"].astype(str).str.extract(r"(\d+)\.(\d+)").astype(int))
+    else:  #TODO: figure out the problem here
+        # data[["spot", "Read number"]] = (
+        #     data["spot"].astype(str).str.extract(r"(\d+)\.(\d+)").astype(int))
+        # print('+++++')
+        # print(data)
         groups = data[['sample', 'spot', 'Read number']].rename(columns={"sample": "Fruit"})
 
     invalid_columns = [col for col in data.columns
@@ -222,8 +229,14 @@ def _get_c12880_data(fruit: str = "tomato",
     # get y from as7262 data
     y_data_df = pd.read_csv(data_folder / f"{fruit}_as7262_ref_data.csv")
     y = y_data_df.groupby(by=["Fruit"]).agg({target: "first"})
-    x = x.reset_index()
-
+    x = x.reset_index()  # reset Fruit and spot to drop later
+    print("=======]]]]")
+    print(x)  # This is horrible design, but just trying to pickle good data an move on
+    print(groups.columns)
+    invalid_columns = [col for col in x.columns
+                       if not is_float(col)]
+    print(invalid_columns)
+    x = x.drop(columns=invalid_columns)
     groups = groups.reset_index(drop=True)
     y = y.reset_index()
     df_merge = groups.merge(y.reset_index(), on="Fruit", how="left")
@@ -231,13 +244,72 @@ def _get_c12880_data(fruit: str = "tomato",
     return x, y, groups
 
 
+@lru_cache()  # cache the data reads, helps make tests much shorter
 def get_data(sensor: str,
              measurement_mode: str = "reflectance",
              fruit: str = "tomato",
-             target_column="lycopene (DW)",
+             target_column: tuple = ("lycopene (DW)", ),
              split_x_y_groups: bool = True,
              mean_spot: bool = False,
              **kwargs):
+    """
+    Load and preprocess spectral data from fruit measurement datasets.
+
+    Parameters
+    ----------
+    sensor : str
+        The name of the sensor used. Options include 'as7262', 'as7263', 'as7265x', or 'c12880'.
+
+    measurement_mode : str, default="reflectance"
+        The type of data to retrieve. Must be one of:
+        - "raw": Unprocessed sensor readings
+        - "reflectance": Reflectance values normalized to reference
+        - "absorbance": Absorbance values computed as -log10(reflectance)
+
+    fruit : str, default="tomato"
+        The fruit type associated with the dataset folder (e.g. "mango", "tomato").
+
+    target_column : tuple of str, default=("lycopene (DW)",)
+        One or more column names in the dataset that will be used as target variables.
+
+    split_x_y_groups : bool, default=True
+        If True, return (X, Y, group) as separate outputs.
+        If False, return the full preprocessed DataFrame.
+
+    mean_spot : bool, default=False
+        If True, average all readings for each fruit sample across multiple spots.
+
+    **kwargs :
+        Additional sensor-specific filters to apply (e.g. "integration time", "led current").
+        These must match column names in the CSV.
+
+    Returns
+    -------
+    tuple or DataFrame
+        If split_x_y_groups is True:
+            X : pd.DataFrame
+                The spectral feature matrix (columns = wavelengths)
+            Y : pd.DataFrame
+                The target variable(s)
+            groups : pd.DataFrame
+                Metadata for grouping (e.g. Fruit, spot, Read number)
+        If split_x_y_groups is False:
+            full_data : pd.DataFrame
+                The complete filtered dataset including all columns.
+
+    Raises
+    ------
+    KeyError
+        If any target_column is not found in the dataset.
+
+    ValueError
+        If measurement_mode is invalid.
+
+    Notes
+    -----
+    - If `sensor="c12880"`, this function defers to a separate loader `_get_c12880_data()`.
+    - Uses LRU caching to speed up repeated calls with identical arguments.
+    """
     if sensor == "c12880":
         return _get_c12880_data(fruit=fruit,
                                 measurement_mode=measurement_mode,
@@ -264,51 +336,70 @@ def get_data(sensor: str,
     for column in data.columns:
         if 'nm' in column:
             x_columns.append(column)
+    if isinstance(target_column, str):
+        # print("converting: ", type(target_column), target_column)
+        target_column = (target_column, )
+    #     print("converting: ", type(target_column), target_column)
+    # print([x for x in target_column])
 
-    if target_column not in data.columns:
-        raise ValueError(f"{target_column} is not in DataFrame, valid columns are: {data.columns}")
-
+    missing_columns = [col for col in target_column if col not in data.columns]
+    # for col in target_column:
+    #     print("+: ", col in data.columns)
+    # print(data.columns)
+    # print('===')
+    # print(missing_columns)
+    if missing_columns:
+        raise KeyError(f"Missing columns: {missing_columns}")
     if kwargs:
         # print("got sensor settings:", kwargs)
+        # print(data.columns)
         for sensor_setting, sensor_value in kwargs.items():
+            if sensor_setting == "int_time":  # fix this change from last project
+                sensor_setting = "integration time"
+            if sensor_setting == "led_current":
+                sensor_setting = "led current"
             data = data.loc[data[sensor_setting] == sensor_value]
 
     if mean_spot:
         agg_dict = {col: "mean" for col in x_columns}
-        for new_col in ["Fruit", "Fruit number", "spot", target_column]:
-
+        for new_col in ["Fruit", "Fruit number", "spot"] + list(target_column):
             agg_dict[new_col] = "first"
+        # print(data.columns)
+        # print(agg_dict)
         data = data.groupby(by=["Fruit number"]).agg(agg_dict)
         # print("mean data")
         # print(data)
 
     x = data[x_columns]
     if measurement_mode == "absorbance":
+        print("abs")
+        print(x)
         x = -np.log10(x)
 
     if split_x_y_groups:
+        # print(data.columns)
         if mean_spot:
-            return x, data[target_column], data[["Fruit", "spot"]]
+            return x, data[list(target_column)], data[["Fruit", "spot"]]
         else:
-            return x, data[target_column], data[["Fruit", "spot", "Read number"]]
+            return x, data[list(target_column)], data[["Fruit", "spot", "Read number"]]
     return data
 
 
 def get_targets(fruit: str) -> list[str]:
     """
-        Retrieve target columns related to fruit composition from AS7262 sensor data by
-        extracting columns  related to fresh weight (FW),
-        dry weight (DW), or percent dry matter (%DM).
+    Retrieve target columns related to fruit composition from AS7262 sensor data by
+    extracting columns  related to fresh weight (FW),
+    dry weight (DW), or percent dry matter (%DM).
 
-        Parameters:
-            fruit (str): Name of the fruit to load data for (e.g., "tomato", "mango").
+    Parameters:
+        fruit (str): Name of the fruit to load data for (e.g., "tomato", "mango").
 
-        Returns:
-            list[str]: A list of column names corresponding to target variables.
+    Returns:
+        list[str]: A list of column names corresponding to target variables.
 
-        Notes:
-            - Currently matches columns containing "(FW)", "(DW)", or "%DM".
-        """
+    Notes:
+        - Currently matches columns containing "(FW)", "(DW)", or "%DM".
+    """
     data = pd.read_csv(DATA_FOLDER / fruit / "raw" / f"{fruit}_as7262_data.csv")
     targets = []
     for column in data.columns:
@@ -320,15 +411,18 @@ def get_targets(fruit: str) -> list[str]:
 
 
 if __name__ == '__main__':
-    print(get_targets("tomato"))
+    # print(get_targets("tomato"))
     # import matplotlib.pyplot as plt
-    # sensor_settings = {"led current": "12.5 mA",
-    #                    "integration time": 50}
-    # _x, _y, _groups = get_data("as7262", measurement_mode="raw",
-    #                            mean_spot=True,
-    #                            target_column="%DM",
-    #                            **sensor_settings)
-    #
+    sensor_settings = {"led current": "12.5 mA",
+                       "integration time": 50}
+    _x, _y, _groups = get_data("c12880", fruit="mango",
+                               measurement_mode="reflectance",
+                               mean_spot=True,
+                               target_column="%DM",
+                               split_x_y_groups=True,
+                               **sensor_settings)
+    print(_x)
+    print(_y)
     # plt.plot(_x.T)
     # plt.show()
     # _data = get_raw_c12880_data(data_type="data",
