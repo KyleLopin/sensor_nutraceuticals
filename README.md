@@ -54,3 +54,21 @@ The project leverages machine learning models trained on spectral data collected
 - **Resolution**: 15nm FWHM  
 - **Features**: CMOS linear image sensor, 288 pixels  
 - **Datasheet**: [C12880MA Datasheet](https://www.hamamatsu.com/eu/en/product/optical-sensors/spectrometers/mini-spectrometer/C12880MA.html)
+
+---
+
+### 📡 Sensor Hardware & Source Code
+
+The AMS sensors were connected to an **Arduino** for data collection.  
+The source files for the embedded firmware and GUI programs are available here:  
+🔗 [KyleLopin/asm_chloro_test](https://github.com/KyleLopin/asm_chloro_test)
+
+STL files for 3D-printing light-blocking shrouds can be found in the same repository under:  
+🔗 [`3d_files` directory](https://github.com/KyleLopin/asm_chloro_test/tree/master/3d_files)
+
+The **Hamamatsu C12880MA** MEMS spectrometer was tested using the breakout board from Seeed Studio:  
+🔗 [Seeed Studio - Hamamatsu C12880MA Board](https://www.seeedstudio.com/Hamamatsu-C12880MA-MEMS-u-Spectrometer-and-Breakout-Board-p-2916.html)
+
+Analog signal conditioning and communication were implemented using a **PSoC 5LP** on the **CY8CKIT-059** board.  
+The firmware and GUI program for the PSoC are available here:  
+🔗 [KyleLopin/C12880_GUI](https://github.com/KyleLopin/C12880_GUI)
