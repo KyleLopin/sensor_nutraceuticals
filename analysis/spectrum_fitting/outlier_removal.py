@@ -29,6 +29,23 @@ GROUPS_COLUMNS = ["Fruit", "spot", "Read number"]
 logs = []
 
 
+def is_float(value):
+    """
+    Check if a value can be converted to a float.
+
+    Parameters:
+        value: The input value to check (typically a string or number).
+
+    Returns:
+        bool: True if the value can be converted to a float, False otherwise.
+    """
+    try:
+        float(value)
+        return True
+    except ValueError:
+        return False
+
+
 def calculate_residues(x: pd.DataFrame,
                        groups: pd.Series) -> pd.DataFrame:
     """
@@ -142,6 +159,7 @@ def save_mean_data(sensor: str,
     """
     Load spectral data, remove outliers using Mahalanobis distance on residuals,
     average by ["Fruit", "spot"], and save combined result to a CSV file.
+    NOTE: Only works for AS7262, AS7263, and AS7265x, not C12880
 
     Parameters
     ----------
@@ -183,6 +201,25 @@ def save_mean_data(sensor: str,
                              target_column=targets,
                              split_x_y_groups=False)
     print("data: ",  data)
+
+    if sensor == "c12880":
+        print(data)
+        x_columns = [wl for wl in data.columns if is_float(wl)]
+        # print(x_columns)
+        # print(GROUPS_COLUMNS)
+        meaned_data = filter_n_mean_data(data[x_columns],
+                                         data[GROUPS_COLUMNS],
+                                         data,
+                                         residue_threshold=3.0,
+                                         logs=logs,
+                                         is_c12880=True)
+        for log in logs:
+            print(log)
+        output_file = f"{fruit}_{sensor}_mean_data.csv"
+        meaned_data.to_csv(output_file)
+        print(f"Saved cleaned mean data to: {output_file}")
+        return 1  # stop running
+
     # 2. Group by integration time and led current
     setting_groups = data.groupby(["integration time", "led current"])
     print(setting_groups.groups.keys())
@@ -196,7 +233,6 @@ def save_mean_data(sensor: str,
             (data["integration time"] == int_time) &
             (data["led current"] == led_current)
             ]
-        group_index = sub_data.index
         # print("settings: ", int_time, led_current)
         logs.append(f"settings: {int_time}, {led_current}")
         # print(sub_data.groupby(["integration time", "led current"]).nunique())
@@ -214,54 +250,122 @@ def save_mean_data(sensor: str,
             ["integration time", "led current", "Fruit number", "spot"]).index
         keep_mask = ~data_index.isin(small_combos)
         filtered_data = sub_data[keep_mask].reset_index(drop=True)
-        residues = calculate_residues(filtered_data[x_columns],
-                                      filtered_data[GROUPS_COLUMNS])
-        mask = mahalanobis_outlier_removal(residues,
-                                           filtered_data[GROUPS_COLUMNS],
-                                           cutoff_limit=residue_threshold)
-        masked_data = (filtered_data[mask].reset_index(drop=True)
-                       .drop(columns=["Read number", "Unnamed: 0", "Fruit number"]))
-        # Count remaining unique (Fruit number, spot) combos
-        remaining_unique_combos = (
-            masked_data[["Fruit", "spot"]]
-            .drop_duplicates()
-            .shape[0]
-        )
-        remaining_fruits = (
-            masked_data[["Fruit"]]
-            .drop_duplicates()
-            .shape[0]
-        )
-        # print(masked_data)
-        # print(masked_data.columns)
-        print(f"Remaining unique (Fruit number, spot) combos: {remaining_unique_combos} "
-              f"and fruit: {remaining_fruits}")
-        logs.append(f"Remaining unique (Fruit number, spot) combos: {remaining_unique_combos} "
-                    f"and fruit: {remaining_fruits}")
-        agg = {}
-        for column in masked_data:
-            agg[column] = "mean"
-        for column in ["integration time", "led current", "led", "saturation check", "time"]:
-            agg[column] = "first"
-        agg.pop("spot")
-        agg.pop("Fruit")
-        # print(masked_data.dtypes)
-        # print(masked_data["spot"].unique())
-        meaned = (masked_data.groupby(["Fruit", "spot"]).agg(agg)
-                  .reset_index())
-        for col in ["integration time", "gain"]:
-            meaned[col] = meaned[col].astype(int)
-        # print(meaned)
-        # Step 5: Combine and save
-        final_df = pd.concat([final_df, meaned], axis=0)
-        print(final_df)
+        meaned_data = filter_n_mean_data(filtered_data[x_columns],
+                                         filtered_data[GROUPS_COLUMNS],
+                                         filtered_data,
+                                         residue_threshold=3.0,
+                                         logs=logs)
+        final_df = pd.concat([final_df, meaned_data], axis=0)
+        # residues = calculate_residues(filtered_data[x_columns],
+        #                               filtered_data[GROUPS_COLUMNS])
+        # mask = mahalanobis_outlier_removal(residues,
+        #                                    filtered_data[GROUPS_COLUMNS],
+        #                                    cutoff_limit=residue_threshold)
+        # masked_data = (filtered_data[mask].reset_index(drop=True)
+        #                .drop(columns=["Read number", "Unnamed: 0", "Fruit number"]))
+        # # Count remaining unique (Fruit number, spot) combos
+        # remaining_unique_combos = (
+        #     masked_data[["Fruit", "spot"]]
+        #     .drop_duplicates()
+        #     .shape[0]
+        # )
+        # remaining_fruits = (
+        #     masked_data[["Fruit"]]
+        #     .drop_duplicates()
+        #     .shape[0]
+        # )
+        # # print(masked_data)
+        # # print(masked_data.columns)
+        # print(f"Remaining unique (Fruit number, spot) combos: {remaining_unique_combos} "
+        #       f"and fruit: {remaining_fruits}")
+        # logs.append(f"Remaining unique (Fruit number, spot) combos: {remaining_unique_combos} "
+        #             f"and fruit: {remaining_fruits}")
+        # agg = {}
+        # for column in masked_data:
+        #     agg[column] = "mean"
+        # for column in ["integration time", "led current", "led", "saturation check", "time"]:
+        #     agg[column] = "first"
+        # agg.pop("spot")
+        # agg.pop("Fruit")
+        # # print(masked_data.dtypes)
+        # # print(masked_data["spot"].unique())
+        # meaned = (masked_data.groupby(["Fruit", "spot"]).agg(agg)
+        #           .reset_index())
+        # for col in ["integration time", "gain"]:
+        #     meaned[col] = meaned[col].astype(int)
+        # # print(meaned)
+        # # Step 5: Combine and save
+        # final_df = pd.concat([final_df, meaned], axis=0)
+        # print(final_df)
     print(final_df)
     for log in logs:
         print(log)
 
     output_file = f"{fruit}_{sensor}_mean_data.csv"
-    meaned.to_csv(output_file)
+    final_df.to_csv(output_file)
     print(f"Saved cleaned mean data to: {output_file}")
+    return 1
+
+
+def filter_n_mean_data(x: pd.DataFrame,
+                       groups: pd.DataFrame,
+                       full_data: pd.DataFrame,
+                       residue_threshold: float,
+                       logs: list[str]=[],
+                       is_c12880: bool=False) -> pd.DataFrame:
+    """
+    Filter out Mahalanobis outliers from spectral data and compute the mean measurements
+    for each (Fruit, spot) combination.
+
+    This function is designed to support modular sensor-specific preprocessing. It uses
+    Mahalanobis distance to identify outliers, removes them, and averages the remaining
+    data by (Fruit, spot) group.
+
+    Args:
+        x (pd.DataFrame): The feature matrix (e.g., spectral channels or wavelengths).
+        groups (pd.DataFrame): The grouping columns used in Mahalanobis calculation
+                               (e.g., integration time, led current, etc.).
+        full_data (pd.DataFrame): The full dataset including both features and metadata.
+        residue_threshold (float): Cutoff value for Mahalanobis distance to flag outliers.
+        logs (list of str): A list to append log messages to for tracking.
+
+    Returns:
+        pd.DataFrame: A new DataFrame where outliers have been removed and values have
+                      been averaged by (Fruit, spot).
+    """
+    # Step 1: Calculate Mahalanobis residues and remove outliers
+    residues = calculate_residues(x, groups)
+    mask = mahalanobis_outlier_removal(residues, groups, cutoff_limit=residue_threshold)
+
+    # Step 2: Remove dropped rows and unnecessary columns
+    masked_data = full_data[mask].reset_index(drop=True).drop(
+        columns=["Read number", "Unnamed: 0", "Fruit number"], errors="ignore")
+
+    # Step 3: Log remaining group sizes
+    remaining_unique_combos = masked_data[["Fruit", "spot"]].drop_duplicates().shape[0]
+    remaining_fruits = masked_data[["Fruit"]].drop_duplicates().shape[0]
+    msg = (f"Remaining unique (Fruit number, spot) combos: {remaining_unique_combos} "
+           f"and fruit: {remaining_fruits}")
+    print(msg)
+    logs.append(msg)
+
+    # Step 4: Aggregation plan
+    agg = {col: "mean" for col in masked_data}
+    if not is_c12880:
+        for col in ["integration time", "led current", "led", "saturation check", "time"]:
+            agg[col] = "first"
+    agg.pop("spot", None)
+    agg.pop("Fruit", None)
+
+    # Step 5: Aggregate
+    meaned = masked_data.groupby(["Fruit", "spot"]).agg(agg).reset_index()
+
+    # Step 6: Convert selected columns to int if they exist
+    for col in ["integration time", "gain"]:
+        if col in meaned.columns:
+            meaned[col] = meaned[col].astype(int)
+
+    return meaned
 
 
 def make_manuscript_figure(fruit: str = "mango"):
@@ -466,7 +570,7 @@ def make_manuscript_figure(fruit: str = "mango"):
 
 
 if __name__ == '__main__':
-    save_mean_data(sensor="c12880", fruit="tomato")
+    save_mean_data(sensor="as7265x", fruit="mango")
 
     # make_manuscript_figure("tomato")
     #
