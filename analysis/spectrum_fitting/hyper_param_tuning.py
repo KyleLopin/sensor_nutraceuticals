@@ -6,15 +6,23 @@
 
 __author__ = "Kyle Vitautas Lopin"
 
+# standard libraries
+import itertools
+
 # installed libraries
 import matplotlib.pyplot as plt
+from matplotlib.backends.backend_pdf import PdfPages
 import numpy as np
 import pandas as pd
-from sklearn.cross_decomposition import PLSRegression
 from sklearn.metrics import mean_absolute_error, r2_score
 from sklearn.model_selection import GridSearchCV, GroupShuffleSplit
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import PolynomialFeatures, StandardScaler
+
+# sklearn models
+from sklearn.cross_decomposition import PLSRegression
+from sklearn.ensemble import GradientBoostingRegressor
+from sklearn.linear_model import ARDRegression, HuberRegressor, Lasso
 
 # local files
 import get_data
@@ -27,6 +35,11 @@ N_SPLITS = 100  # To reduce variance in final score use high numbers
 RANDOM_STATE = 43
 USE_RFECV = False
 USE_SFS = False
+LED_CURRENTS = ["12.5 mA", "25 mA", "50 mA", "100 mA"]
+INT_TIMES = [50, 100, 150, 200, 250]
+MEASUREMENT_TYPES = ["reflectance", "absorbance"]
+FRUITS = ["mango", "tomato"]
+CV = GroupShuffleSplit(test_size=0.2, n_splits=10)
 
 
 def calculate_aic(residual_sum_of_squares, num_observations, num_parameters):
@@ -230,7 +243,7 @@ def grid_search_pls_aic_r2(x, y, groups, cv=None, max_components: int = 6):
     return results
 
 
-def plot_4_sensors(fruit: str):
+def plot_4_sensors_pls(fruit: str):
     width = 5
 
     y_columns = tuple(get_data.get_targets(fruit))
@@ -273,9 +286,102 @@ def plot_4_sensors(fruit: str):
     plt.show()
 
 
+def make_grid_searches(regr_type:str, sensors: list=[]):
+    if not sensors:
+        sensors = ["as7262", "as7263", "as7265x", "c12880"]
+    for sensor in sensors:
+        pdf_filename = f"{regr_type} grid wide search {sensor}.pdf"
+        with PdfPages(pdf_filename) as pdf:
+            combinations = itertools.product(FRUITS, MEASUREMENT_TYPES, INT_TIMES, LED_CURRENTS)
+            for fruit, measure_type, int_time, current in combinations:
+                target = "lycopene (FW)"
+                if fruit == "mango":
+                    target = "carotene (FW)"
+                x, y, groups = get_data.get_cleaned_data(
+                    sensor=sensor, fruit=fruit,
+                    targets=[target],
+                    measurement_mode=measure_type,
+                    int_time=int_time, led_current=current)
+
+                scaler = StandardScaler()
+                x = pd.DataFrame(
+                    scaler.fit_transform(x),
+                    columns=x.columns,
+                    index=x.index
+                )
+                groups = groups["Fruit"]
+                title = f"leaf: {fruit}, {measure_type}, int time: {int_time}, current: {current}"
+                if regr_type == "Huber":
+                    param_grid = {
+                        'epsilon': [1, 1.35, 1.55, 1.7, 2.0, 2.5, 3, 3.5, 4, 5, 6, 7, 8, 9, 10],
+                        'alpha': np.logspace(-5, 1, num=10),
+                    }
+
+                    # Initialize the Huber Regressor
+                    huber = HuberRegressor(max_iter=1000)
+                    make_regr_grid_search_best_params(
+                        huber, param_grid, x, y, groups, title, pdf)
+
+
+def make_regr_grid_search_best_params(
+        regr, param_grid: dict, x: pd.DataFrame, y: pd.Series,
+        groups: pd.Series, title: str,
+        pdf: PdfPages, show_figure: bool = True):
+
+    # Perform grid search
+    grid_search = GridSearchCV(
+        regr, param_grid, cv=CV, scoring='r2', n_jobs=-1)
+    print(x)
+    print(y)
+    print(groups)
+    grid_search.fit(x, y, groups=groups)
+    # Extract results
+    results = grid_search.cv_results_
+
+    # Convert results to a DataFrame
+    results_df = pd.DataFrame(results)
+    # Initialize a dictionary to store the best scores for each hyperparameter
+    # Initialize a dictionary to store the best scores for each hyperparameter
+    best_scores = {key: [] for key in param_grid}
+    # Extract best scores for each hyperparameter value
+    for param in best_scores.keys():
+        for value in param_grid[param]:
+            mask = results_df[f'param_{param}'] == value
+            best_score = results_df[mask]['mean_test_score'].max()
+            best_scores[param].append((value, best_score))
+
+    # Convert best scores to a DataFrame for plotting
+    best_scores_df = {param: pd.DataFrame(scores, columns=[param, 'best_score']) for param, scores
+                      in best_scores.items()}
+    plt.figure(figsize=(10, 6))
+    # Plot each hyperparameter's best score
+    for param, df in best_scores_df.items():
+        plt.plot(df[param], df['best_score'], label=param, marker='o')
+        plt.xscale('log')  # Set the x-axis to logarithmic scale
+
+    plt.xlabel('Hyperparameter Value')
+    plt.ylabel('Best R2 Score')
+    plt.title(f'Best R2 Score for Each Hyperparameter Value (Log Scale)\n{title}')
+    plt.legend()
+    plt.grid(True)
+    # Best parameters and model
+    best_params = grid_search.best_params_
+    print("Best parameters found:", best_params)
+    best_params_text = "\n".join([f"{key}: {value:.0e}" for key, value in best_params.items()])
+    plt.annotate(f'Best Parameters:\n{best_params_text}', xy=(0.05, 0.95), xycoords='axes fraction',
+                 fontsize=12, verticalalignment='top',
+                 bbox=dict(boxstyle="round,pad=0.3", edgecolor="black", facecolor="white"))
+    if show_figure:
+        plt.show()
+    else:
+        pdf.savefig()
+        plt.close()
+
+
 if __name__ == '__main__':
     # pls_scan("tomato", "as7265x", "lycopene (DW)")
     # print(get_data.get_targets("tomato"))
     # for target in ['%DM', 'lycopene (DW)', 'lycopene (FW)', 'beta-carotene (DW)', 'beta-carotene (FW)']:
     #     plot_3_sensors("tomato", target)
-    plot_4_sensors("tomato")
+    # plot_4_sensors_pls("tomato")
+    make_grid_searches("Huber")
