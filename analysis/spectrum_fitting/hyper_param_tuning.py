@@ -10,6 +10,7 @@ __author__ = "Kyle Vitautas Lopin"
 import itertools
 
 # installed libraries
+import matplotlib
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_pdf import PdfPages
 import numpy as np
@@ -286,7 +287,9 @@ def plot_4_sensors_pls(fruit: str):
     plt.show()
 
 
-def make_grid_searches(regr_type:str, sensors: list=[]):
+def make_grid_searches(regr_type:str, sensors: list=[], show_figures=False):
+    if not show_figures:
+        matplotlib.use('Agg')  # Use the 'Agg' backend for non-interactive plotting
     if not sensors:
         sensors = ["as7262", "as7263", "as7265x", "c12880"]
     for sensor in sensors:
@@ -318,15 +321,24 @@ def make_grid_searches(regr_type:str, sensors: list=[]):
                     }
 
                     # Initialize the Huber Regressor
-                    huber = HuberRegressor(max_iter=1000)
-                    make_regr_grid_search_best_params(
-                        huber, param_grid, x, y, groups, title, pdf)
+                    regr = HuberRegressor(max_iter=1000)
+                elif regr_type == "ARD":
+                    param_grid = {
+                        'alpha_1': np.logspace(-6, -2, num=5),
+                        'alpha_2': np.logspace(-6, -2, num=5),
+                        'lambda_1': np.logspace(-6, -2, num=5),
+                        'lambda_2': np.logspace(-6, -2, num=5),
+                    }
+                    regr = ARDRegression()
+
+                make_regr_grid_search_best_params(
+                    regr, param_grid, x, y, groups, title, pdf)
 
 
 def make_regr_grid_search_best_params(
         regr, param_grid: dict, x: pd.DataFrame, y: pd.Series,
         groups: pd.Series, title: str,
-        pdf: PdfPages, show_figure: bool = True):
+        pdf: PdfPages, show_figure: bool = False):
 
     # Perform grid search
     grid_search = GridSearchCV(
