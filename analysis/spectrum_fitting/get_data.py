@@ -184,13 +184,15 @@ def _get_c12880_data(fruit: str = "tomato",
                                    **kwargs)
         raise ValueError("Raw values not working for C12880 now")
         # data_folder = DATA_FOLDER / fruit / measurement_mode
-    elif measurement_mode == "reflectance":
+    elif measurement_mode in ["reflectance", "absorbance"] :
         # Load reflectance data from a CSV file
         data_folder = DATA_FOLDER / fruit / "reflectance"
         data_file = data_folder / f"{fruit}_reflectance.csv"
         data = pd.read_csv(data_file)
+
+
     else:
-        raise ValueError(f"measurement_mode needs to be in ['raw', 'reflectance'], "
+        raise ValueError(f"measurement_mode needs to be in ['raw', 'reflectance', 'absorbance'], "
                          f"{measurement_mode} is not valid")
 
     # Extract numeric spot group ID from spot column
@@ -228,7 +230,17 @@ def _get_c12880_data(fruit: str = "tomato",
     # print(x)
     # get y from as7262 data
     y_data_df = pd.read_csv(data_folder / f"{fruit}_as7262_ref_data.csv")
-    y = y_data_df.groupby(by=["Fruit"]).agg({target: "first"})
+    print(y_data_df)
+    print(target)
+    agg_target = {}
+    if isinstance(target, tuple):
+        for t in target:
+            agg_target[t] = "first"
+            target = list(target)
+    else:
+        agg_target[target] = "first"
+    print(agg_target)
+    y = y_data_df.groupby(by=["Fruit"]).agg(agg_target)
     x = x.reset_index()  # reset Fruit and spot to drop later
     print("=======]]]]")
     print(x)  # This is horrible design, but just trying to pickle good data an move on
@@ -240,7 +252,7 @@ def _get_c12880_data(fruit: str = "tomato",
     groups = groups.reset_index(drop=True)
     y = y.reset_index()
     df_merge = groups.merge(y.reset_index(), on="Fruit", how="left")
-    y = df_merge[target]
+    y = df_merge[[target]]
     return x, y, groups
 
 
@@ -311,11 +323,16 @@ def get_data(sensor: str,
     - Uses LRU caching to speed up repeated calls with identical arguments.
     """
     if sensor == "c12880":
-        return _get_c12880_data(fruit=fruit,
-                                measurement_mode=measurement_mode,
-                                mean_spot=mean_spot,
-                                target=target_column,
-                                **kwargs)
+        x, y, g = _get_c12880_data(fruit=fruit,
+                                   measurement_mode=measurement_mode,
+                                   mean_spot=mean_spot,
+                                   target=target_column,
+                                   **kwargs)
+        print("check: ", x, y, g)
+        if split_x_y_groups:
+            return x, y, g
+        else:  # concat
+            return pd.concat([x, y, g], axis=1)
 
     fruit_folder = DATA_FOLDER / fruit
     if measurement_mode == "raw":
@@ -329,7 +346,8 @@ def get_data(sensor: str,
                          "Use 'raw', 'reflectance', or 'absorbance")
 
     data = pd.read_csv(data_folder / f"{fruit}_{sensor}{mid}data.csv")
-    # print(data)
+    print(data.columns)
+    print(f"Any saturated? {data['saturation check'].unique()}")
 
     # get spectral columns
     x_columns = []
@@ -410,8 +428,38 @@ def get_targets(fruit: str) -> list[str]:
     return targets
 
 
+def get_cleaned_data(sensor: str, fruit: str,
+                     targets: list[str],
+                     measurement_mode="absorbance",
+                     **kwargs):
+    fruit_folder = DATA_FOLDER / fruit
+    data_folder = fruit_folder / "reflectance"
+    data = pd.read_csv(data_folder / f"{fruit}_{sensor}_mean_data.csv")
+
+    if kwargs and sensor != "c12880":  # filter AMS sensors
+        for sensor_setting, sensor_value in kwargs.items():
+            if sensor_setting == "int_time":  # fix this change from last project
+                sensor_setting = "integration time"
+            elif sensor_setting == "led_current":
+                sensor_setting = "led current"
+            elif sensor_setting == "led":  # ignore this for the meaned clean data
+                continue
+            data = data.loc[data[sensor_setting] == sensor_value]
+
+    if sensor == "c12880":
+        x_columns = [col for col in data.columns if is_float(col)]
+    else:
+        x_columns = [x for x in data.columns if 'nm' in x]
+
+    x = data[x_columns]
+    if measurement_mode == "absorbance":
+        x = -np.log10(np.maximum(x, 1e-6))
+    return x, data[list(targets)], data[["Fruit", "spot"]]
+
+
 if __name__ == '__main__':
     # print(get_targets("tomato"))
+
     # import matplotlib.pyplot as plt
     sensor_settings = {"led current": "12.5 mA",
                        "integration time": 50}

@@ -7,6 +7,7 @@ Add unittest for functions in the analysis/spectrum_fitting/get_data.py file
 __author__ = "Kyle Vitautas Lopin"
 
 # standard libraries
+from itertools import product
 import unittest
 
 # installed libraries
@@ -90,6 +91,41 @@ class TestGetC12880Data(unittest.TestCase):
                 f"{expected_samples - set(data['sample'].values)}")
 
 
+class TestGetC12880DataFromGetData(unittest.TestCase):
+    def test_get_x_y(self):
+        """Loop over combinations of fruit, mean_spot, and measurement_mode."""
+        fruits = ["mango", "tomato"]
+        for fruit in fruits:
+            with self.subTest(fruit=fruit):
+                self._check_all_cases(fruit)
+
+    def _check_all_cases(self, fruit: str):
+        """
+        Helper function to load data and assert structure and consistency.
+
+        Parameters
+        ----------
+        fruit : str
+            Fruit name ("mango", "tomato").
+        mean_spot : bool
+            Whether to average spot measurements.
+        method : str
+            Measurement mode ("raw" or "reflectance").
+        """
+        target = "lycopene (DW)"
+        if fruit == "mango":
+            target = "carotene (DW)"
+        x, y, groups = get_data.get_data(
+            sensor="c12880", fruit=fruit, target_column=target,
+            measurement_mode="reflectance", mean_spot=True)
+        print(x.columns)
+        print([x for x in x.columns if not isinstance(x, float)])
+        is_float = (isinstance(x, float) for x in x.columns)
+        self.assertTrue(all(is_float), msg=f"is_float = {list(is_float)}\nfor columns:{x.columns}")
+        # print(y)
+        # print(groups)
+
+
 class TestGetDataIndexConsistency(unittest.TestCase):
     """
     Unit tests for validating the consistency of index alignment and column structure
@@ -164,8 +200,8 @@ class TestGetDataIndexConsistency(unittest.TestCase):
         all have the same flat index (not a MultiIndex) and are aligned correctly
         when using both `mean_spot=True` and `mean_spot=False`.
         """
-        # for sensor in ["as7262", "as7263", "as7265x", "c12880"]:
-        for sensor in ["as7262", "c12880"]:
+        for sensor in ["as7262", "as7263", "as7265x", "c12880"]:
+        # for sensor in ["as7262", "c12880"]:
             for mean_spot in [True, False]:
                 with self.subTest(sensor=sensor):
                     self.sensor = sensor  # override
@@ -173,12 +209,33 @@ class TestGetDataIndexConsistency(unittest.TestCase):
 
                     # Check types
                     self.assertIsInstance(x, pd.DataFrame)
-                    self.assertIsInstance(y, pd.Series)
+                    self.assertIsInstance(y, pd.DataFrame,
+                                          msg=f"\ny should be pandas DataFrame, it is type {type(y)}")
                     self.assertIsInstance(groups, pd.DataFrame)
 
                     # Check that all have the same index
-                    self.assertTrue(x.index.equals(y.index), "x and y index mismatch")
+                    self.assertTrue(x.index.equals(y.index), "x and y index mismatch\n"
+                                                             f"x.index: {x.index}\n"
+                                                             f"y.index: {y.index}")
                     self.assertTrue(x.index.equals(groups.index), "x and groups index mismatch")
 
                     # Check that index is not MultiIndex (the groupby has to be reset)
                     self.assertNotIsInstance(x.index, pd.MultiIndex)
+
+
+class TestBasicLoad(unittest.TestCase):
+    def test_basic_load(self):
+        """Loop over combinations of fruit, mean_spot, and measurement_mode."""
+        fruits = ["mango", "tomato"]
+        sensors = ["as7262", "as7263", "as7265x", "c12880"]
+
+        for sensor, fruit, in product(sensors, fruits):
+            with self.subTest(sensor=sensor, fruit=fruit):
+                target = "lycopene (DW)"
+                if fruit == "mango":
+                    target = "carotene (DW)"
+                _, _, _ = get_data.get_data(
+                    sensor=sensor, fruit=fruit,
+                    target_column=target,
+                    measurement_mode="reflectance", mean_spot=True)
+                self.assertTrue(True)

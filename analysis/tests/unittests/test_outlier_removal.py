@@ -183,10 +183,30 @@ class TestMahalanobisOutlierRemoval(unittest.TestCase):
             np.vstack([normal_data, outliers]),
             columns=["feature1", "feature2"]
         )
+        # Step 2: Create group labels (can be numeric or strings)
+        fruit = (
+                ['A'] * 20 +
+                ['B'] * 15 +
+                ['C'] * 15 +
+                ['Z'] * 3
+        )
+
+        spot = (
+                [i for i in range(1, 5) for _ in range(5)] +  # A: 4 spots, 5 rows each
+                [i for i in range(1, 4) for _ in range(5)] +  # B: 3 spots, 5 rows each
+                [i for i in range(1, 4) for _ in range(5)] +  # C: 3 spots, 5 rows each
+                [99, 99, 99]  # Z: 1 outlier spot
+        )
+
+        # Step 3: Construct the groups DataFrame
+        self.groups = pd.DataFrame({
+            "Fruit": fruit,
+            "spot": spot
+        }, index=self.x.index)
 
     def test_detect_outliers(self):
         """Test that obvious outliers are detected."""
-        mask = mahalanobis_outlier_removal(self.x, use_robust=True,
+        mask = mahalanobis_outlier_removal(self.x, self.groups, use_robust=True,
                                            display_hist=False, cutoff_limit=3.0)
 
         # There are 53 points total
@@ -204,7 +224,21 @@ class TestMahalanobisOutlierRemoval(unittest.TestCase):
             np.random.normal(0, 1, size=(100, 2)),
             columns=["feature1", "feature2"]
         )
-        mask = mahalanobis_outlier_removal(clean_data, use_robust=True, display_hist=False, cutoff_limit=4.0)
+        # Step 2: Generate structured group labels
+        # 5 fruits × 20 rows each
+        fruit_labels = [fruit for fruit in ['A', 'B', 'C', 'D', 'E'] for _ in range(20)]
+
+        spot_labels = [spot for _ in range(5) for spot in range(1, 5) for _ in range(5)]
+        # 5 fruits × 4 spots × 5 rows = 100
+
+        # Step 3: Build the groups DataFrame
+        groups = pd.DataFrame({
+            "Fruit": fruit_labels,
+            "spot": spot_labels
+        }, index=clean_data.index)
+        mask = mahalanobis_outlier_removal(clean_data, groups,
+                                           use_robust=True, display_hist=False,
+                                           cutoff_limit=4.0)
 
         # In purely normal data, few or no outliers should be found
         num_outliers = (~mask).sum()

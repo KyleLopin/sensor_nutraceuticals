@@ -126,7 +126,7 @@ def mahalanobis_outlier_removal(x: pd.DataFrame,
     # Data-level mask (e.g., based on Mahalanobis cutoff)
     data_mask = np.where((-cutoff < shifted_mahal) & (shifted_mahal < cutoff), True, False)
     # Group-level mask (e.g., remove groups with >= 2 outliers)
-    outlier_mask = pd.Series(~data_mask, index = groups.index)
+    outlier_mask = pd.Series(~data_mask, index=groups.index)
     # now remove spots that have 2 or more outliers
     group_outlier_counts = outlier_mask.groupby([groups["Fruit"], groups["spot"]]).sum()
     groups_to_remove = group_outlier_counts[group_outlier_counts > 2].index
@@ -176,10 +176,6 @@ def save_mean_data(sensor: str,
         Cutoff used in Mahalanobis outlier removal.
     """
     # Step 1: Build sensor settings
-    # sensor_settings = {
-    #     "led current": "12.5 mA",
-    #     "integration time": 50
-    # }
     sensor_settings = {}
     if sensor == "as7265x":
         sensor_settings["led"] = "b'White IR'"
@@ -256,47 +252,7 @@ def save_mean_data(sensor: str,
                                          residue_threshold=3.0,
                                          logs=logs)
         final_df = pd.concat([final_df, meaned_data], axis=0)
-        # residues = calculate_residues(filtered_data[x_columns],
-        #                               filtered_data[GROUPS_COLUMNS])
-        # mask = mahalanobis_outlier_removal(residues,
-        #                                    filtered_data[GROUPS_COLUMNS],
-        #                                    cutoff_limit=residue_threshold)
-        # masked_data = (filtered_data[mask].reset_index(drop=True)
-        #                .drop(columns=["Read number", "Unnamed: 0", "Fruit number"]))
-        # # Count remaining unique (Fruit number, spot) combos
-        # remaining_unique_combos = (
-        #     masked_data[["Fruit", "spot"]]
-        #     .drop_duplicates()
-        #     .shape[0]
-        # )
-        # remaining_fruits = (
-        #     masked_data[["Fruit"]]
-        #     .drop_duplicates()
-        #     .shape[0]
-        # )
-        # # print(masked_data)
-        # # print(masked_data.columns)
-        # print(f"Remaining unique (Fruit number, spot) combos: {remaining_unique_combos} "
-        #       f"and fruit: {remaining_fruits}")
-        # logs.append(f"Remaining unique (Fruit number, spot) combos: {remaining_unique_combos} "
-        #             f"and fruit: {remaining_fruits}")
-        # agg = {}
-        # for column in masked_data:
-        #     agg[column] = "mean"
-        # for column in ["integration time", "led current", "led", "saturation check", "time"]:
-        #     agg[column] = "first"
-        # agg.pop("spot")
-        # agg.pop("Fruit")
-        # # print(masked_data.dtypes)
-        # # print(masked_data["spot"].unique())
-        # meaned = (masked_data.groupby(["Fruit", "spot"]).agg(agg)
-        #           .reset_index())
-        # for col in ["integration time", "gain"]:
-        #     meaned[col] = meaned[col].astype(int)
-        # # print(meaned)
-        # # Step 5: Combine and save
-        # final_df = pd.concat([final_df, meaned], axis=0)
-        # print(final_df)
+
     print(final_df)
     for log in logs:
         print(log)
@@ -570,7 +526,8 @@ def make_manuscript_figure(fruit: str = "mango"):
 
 
 if __name__ == '__main__':
-    save_mean_data(sensor="as7265x", fruit="mango")
+    pass
+    # save_mean_data(sensor="as7265x", fruit="mango")
 
     # make_manuscript_figure("tomato")
     #
