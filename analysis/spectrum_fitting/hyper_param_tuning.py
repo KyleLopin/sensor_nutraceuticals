@@ -293,10 +293,19 @@ def make_grid_searches(regr_type:str, sensors: list=[], show_figures=False):
     if not sensors:
         sensors = ["as7262", "as7263", "as7265x", "c12880"]
     for sensor in sensors:
+        led = "White LED"
+        if sensor =="as7265x":
+            led = "b'White IR'"
         pdf_filename = f"{regr_type} grid wide search {sensor}.pdf"
         with PdfPages(pdf_filename) as pdf:
             combinations = itertools.product(FRUITS, MEASUREMENT_TYPES, INT_TIMES, LED_CURRENTS)
             for fruit, measure_type, int_time, current in combinations:
+                if sensor == "as7265x" and int_time in [200, 250]:
+                    continue
+                if sensor == "c12880":
+                    if (int_time in [100, 150, 200, 250] or
+                            current in ["25 mA", "50 mA", "100 mA"]):
+                        continue
                 target = "lycopene (FW)"
                 if fruit == "mango":
                     target = "carotene (FW)"
@@ -304,19 +313,22 @@ def make_grid_searches(regr_type:str, sensors: list=[], show_figures=False):
                     sensor=sensor, fruit=fruit,
                     targets=[target],
                     measurement_mode=measure_type,
-                    int_time=int_time, led_current=current)
+                    int_time=int_time, led_current=current, led=led)
 
                 scaler = StandardScaler()
+                print("a: ", sensor, fruit, measure_type)
                 x = pd.DataFrame(
                     scaler.fit_transform(x),
                     columns=x.columns,
                     index=x.index
                 )
+                y = y.iloc[:, 0]  # supress errors
                 groups = groups["Fruit"]
                 title = f"leaf: {fruit}, {measure_type}, int time: {int_time}, current: {current}"
                 if regr_type == "Huber":
                     param_grid = {
-                        'epsilon': [1, 1.35, 1.55, 1.7, 2.0, 2.5, 3, 3.5, 4, 5, 6, 7, 8, 9, 10],
+                        'epsilon': [1, 1.35, 1.55, 1.7, 2.0, 2.5, 3, 3.5, 4,
+                                    5, 6, 7, 8, 9, 10],
                         'alpha': np.logspace(-5, 1, num=10),
                     }
 
@@ -343,17 +355,16 @@ def make_regr_grid_search_best_params(
     # Perform grid search
     grid_search = GridSearchCV(
         regr, param_grid, cv=CV, scoring='r2', n_jobs=-1)
-    print(x)
-    print(y)
-    print(groups)
+    # print(x)
+    # print(y)
+    # print(groups)
     grid_search.fit(x, y, groups=groups)
     # Extract results
     results = grid_search.cv_results_
 
     # Convert results to a DataFrame
     results_df = pd.DataFrame(results)
-    # Initialize a dictionary to store the best scores for each hyperparameter
-    # Initialize a dictionary to store the best scores for each hyperparameter
+   # Initialize a dictionary to store the best scores for each hyperparameter
     best_scores = {key: [] for key in param_grid}
     # Extract best scores for each hyperparameter value
     for param in best_scores.keys():
@@ -363,8 +374,9 @@ def make_regr_grid_search_best_params(
             best_scores[param].append((value, best_score))
 
     # Convert best scores to a DataFrame for plotting
-    best_scores_df = {param: pd.DataFrame(scores, columns=[param, 'best_score']) for param, scores
-                      in best_scores.items()}
+    best_scores_df = {param: pd.DataFrame(
+        scores, columns=[param, 'best_score'])
+        for param, scores in best_scores.items()}
     plt.figure(figsize=(10, 6))
     # Plot each hyperparameter's best score
     for param, df in best_scores_df.items():
@@ -379,10 +391,13 @@ def make_regr_grid_search_best_params(
     # Best parameters and model
     best_params = grid_search.best_params_
     print("Best parameters found:", best_params)
-    best_params_text = "\n".join([f"{key}: {value:.0e}" for key, value in best_params.items()])
-    plt.annotate(f'Best Parameters:\n{best_params_text}', xy=(0.05, 0.95), xycoords='axes fraction',
+    best_params_text = "\n".join([f"{key}: {value:.0e}"
+                                  for key, value in best_params.items()])
+    plt.annotate(f'Best Parameters:\n{best_params_text}', xy=(0.05, 0.95),
+                 xycoords='axes fraction',
                  fontsize=12, verticalalignment='top',
-                 bbox=dict(boxstyle="round,pad=0.3", edgecolor="black", facecolor="white"))
+                 bbox=dict(boxstyle="round,pad=0.3",
+                           edgecolor="black", facecolor="white"))
     if show_figure:
         plt.show()
     else:
