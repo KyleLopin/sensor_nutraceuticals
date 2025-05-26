@@ -256,7 +256,7 @@ def _get_c12880_data(fruit: str = "tomato",
     return x, y, groups
 
 
-@lru_cache(max_size=None)  # cache the data reads, helps make tests much shorter
+@lru_cache(maxsize=None)  # cache the data reads, helps make tests much shorter
 def get_data(sensor: str,
              measurement_mode: str = "reflectance",
              fruit: str = "tomato",
@@ -428,7 +428,7 @@ def get_targets(fruit: str) -> list[str]:
     return targets
 
 
-@lru_cache(max_size=None)
+@lru_cache(maxsize=None)
 def get_cleaned_data(sensor: str, fruit: str,
                      targets: list[str],
                      measurement_mode="absorbance",
