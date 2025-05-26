@@ -53,10 +53,9 @@ def get_raw_c12880_data(fruit: str = "tomato",
 
     data_type : str, optional
         The type of data to retrieve. Must be one of:
-        - `"reference"` : Returns only reference measurements of white background.
-        - `"dark"` : Returns only dark calibration measurements.
-        - `"data"` : Returns spectral data from fruit.
-        Default is `"data"`.
+        - "reference": Returns only reference measurements of white background.
+        - "dark": Returns only dark calibration measurements.
+        - "data": Returns spectral data from fruit. The default is `"data"`.
 
     wavelength_range : list[float]
         Specifies the range of wavelengths (inclusive) to keep in the dataset.
@@ -70,8 +69,8 @@ def get_raw_c12880_data(fruit: str = "tomato",
     -------
     pd.DataFrame
         A processed DataFrame containing the relevant spectral data, with:
-        - `"sample"` : Sample numbers
-        - `"spot"` : Spot number ont he sample.
+        - "sample": Sample numbers
+        - "spot": Spot number of the sample.
         - Remaining columns : Spectral intensity values at different wavelengths
           (with dark current correction if applicable).
 
@@ -117,8 +116,8 @@ def get_raw_c12880_data(fruit: str = "tomato",
         raise ValueError(f"data_type = {data_type} is not valid, data_type must be in "
                          f"['reference', 'dark', 'data']")
 
-    # because the sensor has to be programmed with wavelengths, some numbers are repeated
-    # remove the invalid columns that are repeated with .1 at the end
+    # Because the sensor has to be programmed with wavelengths, some numbers are repeated.
+    # Remove the invalid columns that are repeated with .1 at the end
     invalid_columns = [col for col in data.columns
                        if not is_float(col)]
     print(invalid_columns)
@@ -179,9 +178,9 @@ def _get_c12880_data(fruit: str = "tomato",
     """
     if measurement_mode == "raw":  # NOT WORKING
         # Load raw sensor data using a separate function
-        data = get_raw_c12880_data(fruit=fruit,
-                                   data_type="data",
-                                   **kwargs)
+        # data = get_raw_c12880_data(fruit=fruit,
+        #                            data_type="data",
+        #                            **kwargs)
         raise ValueError("Raw values not working for C12880 now")
         # data_folder = DATA_FOLDER / fruit / measurement_mode
     elif measurement_mode in ["reflectance", "absorbance"] :
@@ -243,7 +242,7 @@ def _get_c12880_data(fruit: str = "tomato",
     y = y_data_df.groupby(by=["Fruit"]).agg(agg_target)
     x = x.reset_index()  # reset Fruit and spot to drop later
     print("=======]]]]")
-    print(x)  # This is horrible design, but just trying to pickle good data an move on
+    print(x)  # This is a horrible design, but just trying to pickle good data and move on
     print(groups.columns)
     invalid_columns = [col for col in x.columns
                        if not is_float(col)]
@@ -281,7 +280,7 @@ def get_data(sensor: str,
     fruit : str, default="tomato"
         The fruit type associated with the dataset folder (e.g. "mango", "tomato").
 
-    target_column : tuple of str, default=("lycopene (DW)",)
+    target_column : tuple of str, default=("lycopene (DW)", )
         One or more column names in the dataset that will be used as target variables.
 
     split_x_y_groups : bool, default=True
@@ -304,7 +303,7 @@ def get_data(sensor: str,
             Y : pd.DataFrame
                 The target variable(s)
             groups : pd.DataFrame
-                Metadata for grouping (e.g. Fruit, spot, Read number)
+                Metadata for grouping (e.g., Fruit, spot, Read number)
         If split_x_y_groups is False:
             full_data : pd.DataFrame
                 The complete filtered dataset including all columns.
@@ -372,7 +371,7 @@ def get_data(sensor: str,
         # print("got sensor settings:", kwargs)
         # print(data.columns)
         for sensor_setting, sensor_value in kwargs.items():
-            if sensor_setting == "int_time":  # fix this change from last project
+            if sensor_setting == "int_time":  # fix this change from the last project
                 sensor_setting = "integration time"
             if sensor_setting == "led_current":
                 sensor_setting = "led current"
@@ -406,7 +405,7 @@ def get_data(sensor: str,
 def get_targets(fruit: str) -> list[str]:
     """
     Retrieve target columns related to fruit composition from AS7262 sensor data by
-    extracting columns  related to fresh weight (FW),
+    extracting columns related to fresh weight (FW),
     dry weight (DW), or percent dry matter (%DM).
 
     Parameters:
@@ -423,14 +422,14 @@ def get_targets(fruit: str) -> list[str]:
     for column in data.columns:
         if "FW" in column or "(DW)" in column:
             targets.append(column)
-        if "%DM" in column:  # is in both, but if add fruits later who knows
+        if "%DM" in column:  # is in both, but if it is in other fruit samples later, who knows?
             targets.append(column)
     return targets
 
 
 @lru_cache(maxsize=None)
 def get_cleaned_data(sensor: str, fruit: str,
-                     targets: list[str],
+                     targets: tuple[str, ...],
                      measurement_mode="absorbance",
                      **kwargs):
     fruit_folder = DATA_FOLDER / fruit
@@ -439,11 +438,11 @@ def get_cleaned_data(sensor: str, fruit: str,
 
     if kwargs and sensor != "c12880":  # filter AMS sensors
         for sensor_setting, sensor_value in kwargs.items():
-            if sensor_setting == "int_time":  # fix this change from last project
+            if sensor_setting == "int_time":  # fix this change from the last project
                 sensor_setting = "integration time"
             elif sensor_setting == "led_current":
                 sensor_setting = "led current"
-            elif sensor_setting == "led":  # ignore this for the meaned clean data
+            elif sensor_setting == "led":  # ignore this for the averaged clean data
                 continue
             data = data.loc[data[sensor_setting] == sensor_value]
 
@@ -467,7 +466,7 @@ if __name__ == '__main__':
     _x, _y, _groups = get_data("c12880", fruit="mango",
                                measurement_mode="reflectance",
                                mean_spot=True,
-                               target_column="%DM",
+                               target_column=("%DM", ),
                                split_x_y_groups=True,
                                **sensor_settings)
     print(_x)
