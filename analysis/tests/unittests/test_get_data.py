@@ -190,6 +190,8 @@ class TestGetDataIndexConsistency(unittest.TestCase):
                 _, _, groups = self._load_data(mean_spot=False)
                 # print(groups.columns)
                 expected_columns = ['Fruit', 'spot', 'Read number']
+                if sensor == "c12880":
+                    expected_columns = ['Fruit', 'spot']
                 self.assertListEqual(list(groups.columns), expected_columns,
                                      "groups columns do not match expected order "
                                      "and names for data not averaged")

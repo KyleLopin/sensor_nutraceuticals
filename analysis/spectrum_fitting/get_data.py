@@ -187,7 +187,7 @@ def _get_c12880_data(fruit: str = "tomato",
     elif measurement_mode in ["reflectance", "absorbance"] :
         # Load reflectance data from a CSV file
         data_folder = DATA_FOLDER / fruit / "reflectance"
-        data_file = data_folder / f"{fruit}_reflectance.csv"
+        data_file = data_folder / f"{fruit}_c12880_mean_data.csv"
         data = pd.read_csv(data_file)
 
 
@@ -213,8 +213,8 @@ def _get_c12880_data(fruit: str = "tomato",
         # data[["spot", "Read number"]] = (
         #     data["spot"].astype(str).str.extract(r"(\d+)\.(\d+)").astype(int))
         # print('+++++')
-        # print(data)
-        groups = data[['sample', 'spot', 'Read number']].rename(columns={"sample": "Fruit"})
+        print(data)
+        groups = data[['Fruit', 'spot']]
 
     invalid_columns = [col for col in data.columns
                        if not is_float(col)]
