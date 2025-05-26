@@ -166,39 +166,11 @@ def grid_search_pls_aic_r2(x, y, groups, cv=None, max_components: int = 6):
         r2_train = []
         mae_list = []
 
-        if USE_RFECV:
-            # Apply RFECV to select features within each CV split
-            rfecv = RFECV(
-                estimator=pls,
-                step=1,
-                cv=cv,  # Small CV within each fold to determine features
-                scoring='neg_mean_absolute_error',
-                min_features_to_select=max_components,
-                n_jobs=-1
-            )
-            rfecv.fit(x, y, groups=groups)
-
-            # print(f"optimal number of features {rfecv.n_features_}")
-
-            # Use the selected features from RFECV for PLS
-            x_fs = rfecv.transform(x)
-        elif USE_SFS:
-            sfs = SequentialFeatureSelector(
-                estimator=pls,
-                tol=0.005,
-                cv=cv,
-                scoring='neg_mean_absolute_error',
-                n_jobs=-1
-            )
-            x_fs = sfs.fit_transform(x, y, groups=groups)
-        else:
-            x_fs = x
-
         # Cross-validate using the provided CV strategy
         # print(groups)
-        for train_idx, test_idx in cv.split(x_fs, y, groups=groups["Fruit"]):
+        for train_idx, test_idx in cv.split(x, y, groups=groups["Fruit"]):
             # Use standard indexing for numpy arrays
-            x_train, x_test = x_fs[train_idx], x_fs[test_idx]
+            x_train, x_test = x[train_idx], x[test_idx]
             y_train, y_test = y[train_idx], y[test_idx]
             # print("====")
             # print(x_train.shape, x_test.shape)
@@ -269,11 +241,12 @@ def plot_4_sensors_pls(fruit: str):
                 sensor=sensor, int_time=50, targets=y_columns,
                 led_current="12.5 mA", fruit=fruit,
                 measurement_mode="absorbance", led=led)
+            groups = groups[["Fruit"]]
             # print(x, y)
             # print(get_data.get_targets(fruit))
             # 
-            # print("====")
-            # print(y)
+            print("====")
+            print(groups)
             # print(target)
             # print(y[target])
             y_target = y[target].to_numpy().flatten()
@@ -329,19 +302,150 @@ def make_grid_searches(regr_type:str, sensors: list=[], show_figures=False):
                     param_grid = {
                         'epsilon': [1, 1.35, 1.55, 1.7, 2.0, 2.5, 3, 3.5, 4,
                                     5, 6, 7, 8, 9, 10],
-                        'alpha': np.logspace(-5, 1, num=10),
+                        'alpha': np.logspace(-5, 2, num=10),
                     }
 
                     # Initialize the Huber Regressor
                     regr = HuberRegressor(max_iter=1000)
                 elif regr_type == "ARD":
                     param_grid = {
-                        'alpha_1': np.logspace(-6, -2, num=5),
-                        'alpha_2': np.logspace(-6, -2, num=5),
-                        'lambda_1': np.logspace(-6, -2, num=5),
-                        'lambda_2': np.logspace(-6, -2, num=5),
+                        'alpha_1': np.logspace(-6, -2, num=10),
+                        'alpha_2': np.logspace(-6, -2, num=10),
+                        'lambda_1': np.logspace(-6, 0, num=10),
+                        'lambda_2': np.logspace(-6, 0, num=10),
                     }
                     regr = ARDRegression()
+                elif regr_type == "Ridge":
+                    param_grid = {
+                        'alpha': np.logspace(-5, 3, num=10),
+                        'solver': ['auto', 'svd', 'cholesky', 'lsqr'],
+                    }
+                    from sklearn.linear_model import Ridge
+                    regr = Ridge(max_iter=1000)
+
+                elif regr_type == "Lasso":
+                    param_grid = {
+                        'alpha': np.logspace(-5, 1, num=10),
+                        'max_iter': [1000, 5000],
+                    }
+                    from sklearn.linear_model import Lasso
+                    regr = Lasso()
+
+                elif regr_type == "ElasticNet":
+                    param_grid = {
+                        'alpha': np.logspace(-5, 1, num=8),
+                        'l1_ratio': [0.1, 0.3, 0.5, 0.7, 0.9],
+                        'max_iter': [1000],
+                    }
+                    from sklearn.linear_model import ElasticNet
+                    regr = ElasticNet()
+
+                elif regr_type == "SVR":
+                    param_grid = {
+                        'C': np.logspace(-2, 3, 10),
+                        'gamma': np.logspace(-4, 0, 5),
+                        'epsilon': [0.1, 0.2, 0.5, 1.0],
+                        'kernel': ['rbf'],
+                    }
+                    from sklearn.svm import SVR
+                    regr = SVR()
+                elif regr_type == "DecisionTree":
+                    from sklearn.tree import DecisionTreeRegressor
+                    param_grid = {
+                        'max_depth': [3, 5, 10, 15, None],
+                        'min_samples_split': [2, 5, 10],
+                        'min_samples_leaf': [1, 2, 5]
+                    }
+                    regr = DecisionTreeRegressor()
+
+                elif regr_type == "RandomForest":
+                    from sklearn.ensemble import RandomForestRegressor
+                    param_grid = {
+                        'n_estimators': [50, 100],
+                        'max_depth': [5, 10, None],
+                        'max_features': ['sqrt', 'log2'],
+                        'min_samples_split': [2, 5]
+                    }
+                    regr = RandomForestRegressor(n_jobs=-1)
+
+                elif regr_type == "ExtraTrees":
+                    from sklearn.ensemble import ExtraTreesRegressor
+                    param_grid = {
+                        'n_estimators': [50, 100],
+                        'max_depth': [5, 10, None],
+                        'min_samples_split': [2, 5]
+                    }
+                    regr = ExtraTreesRegressor(n_jobs=-1)
+
+                elif regr_type == "GradientBoosting":
+                    from sklearn.ensemble import GradientBoostingRegressor
+                    param_grid = {
+                        'n_estimators': [50, 100],
+                        'learning_rate': [0.01, 0.1],
+                        'max_depth': [3, 5],
+                        'min_samples_split': [2, 5]
+                    }
+                    regr = GradientBoostingRegressor()
+
+                elif regr_type == "HistGradientBoosting":
+                    from sklearn.ensemble import HistGradientBoostingRegressor
+                    param_grid = {
+                        'learning_rate': [0.01, 0.1],
+                        'max_iter': [100, 200],
+                        'max_leaf_nodes': [15, 31, 63],
+                        'min_samples_leaf': [20, 50]
+                    }
+                    regr = HistGradientBoostingRegressor()
+
+
+                elif regr_type == "AdaBoost":
+                    from sklearn.ensemble import AdaBoostRegressor
+                    from sklearn.tree import DecisionTreeRegressor
+
+                    param_grid = {
+                        'n_estimators': [50, 100],
+                        'learning_rate': [0.01, 0.1, 1.0],
+                        'estimator__max_depth': [2, 3, 5]
+                    }
+                    base_tree = DecisionTreeRegressor()
+                    regr = AdaBoostRegressor(estimator=base_tree)
+
+                elif regr_type == "KNN":
+                    from sklearn.neighbors import KNeighborsRegressor
+                    param_grid = {
+                        'n_neighbors': [3, 5, 7, 9],
+                        'weights': ['uniform', 'distance'],
+                        'p': [1, 2]  # 1 = Manhattan, 2 = Euclidean
+                    }
+                    regr = KNeighborsRegressor()
+                elif regr_type == "BayesianRidge":
+                    from sklearn.linear_model import BayesianRidge
+                    param_grid = {
+                        'alpha_1': np.logspace(-6, -2, 4),
+                        'alpha_2': np.logspace(-6, -2, 4),
+                        'lambda_1': np.logspace(-6, -2, 4),
+                        'lambda_2': np.logspace(-6, -2, 4)
+                    }
+                    regr = BayesianRidge()
+                elif regr_type == "KPCA_LR":
+                    from sklearn.decomposition import KernelPCA
+                    from sklearn.linear_model import LinearRegression
+                    from sklearn.pipeline import Pipeline
+                    from sklearn.model_selection import GridSearchCV
+
+                    param_grid = {
+                        'kpca__kernel': ['linear', 'poly', 'rbf', 'sigmoid'],
+                        'kpca__n_components': [3, 5, 6]
+                    }
+
+                    # Use a pipeline: KernelPCA → LinearRegression
+                    regr = Pipeline([
+                        ('kpca', KernelPCA(fit_inverse_transform=False, eigen_solver='auto')),
+                        ('lr', LinearRegression())
+                    ])
+
+                else:
+                    raise ValueError(f"Unsupported regression type: {regr_type}")
 
                 make_regr_grid_search_best_params(
                     regr, param_grid, x, y, groups, title, pdf)
@@ -354,7 +458,7 @@ def make_regr_grid_search_best_params(
 
     # Perform grid search
     grid_search = GridSearchCV(
-        regr, param_grid, cv=CV, scoring='r2', n_jobs=-1)
+        regr, param_grid, cv=CV, scoring='r2', n_jobs=8)
     # print(x)
     # print(y)
     # print(groups)
@@ -391,8 +495,10 @@ def make_regr_grid_search_best_params(
     # Best parameters and model
     best_params = grid_search.best_params_
     print("Best parameters found:", best_params)
-    best_params_text = "\n".join([f"{key}: {value:.0e}"
+    best_params_text = "\n".join([f"{key}: {value}"
                                   for key, value in best_params.items()])
+    best_score = grid_search.best_score_
+    print(f"Best R² Score: {best_score:.4f}")
     plt.annotate(f'Best Parameters:\n{best_params_text}', xy=(0.05, 0.95),
                  xycoords='axes fraction',
                  fontsize=12, verticalalignment='top',
@@ -411,4 +517,6 @@ if __name__ == '__main__':
     # for target in ['%DM', 'lycopene (DW)', 'lycopene (FW)', 'beta-carotene (DW)', 'beta-carotene (FW)']:
     #     plot_3_sensors("tomato", target)
     # plot_4_sensors_pls("tomato")
-    make_grid_searches("Huber")
+    # ["DecisionTree", "RandomForest", "ExtraTrees", "GradientBoosting", "HistGradientBoosting", "ARD"]
+    for regr in ["AdaBoost"]:
+        make_grid_searches(regr)
