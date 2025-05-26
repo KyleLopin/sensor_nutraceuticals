@@ -17,20 +17,17 @@ import numpy as np
 import pandas as pd
 from sklearn.metrics import mean_absolute_error, r2_score
 from sklearn.model_selection import GridSearchCV, GroupShuffleSplit
-from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import PolynomialFeatures, StandardScaler
 
 # sklearn models
 from sklearn.cross_decomposition import PLSRegression
-from sklearn.ensemble import GradientBoostingRegressor
-from sklearn.linear_model import ARDRegression, HuberRegressor, Lasso
+from sklearn.linear_model import ARDRegression, HuberRegressor
 
 # local files
 import get_data
-from stratified_group_shuffle_split import StratifiedGroupShuffleSplit
 
-# used to choose the number of components from the AIC score, and this
-# will be repeated an additional N_SPLITS_OUTER for final AIC and R2 scores
+# used to choose the number of components from the AIC score,
+# to be repeated an additional N_SPLITS_OUTER for final AIC and R2 scores
 MIN_COMPONENTS = 3
 N_SPLITS = 100  # To reduce variance in final score use high numbers
 RANDOM_STATE = 43
@@ -89,12 +86,13 @@ def calculate_aic(residual_sum_of_squares, num_observations, num_parameters):
         2 * num_parameters
 
 
-def pls_scan(ax: plt.Axes, x: pd.DataFrame, y: pd.Series, groups: pd.DataFrame, max_comps):
+def pls_scan(ax: plt.Axes, x: pd.DataFrame, y: pd.Series, groups: pd.DataFrame, max_comps, use_poly: bool =False):
 
     # print(x, y)
     # Standardize data before Mahalanobis distance
-    # poly = PolynomialFeatures(degree=2)
-    # x = poly.fit_transform(x)
+    if use_poly:
+        poly = PolynomialFeatures(degree=2)
+        x = poly.fit_transform(x)
 
     scaler = StandardScaler()
     x = scaler.fit_transform(x)
@@ -135,7 +133,7 @@ def grid_search_pls_aic_r2(x, y, groups, cv=None, max_components: int = 6):
         dict: A dictionary containing lists of AIC and R^2 statistics
               for each number of components.
     """
-    # Convert x to numpy array for consistent indexing
+    # Convert x to a numpy array for consistent indexing
     x = np.array(x)
     y = np.array(y)
 
@@ -203,7 +201,7 @@ def grid_search_pls_aic_r2(x, y, groups, cv=None, max_components: int = 6):
             mae_list.append(mean_absolute_error(y_test, y_pred))
 
         # Compute the mean and standard deviation of AIC and R^2 across CV folds and
-        # Store AIC and R^2 statistics for current number of components
+        # Store AIC and R^2 statistics for the current number of components
         results['n_components'].append(n_components)
         results['mean_aic'].append(np.mean(aic_list))
         results['std_aic'].append(np.std(aic_list))
@@ -220,7 +218,7 @@ def plot_4_sensors_pls(fruit: str):
     width = 5
 
     y_columns = tuple(get_data.get_targets(fruit))
-    # just test free weight targets
+    # just test free weight (FW) targets
     y_columns = tuple([x for x in y_columns if " (FW)" in x])
     print(y_columns)
     for target in y_columns:
@@ -235,8 +233,8 @@ def plot_4_sensors_pls(fruit: str):
                 led = "b'White IR'"
                 max_comps = 14
 
-            # get all coluns 1 time, get_data.get_data is caching the data, this way on
-            # read each csv once
+            # Get all columns 1 time, and get_data.get_data caches the data. This way
+            # each csv is only read once
             x, y, groups = get_data.get_cleaned_data(
                 sensor=sensor, int_time=50, targets=y_columns,
                 led_current="12.5 mA", fruit=fruit,
@@ -260,11 +258,11 @@ def plot_4_sensors_pls(fruit: str):
     plt.show()
 
 
-def make_grid_searches(regr_type:str, sensors: list=[], show_figures=False):
+def make_grid_searches(regr_type:str, sensors: tuple=(), show_figures=False):
     if not show_figures:
         matplotlib.use('Agg')  # Use the 'Agg' backend for non-interactive plotting
     if not sensors:
-        sensors = ["as7262", "as7263", "as7265x", "c12880"]
+        sensors = ("as7262", "as7263", "as7265x", "c12880")
     for sensor in sensors:
         led = "White LED"
         if sensor =="as7265x":
@@ -284,7 +282,7 @@ def make_grid_searches(regr_type:str, sensors: list=[], show_figures=False):
                     target = "carotene (FW)"
                 x, y, groups = get_data.get_cleaned_data(
                     sensor=sensor, fruit=fruit,
-                    targets=[target],
+                    targets=(target),
                     measurement_mode=measure_type,
                     int_time=int_time, led_current=current, led=led)
 
@@ -485,7 +483,7 @@ def make_regr_grid_search_best_params(
     # Plot each hyperparameter's best score
     for param, df in best_scores_df.items():
         plt.plot(df[param], df['best_score'], label=param, marker='o')
-        plt.xscale('log')  # Set the x-axis to logarithmic scale
+        plt.xscale('log')  # Set the x-axis to a logarithmic scale
 
     plt.xlabel('Hyperparameter Value')
     plt.ylabel('Best R2 Score')
@@ -512,11 +510,10 @@ def make_regr_grid_search_best_params(
 
 
 if __name__ == '__main__':
-    # pls_scan("tomato", "as7265x", "lycopene (DW)")
     # print(get_data.get_targets("tomato"))
     # for target in ['%DM', 'lycopene (DW)', 'lycopene (FW)', 'beta-carotene (DW)', 'beta-carotene (FW)']:
     #     plot_3_sensors("tomato", target)
-    # plot_4_sensors_pls("tomato")
+    plot_4_sensors_pls("tomato")
     # ["DecisionTree", "RandomForest", "ExtraTrees", "GradientBoosting", "HistGradientBoosting", "ARD"]
-    for regr in ["AdaBoost"]:
-        make_grid_searches(regr)
+    # for regr in ["AdaBoost"]:
+    #     make_grid_searches(regr)
