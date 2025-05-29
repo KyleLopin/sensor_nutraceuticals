@@ -1,0 +1,2401 @@
+Fruit,Target,Regressor,Measurement Type,Integration Time,LED Current,Score
+tomato,lycopene (FW),ARD,reflectance,50,12.5 mA,-0.38652894892736583
+tomato,lycopene (FW),ARD,reflectance,50,12.5 mA,-0.2927517126089123
+tomato,lycopene (FW),ARD,reflectance,50,12.5 mA,-0.19217654290031613
+tomato,lycopene (FW),ARD,reflectance,50,12.5 mA,-0.32773547639605416
+tomato,lycopene (FW),ARD,reflectance,50,12.5 mA,-0.3649776981969274
+tomato,lycopene (FW),ARD,reflectance,50,12.5 mA,-0.23964826665158823
+tomato,lycopene (FW),ARD,reflectance,50,12.5 mA,-0.3087115951753461
+tomato,lycopene (FW),ARD,reflectance,50,12.5 mA,-0.33341631056473775
+tomato,lycopene (FW),ARD,reflectance,50,12.5 mA,-0.38570295322545267
+tomato,lycopene (FW),ARD,reflectance,50,12.5 mA,-0.299332931578064
+tomato,beta-carotene (FW),ARD,reflectance,50,12.5 mA,-0.06126797867247175
+tomato,beta-carotene (FW),ARD,reflectance,50,12.5 mA,-0.07590689306502338
+tomato,beta-carotene (FW),ARD,reflectance,50,12.5 mA,-0.06998372173453123
+tomato,beta-carotene (FW),ARD,reflectance,50,12.5 mA,-0.0677992962967092
+tomato,beta-carotene (FW),ARD,reflectance,50,12.5 mA,-0.07558973049828087
+tomato,beta-carotene (FW),ARD,reflectance,50,12.5 mA,-0.08444093989123552
+tomato,beta-carotene (FW),ARD,reflectance,50,12.5 mA,-0.061156723377408476
+tomato,beta-carotene (FW),ARD,reflectance,50,12.5 mA,-0.06871470513813857
+tomato,beta-carotene (FW),ARD,reflectance,50,12.5 mA,-0.05755465934336732
+tomato,beta-carotene (FW),ARD,reflectance,50,12.5 mA,-0.06283002886261393
+tomato,lycopene (FW),Huber Regression,reflectance,50,12.5 mA,-0.3083210492558944
+tomato,lycopene (FW),Huber Regression,reflectance,50,12.5 mA,-0.2890430311033888
+tomato,lycopene (FW),Huber Regression,reflectance,50,12.5 mA,-0.3107478654012993
+tomato,lycopene (FW),Huber Regression,reflectance,50,12.5 mA,-0.38435006174803693
+tomato,lycopene (FW),Huber Regression,reflectance,50,12.5 mA,-0.33269994496324573
+tomato,lycopene (FW),Huber Regression,reflectance,50,12.5 mA,-0.27805554993159715
+tomato,lycopene (FW),Huber Regression,reflectance,50,12.5 mA,-0.31352377176318297
+tomato,lycopene (FW),Huber Regression,reflectance,50,12.5 mA,-0.32196259817361284
+tomato,lycopene (FW),Huber Regression,reflectance,50,12.5 mA,-0.31254034226770516
+tomato,lycopene (FW),Huber Regression,reflectance,50,12.5 mA,-0.28592237021307243
+tomato,beta-carotene (FW),Huber Regression,reflectance,50,12.5 mA,-0.06928580539720294
+tomato,beta-carotene (FW),Huber Regression,reflectance,50,12.5 mA,-0.07961107104418741
+tomato,beta-carotene (FW),Huber Regression,reflectance,50,12.5 mA,-0.08499544113688731
+tomato,beta-carotene (FW),Huber Regression,reflectance,50,12.5 mA,-0.06449480570084636
+tomato,beta-carotene (FW),Huber Regression,reflectance,50,12.5 mA,-0.0587509342093538
+tomato,beta-carotene (FW),Huber Regression,reflectance,50,12.5 mA,-0.07187102700708325
+tomato,beta-carotene (FW),Huber Regression,reflectance,50,12.5 mA,-0.06976494631151209
+tomato,beta-carotene (FW),Huber Regression,reflectance,50,12.5 mA,-0.06609636563248121
+tomato,beta-carotene (FW),Huber Regression,reflectance,50,12.5 mA,-0.0643474211868504
+tomato,beta-carotene (FW),Huber Regression,reflectance,50,12.5 mA,-0.08605388335548661
+tomato,lycopene (FW),Lasso IC,reflectance,50,12.5 mA,-0.4001000702328662
+tomato,lycopene (FW),Lasso IC,reflectance,50,12.5 mA,-0.31884142825727296
+tomato,lycopene (FW),Lasso IC,reflectance,50,12.5 mA,-0.3414458084015273
+tomato,lycopene (FW),Lasso IC,reflectance,50,12.5 mA,-0.3787574561391571
+tomato,lycopene (FW),Lasso IC,reflectance,50,12.5 mA,-0.3608564232183415
+tomato,lycopene (FW),Lasso IC,reflectance,50,12.5 mA,-0.32315193194967645
+tomato,lycopene (FW),Lasso IC,reflectance,50,12.5 mA,-0.21403029399949808
+tomato,lycopene (FW),Lasso IC,reflectance,50,12.5 mA,-0.28837395155862233
+tomato,lycopene (FW),Lasso IC,reflectance,50,12.5 mA,-0.345840827938078
+tomato,lycopene (FW),Lasso IC,reflectance,50,12.5 mA,-0.4010033554339503
+tomato,beta-carotene (FW),Lasso IC,reflectance,50,12.5 mA,-0.06078739946397933
+tomato,beta-carotene (FW),Lasso IC,reflectance,50,12.5 mA,-0.08429327491121759
+tomato,beta-carotene (FW),Lasso IC,reflectance,50,12.5 mA,-0.06609802296643004
+tomato,beta-carotene (FW),Lasso IC,reflectance,50,12.5 mA,-0.06815613648258514
+tomato,beta-carotene (FW),Lasso IC,reflectance,50,12.5 mA,-0.07559613063094806
+tomato,beta-carotene (FW),Lasso IC,reflectance,50,12.5 mA,-0.05970260434424102
+tomato,beta-carotene (FW),Lasso IC,reflectance,50,12.5 mA,-0.06355802008737291
+tomato,beta-carotene (FW),Lasso IC,reflectance,50,12.5 mA,-0.08387245495732853
+tomato,beta-carotene (FW),Lasso IC,reflectance,50,12.5 mA,-0.08666373275298309
+tomato,beta-carotene (FW),Lasso IC,reflectance,50,12.5 mA,-0.05617437496700502
+tomato,lycopene (FW),SVR,reflectance,50,12.5 mA,-0.4976647251377232
+tomato,lycopene (FW),SVR,reflectance,50,12.5 mA,-0.45013437305265025
+tomato,lycopene (FW),SVR,reflectance,50,12.5 mA,-0.30914845947325287
+tomato,lycopene (FW),SVR,reflectance,50,12.5 mA,-0.44416667154657463
+tomato,lycopene (FW),SVR,reflectance,50,12.5 mA,-0.34262098921840295
+tomato,lycopene (FW),SVR,reflectance,50,12.5 mA,-0.32252612631230687
+tomato,lycopene (FW),SVR,reflectance,50,12.5 mA,-0.3606779979917515
+tomato,lycopene (FW),SVR,reflectance,50,12.5 mA,-0.30233184787652156
+tomato,lycopene (FW),SVR,reflectance,50,12.5 mA,-0.558444310712056
+tomato,lycopene (FW),SVR,reflectance,50,12.5 mA,-0.43908380838787
+tomato,beta-carotene (FW),SVR,reflectance,50,12.5 mA,-0.07724225489454639
+tomato,beta-carotene (FW),SVR,reflectance,50,12.5 mA,-0.07581181415688108
+tomato,beta-carotene (FW),SVR,reflectance,50,12.5 mA,-0.07878187643659813
+tomato,beta-carotene (FW),SVR,reflectance,50,12.5 mA,-0.06834695465397715
+tomato,beta-carotene (FW),SVR,reflectance,50,12.5 mA,-0.07574870615699954
+tomato,beta-carotene (FW),SVR,reflectance,50,12.5 mA,-0.07457221878437884
+tomato,beta-carotene (FW),SVR,reflectance,50,12.5 mA,-0.08059498947137553
+tomato,beta-carotene (FW),SVR,reflectance,50,12.5 mA,-0.08302552837511715
+tomato,beta-carotene (FW),SVR,reflectance,50,12.5 mA,-0.08600109877986621
+tomato,beta-carotene (FW),SVR,reflectance,50,12.5 mA,-0.06985077588542744
+tomato,lycopene (FW),PLS,reflectance,50,12.5 mA,-0.3206516597974139
+tomato,lycopene (FW),PLS,reflectance,50,12.5 mA,-0.3016137311576482
+tomato,lycopene (FW),PLS,reflectance,50,12.5 mA,-0.44618132945687067
+tomato,lycopene (FW),PLS,reflectance,50,12.5 mA,-0.31471387196905426
+tomato,lycopene (FW),PLS,reflectance,50,12.5 mA,-0.33291294165388563
+tomato,lycopene (FW),PLS,reflectance,50,12.5 mA,-0.3398584361665236
+tomato,lycopene (FW),PLS,reflectance,50,12.5 mA,-0.3928359343846101
+tomato,lycopene (FW),PLS,reflectance,50,12.5 mA,-0.3931556276315846
+tomato,lycopene (FW),PLS,reflectance,50,12.5 mA,-0.30738239104300913
+tomato,lycopene (FW),PLS,reflectance,50,12.5 mA,-0.35847149363818415
+tomato,beta-carotene (FW),PLS,reflectance,50,12.5 mA,-0.054940167740607074
+tomato,beta-carotene (FW),PLS,reflectance,50,12.5 mA,-0.0977336813317377
+tomato,beta-carotene (FW),PLS,reflectance,50,12.5 mA,-0.061066781206465304
+tomato,beta-carotene (FW),PLS,reflectance,50,12.5 mA,-0.07125365084542973
+tomato,beta-carotene (FW),PLS,reflectance,50,12.5 mA,-0.09321551794521706
+tomato,beta-carotene (FW),PLS,reflectance,50,12.5 mA,-0.062115748661764614
+tomato,beta-carotene (FW),PLS,reflectance,50,12.5 mA,-0.06495474698022288
+tomato,beta-carotene (FW),PLS,reflectance,50,12.5 mA,-0.060102860207651765
+tomato,beta-carotene (FW),PLS,reflectance,50,12.5 mA,-0.0900713612403718
+tomato,beta-carotene (FW),PLS,reflectance,50,12.5 mA,-0.06807406411348156
+tomato,lycopene (FW),ARD,reflectance,50,25 mA,-0.3562410308708863
+tomato,lycopene (FW),ARD,reflectance,50,25 mA,-0.38429378840299444
+tomato,lycopene (FW),ARD,reflectance,50,25 mA,-0.2947956509473366
+tomato,lycopene (FW),ARD,reflectance,50,25 mA,-0.4216561824720131
+tomato,lycopene (FW),ARD,reflectance,50,25 mA,-0.24567802663051497
+tomato,lycopene (FW),ARD,reflectance,50,25 mA,-0.3312845536882595
+tomato,lycopene (FW),ARD,reflectance,50,25 mA,-0.29069367902238274
+tomato,lycopene (FW),ARD,reflectance,50,25 mA,-0.3344680529136998
+tomato,lycopene (FW),ARD,reflectance,50,25 mA,-0.3096483796220709
+tomato,lycopene (FW),ARD,reflectance,50,25 mA,-0.40446674364805346
+tomato,beta-carotene (FW),ARD,reflectance,50,25 mA,-0.05446195008500256
+tomato,beta-carotene (FW),ARD,reflectance,50,25 mA,-0.07264158928813062
+tomato,beta-carotene (FW),ARD,reflectance,50,25 mA,-0.0684360569700814
+tomato,beta-carotene (FW),ARD,reflectance,50,25 mA,-0.07915494606854992
+tomato,beta-carotene (FW),ARD,reflectance,50,25 mA,-0.0698464415608981
+tomato,beta-carotene (FW),ARD,reflectance,50,25 mA,-0.057053782690902374
+tomato,beta-carotene (FW),ARD,reflectance,50,25 mA,-0.07233781490952032
+tomato,beta-carotene (FW),ARD,reflectance,50,25 mA,-0.036395114115627604
+tomato,beta-carotene (FW),ARD,reflectance,50,25 mA,-0.06229030030797098
+tomato,beta-carotene (FW),ARD,reflectance,50,25 mA,-0.07357217195233026
+tomato,lycopene (FW),Huber Regression,reflectance,50,25 mA,-0.3682916194634714
+tomato,lycopene (FW),Huber Regression,reflectance,50,25 mA,-0.30777021406653277
+tomato,lycopene (FW),Huber Regression,reflectance,50,25 mA,-0.3253246392396002
+tomato,lycopene (FW),Huber Regression,reflectance,50,25 mA,-0.24689517585422258
+tomato,lycopene (FW),Huber Regression,reflectance,50,25 mA,-0.36793595527577866
+tomato,lycopene (FW),Huber Regression,reflectance,50,25 mA,-0.3626956617912989
+tomato,lycopene (FW),Huber Regression,reflectance,50,25 mA,-0.3496699960437687
+tomato,lycopene (FW),Huber Regression,reflectance,50,25 mA,-0.3326901600944437
+tomato,lycopene (FW),Huber Regression,reflectance,50,25 mA,-0.35118443369271074
+tomato,lycopene (FW),Huber Regression,reflectance,50,25 mA,-0.29787869325509514
+tomato,beta-carotene (FW),Huber Regression,reflectance,50,25 mA,-0.07468202201597707
+tomato,beta-carotene (FW),Huber Regression,reflectance,50,25 mA,-0.08765042893793612
+tomato,beta-carotene (FW),Huber Regression,reflectance,50,25 mA,-0.059008386711673994
+tomato,beta-carotene (FW),Huber Regression,reflectance,50,25 mA,-0.07177796351582608
+tomato,beta-carotene (FW),Huber Regression,reflectance,50,25 mA,-0.08399275411298553
+tomato,beta-carotene (FW),Huber Regression,reflectance,50,25 mA,-0.07959361467350312
+tomato,beta-carotene (FW),Huber Regression,reflectance,50,25 mA,-0.06329619742925431
+tomato,beta-carotene (FW),Huber Regression,reflectance,50,25 mA,-0.08038036107899993
+tomato,beta-carotene (FW),Huber Regression,reflectance,50,25 mA,-0.08395027712583535
+tomato,beta-carotene (FW),Huber Regression,reflectance,50,25 mA,-0.06714208054677483
+tomato,lycopene (FW),Lasso IC,reflectance,50,25 mA,-0.21724879911634046
+tomato,lycopene (FW),Lasso IC,reflectance,50,25 mA,-0.30619327034281485
+tomato,lycopene (FW),Lasso IC,reflectance,50,25 mA,-0.2567644523294077
+tomato,lycopene (FW),Lasso IC,reflectance,50,25 mA,-0.4572255962121486
+tomato,lycopene (FW),Lasso IC,reflectance,50,25 mA,-0.36807265968646863
+tomato,lycopene (FW),Lasso IC,reflectance,50,25 mA,-0.24382629014300977
+tomato,lycopene (FW),Lasso IC,reflectance,50,25 mA,-0.29859866695177484
+tomato,lycopene (FW),Lasso IC,reflectance,50,25 mA,-0.30732196954377106
+tomato,lycopene (FW),Lasso IC,reflectance,50,25 mA,-0.25204294630395274
+tomato,lycopene (FW),Lasso IC,reflectance,50,25 mA,-0.3571174653898502
+tomato,beta-carotene (FW),Lasso IC,reflectance,50,25 mA,-0.05560116604137677
+tomato,beta-carotene (FW),Lasso IC,reflectance,50,25 mA,-0.05779972400253326
+tomato,beta-carotene (FW),Lasso IC,reflectance,50,25 mA,-0.07200722291396613
+tomato,beta-carotene (FW),Lasso IC,reflectance,50,25 mA,-0.0724722214452648
+tomato,beta-carotene (FW),Lasso IC,reflectance,50,25 mA,-0.05732285481067937
+tomato,beta-carotene (FW),Lasso IC,reflectance,50,25 mA,-0.0865471472122448
+tomato,beta-carotene (FW),Lasso IC,reflectance,50,25 mA,-0.078183087452969
+tomato,beta-carotene (FW),Lasso IC,reflectance,50,25 mA,-0.06903683790233137
+tomato,beta-carotene (FW),Lasso IC,reflectance,50,25 mA,-0.06494371055494605
+tomato,beta-carotene (FW),Lasso IC,reflectance,50,25 mA,-0.06071140973485405
+tomato,lycopene (FW),SVR,reflectance,50,25 mA,-0.3404485689053783
+tomato,lycopene (FW),SVR,reflectance,50,25 mA,-0.4362927103657718
+tomato,lycopene (FW),SVR,reflectance,50,25 mA,-0.39644927665011914
+tomato,lycopene (FW),SVR,reflectance,50,25 mA,-0.47369737894460473
+tomato,lycopene (FW),SVR,reflectance,50,25 mA,-0.36286697353184466
+tomato,lycopene (FW),SVR,reflectance,50,25 mA,-0.3078612827482702
+tomato,lycopene (FW),SVR,reflectance,50,25 mA,-0.3902130704554591
+tomato,lycopene (FW),SVR,reflectance,50,25 mA,-0.40433921223882835
+tomato,lycopene (FW),SVR,reflectance,50,25 mA,-0.3272643049661032
+tomato,lycopene (FW),SVR,reflectance,50,25 mA,-0.294252408027525
+tomato,beta-carotene (FW),SVR,reflectance,50,25 mA,-0.08741986977835296
+tomato,beta-carotene (FW),SVR,reflectance,50,25 mA,-0.08977708836868863
+tomato,beta-carotene (FW),SVR,reflectance,50,25 mA,-0.08759811674804481
+tomato,beta-carotene (FW),SVR,reflectance,50,25 mA,-0.07723593948948564
+tomato,beta-carotene (FW),SVR,reflectance,50,25 mA,-0.053349247607262125
+tomato,beta-carotene (FW),SVR,reflectance,50,25 mA,-0.07322131979396904
+tomato,beta-carotene (FW),SVR,reflectance,50,25 mA,-0.06991640042601979
+tomato,beta-carotene (FW),SVR,reflectance,50,25 mA,-0.06893954920077162
+tomato,beta-carotene (FW),SVR,reflectance,50,25 mA,-0.07461362572179685
+tomato,beta-carotene (FW),SVR,reflectance,50,25 mA,-0.07756020979215364
+tomato,lycopene (FW),PLS,reflectance,50,25 mA,-0.23940920506540425
+tomato,lycopene (FW),PLS,reflectance,50,25 mA,-0.42083538117354724
+tomato,lycopene (FW),PLS,reflectance,50,25 mA,-0.3313894991480576
+tomato,lycopene (FW),PLS,reflectance,50,25 mA,-0.31606454338850737
+tomato,lycopene (FW),PLS,reflectance,50,25 mA,-0.3119200581791507
+tomato,lycopene (FW),PLS,reflectance,50,25 mA,-0.3483241861091762
+tomato,lycopene (FW),PLS,reflectance,50,25 mA,-0.37566718241845753
+tomato,lycopene (FW),PLS,reflectance,50,25 mA,-0.2537413273895609
+tomato,lycopene (FW),PLS,reflectance,50,25 mA,-0.2125065498823025
+tomato,lycopene (FW),PLS,reflectance,50,25 mA,-0.39599317734301026
+tomato,beta-carotene (FW),PLS,reflectance,50,25 mA,-0.06999994220167645
+tomato,beta-carotene (FW),PLS,reflectance,50,25 mA,-0.06830848339264015
+tomato,beta-carotene (FW),PLS,reflectance,50,25 mA,-0.06780500994103131
+tomato,beta-carotene (FW),PLS,reflectance,50,25 mA,-0.067556564732802
+tomato,beta-carotene (FW),PLS,reflectance,50,25 mA,-0.057217054474838366
+tomato,beta-carotene (FW),PLS,reflectance,50,25 mA,-0.07211609224828455
+tomato,beta-carotene (FW),PLS,reflectance,50,25 mA,-0.0591391918235893
+tomato,beta-carotene (FW),PLS,reflectance,50,25 mA,-0.044959337241193977
+tomato,beta-carotene (FW),PLS,reflectance,50,25 mA,-0.07215365852511238
+tomato,beta-carotene (FW),PLS,reflectance,50,25 mA,-0.06919078799709613
+tomato,lycopene (FW),ARD,reflectance,100,12.5 mA,-0.2902903388371575
+tomato,lycopene (FW),ARD,reflectance,100,12.5 mA,-0.3210283661235519
+tomato,lycopene (FW),ARD,reflectance,100,12.5 mA,-0.30528908507868574
+tomato,lycopene (FW),ARD,reflectance,100,12.5 mA,-0.2974793813409084
+tomato,lycopene (FW),ARD,reflectance,100,12.5 mA,-0.21629948717651654
+tomato,lycopene (FW),ARD,reflectance,100,12.5 mA,-0.2743951787217962
+tomato,lycopene (FW),ARD,reflectance,100,12.5 mA,-0.29741376784835233
+tomato,lycopene (FW),ARD,reflectance,100,12.5 mA,-0.27011536472277575
+tomato,lycopene (FW),ARD,reflectance,100,12.5 mA,-0.29143805628397274
+tomato,lycopene (FW),ARD,reflectance,100,12.5 mA,-0.27825795951977295
+tomato,beta-carotene (FW),ARD,reflectance,100,12.5 mA,-0.07321391819170564
+tomato,beta-carotene (FW),ARD,reflectance,100,12.5 mA,-0.07099299109362915
+tomato,beta-carotene (FW),ARD,reflectance,100,12.5 mA,-0.06565108053551691
+tomato,beta-carotene (FW),ARD,reflectance,100,12.5 mA,-0.06178222840871994
+tomato,beta-carotene (FW),ARD,reflectance,100,12.5 mA,-0.08093080313799442
+tomato,beta-carotene (FW),ARD,reflectance,100,12.5 mA,-0.06832132899552294
+tomato,beta-carotene (FW),ARD,reflectance,100,12.5 mA,-0.06770447520000458
+tomato,beta-carotene (FW),ARD,reflectance,100,12.5 mA,-0.08010019006341929
+tomato,beta-carotene (FW),ARD,reflectance,100,12.5 mA,-0.08053940678419007
+tomato,beta-carotene (FW),ARD,reflectance,100,12.5 mA,-0.08371723656745056
+tomato,lycopene (FW),Huber Regression,reflectance,100,12.5 mA,-0.34275529931194937
+tomato,lycopene (FW),Huber Regression,reflectance,100,12.5 mA,-0.3488240585448786
+tomato,lycopene (FW),Huber Regression,reflectance,100,12.5 mA,-0.33030650284697943
+tomato,lycopene (FW),Huber Regression,reflectance,100,12.5 mA,-0.37147391052068124
+tomato,lycopene (FW),Huber Regression,reflectance,100,12.5 mA,-0.34867788756746376
+tomato,lycopene (FW),Huber Regression,reflectance,100,12.5 mA,-0.3260797410568949
+tomato,lycopene (FW),Huber Regression,reflectance,100,12.5 mA,-0.28289527494564826
+tomato,lycopene (FW),Huber Regression,reflectance,100,12.5 mA,-0.3683353926369926
+tomato,lycopene (FW),Huber Regression,reflectance,100,12.5 mA,-0.30498059197188343
+tomato,lycopene (FW),Huber Regression,reflectance,100,12.5 mA,-0.3295863827995027
+tomato,beta-carotene (FW),Huber Regression,reflectance,100,12.5 mA,-0.08185312352885779
+tomato,beta-carotene (FW),Huber Regression,reflectance,100,12.5 mA,-0.0663839271225691
+tomato,beta-carotene (FW),Huber Regression,reflectance,100,12.5 mA,-0.060015146180029205
+tomato,beta-carotene (FW),Huber Regression,reflectance,100,12.5 mA,-0.07923121680673881
+tomato,beta-carotene (FW),Huber Regression,reflectance,100,12.5 mA,-0.08658468449739243
+tomato,beta-carotene (FW),Huber Regression,reflectance,100,12.5 mA,-0.06784047807710707
+tomato,beta-carotene (FW),Huber Regression,reflectance,100,12.5 mA,-0.060445783619372154
+tomato,beta-carotene (FW),Huber Regression,reflectance,100,12.5 mA,-0.060653229073562895
+tomato,beta-carotene (FW),Huber Regression,reflectance,100,12.5 mA,-0.09375239795241942
+tomato,beta-carotene (FW),Huber Regression,reflectance,100,12.5 mA,-0.07209557960947736
+tomato,lycopene (FW),Lasso IC,reflectance,100,12.5 mA,-0.2579182599399389
+tomato,lycopene (FW),Lasso IC,reflectance,100,12.5 mA,-0.31077578251817856
+tomato,lycopene (FW),Lasso IC,reflectance,100,12.5 mA,-0.343411825241763
+tomato,lycopene (FW),Lasso IC,reflectance,100,12.5 mA,-0.40145625154806924
+tomato,lycopene (FW),Lasso IC,reflectance,100,12.5 mA,-0.33358527148442835
+tomato,lycopene (FW),Lasso IC,reflectance,100,12.5 mA,-0.29118688311409624
+tomato,lycopene (FW),Lasso IC,reflectance,100,12.5 mA,-0.25706546871426583
+tomato,lycopene (FW),Lasso IC,reflectance,100,12.5 mA,-0.3196828058772319
+tomato,lycopene (FW),Lasso IC,reflectance,100,12.5 mA,-0.39605219895653754
+tomato,lycopene (FW),Lasso IC,reflectance,100,12.5 mA,-0.4087849388407843
+tomato,beta-carotene (FW),Lasso IC,reflectance,100,12.5 mA,-0.0796102286865136
+tomato,beta-carotene (FW),Lasso IC,reflectance,100,12.5 mA,-0.08107316169519256
+tomato,beta-carotene (FW),Lasso IC,reflectance,100,12.5 mA,-0.0841243504307592
+tomato,beta-carotene (FW),Lasso IC,reflectance,100,12.5 mA,-0.0723619098069198
+tomato,beta-carotene (FW),Lasso IC,reflectance,100,12.5 mA,-0.05709784750058146
+tomato,beta-carotene (FW),Lasso IC,reflectance,100,12.5 mA,-0.06396455671723261
+tomato,beta-carotene (FW),Lasso IC,reflectance,100,12.5 mA,-0.07704282077946807
+tomato,beta-carotene (FW),Lasso IC,reflectance,100,12.5 mA,-0.0545005070637171
+tomato,beta-carotene (FW),Lasso IC,reflectance,100,12.5 mA,-0.06086553891361675
+tomato,beta-carotene (FW),Lasso IC,reflectance,100,12.5 mA,-0.0793464800262548
+tomato,lycopene (FW),SVR,reflectance,100,12.5 mA,-0.3383248211216049
+tomato,lycopene (FW),SVR,reflectance,100,12.5 mA,-0.3782474758017543
+tomato,lycopene (FW),SVR,reflectance,100,12.5 mA,-0.3602465708622784
+tomato,lycopene (FW),SVR,reflectance,100,12.5 mA,-0.4494281516419799
+tomato,lycopene (FW),SVR,reflectance,100,12.5 mA,-0.40964662137714103
+tomato,lycopene (FW),SVR,reflectance,100,12.5 mA,-0.29264293906268773
+tomato,lycopene (FW),SVR,reflectance,100,12.5 mA,-0.363432978508042
+tomato,lycopene (FW),SVR,reflectance,100,12.5 mA,-0.5177992125570634
+tomato,lycopene (FW),SVR,reflectance,100,12.5 mA,-0.3140053204530958
+tomato,lycopene (FW),SVR,reflectance,100,12.5 mA,-0.483667555408452
+tomato,beta-carotene (FW),SVR,reflectance,100,12.5 mA,-0.06480168767139768
+tomato,beta-carotene (FW),SVR,reflectance,100,12.5 mA,-0.06976684732127769
+tomato,beta-carotene (FW),SVR,reflectance,100,12.5 mA,-0.0894827501996226
+tomato,beta-carotene (FW),SVR,reflectance,100,12.5 mA,-0.07256055038773866
+tomato,beta-carotene (FW),SVR,reflectance,100,12.5 mA,-0.08980237889876508
+tomato,beta-carotene (FW),SVR,reflectance,100,12.5 mA,-0.06607088606150957
+tomato,beta-carotene (FW),SVR,reflectance,100,12.5 mA,-0.0750697516476377
+tomato,beta-carotene (FW),SVR,reflectance,100,12.5 mA,-0.0815298695109385
+tomato,beta-carotene (FW),SVR,reflectance,100,12.5 mA,-0.06889074778472451
+tomato,beta-carotene (FW),SVR,reflectance,100,12.5 mA,-0.07399053539602124
+tomato,lycopene (FW),PLS,reflectance,100,12.5 mA,-0.4096295642201337
+tomato,lycopene (FW),PLS,reflectance,100,12.5 mA,-0.32722794680870015
+tomato,lycopene (FW),PLS,reflectance,100,12.5 mA,-0.37166087339237014
+tomato,lycopene (FW),PLS,reflectance,100,12.5 mA,-0.3646970998782317
+tomato,lycopene (FW),PLS,reflectance,100,12.5 mA,-0.31647268788072885
+tomato,lycopene (FW),PLS,reflectance,100,12.5 mA,-0.3438740460215696
+tomato,lycopene (FW),PLS,reflectance,100,12.5 mA,-0.35103178751794306
+tomato,lycopene (FW),PLS,reflectance,100,12.5 mA,-0.3969732994313966
+tomato,lycopene (FW),PLS,reflectance,100,12.5 mA,-0.3503432578310918
+tomato,lycopene (FW),PLS,reflectance,100,12.5 mA,-0.2072125762414038
+tomato,beta-carotene (FW),PLS,reflectance,100,12.5 mA,-0.07357349648513854
+tomato,beta-carotene (FW),PLS,reflectance,100,12.5 mA,-0.0811817194753112
+tomato,beta-carotene (FW),PLS,reflectance,100,12.5 mA,-0.06683693903124807
+tomato,beta-carotene (FW),PLS,reflectance,100,12.5 mA,-0.07555035083656325
+tomato,beta-carotene (FW),PLS,reflectance,100,12.5 mA,-0.09293260804045642
+tomato,beta-carotene (FW),PLS,reflectance,100,12.5 mA,-0.06508724895961862
+tomato,beta-carotene (FW),PLS,reflectance,100,12.5 mA,-0.08964173363066463
+tomato,beta-carotene (FW),PLS,reflectance,100,12.5 mA,-0.04834479190574986
+tomato,beta-carotene (FW),PLS,reflectance,100,12.5 mA,-0.03763937012104387
+tomato,beta-carotene (FW),PLS,reflectance,100,12.5 mA,-0.08099047531722223
+tomato,lycopene (FW),ARD,reflectance,100,25 mA,-0.2417224450535691
+tomato,lycopene (FW),ARD,reflectance,100,25 mA,-0.31668563875860745
+tomato,lycopene (FW),ARD,reflectance,100,25 mA,-0.3986157094660145
+tomato,lycopene (FW),ARD,reflectance,100,25 mA,-0.30032136869045883
+tomato,lycopene (FW),ARD,reflectance,100,25 mA,-0.2240289382477194
+tomato,lycopene (FW),ARD,reflectance,100,25 mA,-0.35831955257568204
+tomato,lycopene (FW),ARD,reflectance,100,25 mA,-0.2904610732799176
+tomato,lycopene (FW),ARD,reflectance,100,25 mA,-0.2332528574225517
+tomato,lycopene (FW),ARD,reflectance,100,25 mA,-0.2374998421532652
+tomato,lycopene (FW),ARD,reflectance,100,25 mA,-0.22696157773354703
+tomato,beta-carotene (FW),ARD,reflectance,100,25 mA,-0.061538477156029295
+tomato,beta-carotene (FW),ARD,reflectance,100,25 mA,-0.08100231216953549
+tomato,beta-carotene (FW),ARD,reflectance,100,25 mA,-0.08569428225453432
+tomato,beta-carotene (FW),ARD,reflectance,100,25 mA,-0.07569548843044026
+tomato,beta-carotene (FW),ARD,reflectance,100,25 mA,-0.08409572467624553
+tomato,beta-carotene (FW),ARD,reflectance,100,25 mA,-0.07144899367837312
+tomato,beta-carotene (FW),ARD,reflectance,100,25 mA,-0.09342056299830503
+tomato,beta-carotene (FW),ARD,reflectance,100,25 mA,-0.11811940533288624
+tomato,beta-carotene (FW),ARD,reflectance,100,25 mA,-0.08101483700594193
+tomato,beta-carotene (FW),ARD,reflectance,100,25 mA,-0.07942496096436946
+tomato,lycopene (FW),Huber Regression,reflectance,100,25 mA,-0.31195874271311874
+tomato,lycopene (FW),Huber Regression,reflectance,100,25 mA,-0.33664401778020525
+tomato,lycopene (FW),Huber Regression,reflectance,100,25 mA,-0.39311166994413715
+tomato,lycopene (FW),Huber Regression,reflectance,100,25 mA,-0.2883111478570004
+tomato,lycopene (FW),Huber Regression,reflectance,100,25 mA,-0.3087109863297906
+tomato,lycopene (FW),Huber Regression,reflectance,100,25 mA,-0.2965864345830195
+tomato,lycopene (FW),Huber Regression,reflectance,100,25 mA,-0.31942085607028564
+tomato,lycopene (FW),Huber Regression,reflectance,100,25 mA,-0.28093388109949646
+tomato,lycopene (FW),Huber Regression,reflectance,100,25 mA,-0.33995526582135405
+tomato,lycopene (FW),Huber Regression,reflectance,100,25 mA,-0.3074300634442553
+tomato,beta-carotene (FW),Huber Regression,reflectance,100,25 mA,-0.06361296095600644
+tomato,beta-carotene (FW),Huber Regression,reflectance,100,25 mA,-0.04951807256523468
+tomato,beta-carotene (FW),Huber Regression,reflectance,100,25 mA,-0.08568736043761593
+tomato,beta-carotene (FW),Huber Regression,reflectance,100,25 mA,-0.05366402739507489
+tomato,beta-carotene (FW),Huber Regression,reflectance,100,25 mA,-0.06536177596967632
+tomato,beta-carotene (FW),Huber Regression,reflectance,100,25 mA,-0.06528117938091835
+tomato,beta-carotene (FW),Huber Regression,reflectance,100,25 mA,-0.07166204502280062
+tomato,beta-carotene (FW),Huber Regression,reflectance,100,25 mA,-0.07187181809263152
+tomato,beta-carotene (FW),Huber Regression,reflectance,100,25 mA,-0.05591512361535351
+tomato,beta-carotene (FW),Huber Regression,reflectance,100,25 mA,-0.05779286808277504
+tomato,lycopene (FW),Lasso IC,reflectance,100,25 mA,-0.32250660207513204
+tomato,lycopene (FW),Lasso IC,reflectance,100,25 mA,-0.30922807907641053
+tomato,lycopene (FW),Lasso IC,reflectance,100,25 mA,-0.4328503888181757
+tomato,lycopene (FW),Lasso IC,reflectance,100,25 mA,-0.440366506868801
+tomato,lycopene (FW),Lasso IC,reflectance,100,25 mA,-0.2910470902249477
+tomato,lycopene (FW),Lasso IC,reflectance,100,25 mA,-0.2671371011882372
+tomato,lycopene (FW),Lasso IC,reflectance,100,25 mA,-0.2679544150361181
+tomato,lycopene (FW),Lasso IC,reflectance,100,25 mA,-0.27101774109851534
+tomato,lycopene (FW),Lasso IC,reflectance,100,25 mA,-0.2672059096897749
+tomato,lycopene (FW),Lasso IC,reflectance,100,25 mA,-0.2823983465914188
+tomato,beta-carotene (FW),Lasso IC,reflectance,100,25 mA,-0.05730722154686381
+tomato,beta-carotene (FW),Lasso IC,reflectance,100,25 mA,-0.06189583021136794
+tomato,beta-carotene (FW),Lasso IC,reflectance,100,25 mA,-0.08231276689339517
+tomato,beta-carotene (FW),Lasso IC,reflectance,100,25 mA,-0.08217549999804094
+tomato,beta-carotene (FW),Lasso IC,reflectance,100,25 mA,-0.0845330053240974
+tomato,beta-carotene (FW),Lasso IC,reflectance,100,25 mA,-0.0689430718510316
+tomato,beta-carotene (FW),Lasso IC,reflectance,100,25 mA,-0.063094720946032
+tomato,beta-carotene (FW),Lasso IC,reflectance,100,25 mA,-0.07868012465186487
+tomato,beta-carotene (FW),Lasso IC,reflectance,100,25 mA,-0.0712993291604777
+tomato,beta-carotene (FW),Lasso IC,reflectance,100,25 mA,-0.06291240648890518
+tomato,lycopene (FW),SVR,reflectance,100,25 mA,-0.36702987614459653
+tomato,lycopene (FW),SVR,reflectance,100,25 mA,-0.37820479112848265
+tomato,lycopene (FW),SVR,reflectance,100,25 mA,-0.3237039524831308
+tomato,lycopene (FW),SVR,reflectance,100,25 mA,-0.34790372040590223
+tomato,lycopene (FW),SVR,reflectance,100,25 mA,-0.31569932801906536
+tomato,lycopene (FW),SVR,reflectance,100,25 mA,-0.45501697845556366
+tomato,lycopene (FW),SVR,reflectance,100,25 mA,-0.34268389153801004
+tomato,lycopene (FW),SVR,reflectance,100,25 mA,-0.35992870334223204
+tomato,lycopene (FW),SVR,reflectance,100,25 mA,-0.29917347145667467
+tomato,lycopene (FW),SVR,reflectance,100,25 mA,-0.36217596081215175
+tomato,beta-carotene (FW),SVR,reflectance,100,25 mA,-0.08687763828108686
+tomato,beta-carotene (FW),SVR,reflectance,100,25 mA,-0.09557903211527576
+tomato,beta-carotene (FW),SVR,reflectance,100,25 mA,-0.07574107406585624
+tomato,beta-carotene (FW),SVR,reflectance,100,25 mA,-0.09115001161175941
+tomato,beta-carotene (FW),SVR,reflectance,100,25 mA,-0.07592248562520063
+tomato,beta-carotene (FW),SVR,reflectance,100,25 mA,-0.06303265849978978
+tomato,beta-carotene (FW),SVR,reflectance,100,25 mA,-0.07409836225118491
+tomato,beta-carotene (FW),SVR,reflectance,100,25 mA,-0.06718516682830582
+tomato,beta-carotene (FW),SVR,reflectance,100,25 mA,-0.0829220947372559
+tomato,beta-carotene (FW),SVR,reflectance,100,25 mA,-0.0823458118919643
+tomato,lycopene (FW),PLS,reflectance,100,25 mA,-0.20781963928038324
+tomato,lycopene (FW),PLS,reflectance,100,25 mA,-0.2766556627537532
+tomato,lycopene (FW),PLS,reflectance,100,25 mA,-0.3327981980109897
+tomato,lycopene (FW),PLS,reflectance,100,25 mA,-0.25828805681857414
+tomato,lycopene (FW),PLS,reflectance,100,25 mA,-0.40068341957436343
+tomato,lycopene (FW),PLS,reflectance,100,25 mA,-0.28713948327530475
+tomato,lycopene (FW),PLS,reflectance,100,25 mA,-0.33081627004293124
+tomato,lycopene (FW),PLS,reflectance,100,25 mA,-0.2872099004231683
+tomato,lycopene (FW),PLS,reflectance,100,25 mA,-0.23721345824461443
+tomato,lycopene (FW),PLS,reflectance,100,25 mA,-0.3961331004592564
+tomato,beta-carotene (FW),PLS,reflectance,100,25 mA,-0.07919473416088167
+tomato,beta-carotene (FW),PLS,reflectance,100,25 mA,-0.06120114261766963
+tomato,beta-carotene (FW),PLS,reflectance,100,25 mA,-0.06874616224975878
+tomato,beta-carotene (FW),PLS,reflectance,100,25 mA,-0.07216565441379279
+tomato,beta-carotene (FW),PLS,reflectance,100,25 mA,-0.09029080772834872
+tomato,beta-carotene (FW),PLS,reflectance,100,25 mA,-0.044042689922782485
+tomato,beta-carotene (FW),PLS,reflectance,100,25 mA,-0.04960827565174697
+tomato,beta-carotene (FW),PLS,reflectance,100,25 mA,-0.07611877335256664
+tomato,beta-carotene (FW),PLS,reflectance,100,25 mA,-0.07080994021613958
+tomato,beta-carotene (FW),PLS,reflectance,100,25 mA,-0.07205373701590934
+tomato,lycopene (FW),ARD,reflectance,150,12.5 mA,-0.2515167299263683
+tomato,lycopene (FW),ARD,reflectance,150,12.5 mA,-0.19771039168586885
+tomato,lycopene (FW),ARD,reflectance,150,12.5 mA,-0.2220713559869357
+tomato,lycopene (FW),ARD,reflectance,150,12.5 mA,-0.27602031343152955
+tomato,lycopene (FW),ARD,reflectance,150,12.5 mA,-0.2789424343731502
+tomato,lycopene (FW),ARD,reflectance,150,12.5 mA,-0.23935533453900706
+tomato,lycopene (FW),ARD,reflectance,150,12.5 mA,-0.4512905422790078
+tomato,lycopene (FW),ARD,reflectance,150,12.5 mA,-0.3819728528936539
+tomato,lycopene (FW),ARD,reflectance,150,12.5 mA,-0.4041345120976619
+tomato,lycopene (FW),ARD,reflectance,150,12.5 mA,-0.37013177821151666
+tomato,beta-carotene (FW),ARD,reflectance,150,12.5 mA,-0.056731923705026555
+tomato,beta-carotene (FW),ARD,reflectance,150,12.5 mA,-0.055987021315845834
+tomato,beta-carotene (FW),ARD,reflectance,150,12.5 mA,-0.06682222702216967
+tomato,beta-carotene (FW),ARD,reflectance,150,12.5 mA,-0.080832671637874
+tomato,beta-carotene (FW),ARD,reflectance,150,12.5 mA,-0.08466589026890256
+tomato,beta-carotene (FW),ARD,reflectance,150,12.5 mA,-0.05809472655660591
+tomato,beta-carotene (FW),ARD,reflectance,150,12.5 mA,-0.06500034222854692
+tomato,beta-carotene (FW),ARD,reflectance,150,12.5 mA,-0.08717624849837555
+tomato,beta-carotene (FW),ARD,reflectance,150,12.5 mA,-0.057778370893837826
+tomato,beta-carotene (FW),ARD,reflectance,150,12.5 mA,-0.12137481795805134
+tomato,lycopene (FW),Huber Regression,reflectance,150,12.5 mA,-0.30460395000459
+tomato,lycopene (FW),Huber Regression,reflectance,150,12.5 mA,-0.3970195324131833
+tomato,lycopene (FW),Huber Regression,reflectance,150,12.5 mA,-0.36275267382921644
+tomato,lycopene (FW),Huber Regression,reflectance,150,12.5 mA,-0.3952451596095225
+tomato,lycopene (FW),Huber Regression,reflectance,150,12.5 mA,-0.27729322525903255
+tomato,lycopene (FW),Huber Regression,reflectance,150,12.5 mA,-0.2695980981603286
+tomato,lycopene (FW),Huber Regression,reflectance,150,12.5 mA,-0.2580497079074175
+tomato,lycopene (FW),Huber Regression,reflectance,150,12.5 mA,-0.3484146342482331
+tomato,lycopene (FW),Huber Regression,reflectance,150,12.5 mA,-0.30771414852043627
+tomato,lycopene (FW),Huber Regression,reflectance,150,12.5 mA,-0.348216385618035
+tomato,beta-carotene (FW),Huber Regression,reflectance,150,12.5 mA,-0.07352707618230966
+tomato,beta-carotene (FW),Huber Regression,reflectance,150,12.5 mA,-0.060124153284358106
+tomato,beta-carotene (FW),Huber Regression,reflectance,150,12.5 mA,-0.06926649755425333
+tomato,beta-carotene (FW),Huber Regression,reflectance,150,12.5 mA,-0.0759927419977582
+tomato,beta-carotene (FW),Huber Regression,reflectance,150,12.5 mA,-0.07993088859962946
+tomato,beta-carotene (FW),Huber Regression,reflectance,150,12.5 mA,-0.05696930255838376
+tomato,beta-carotene (FW),Huber Regression,reflectance,150,12.5 mA,-0.08701554295782127
+tomato,beta-carotene (FW),Huber Regression,reflectance,150,12.5 mA,-0.03209275458123687
+tomato,beta-carotene (FW),Huber Regression,reflectance,150,12.5 mA,-0.06410396619345539
+tomato,beta-carotene (FW),Huber Regression,reflectance,150,12.5 mA,-0.07808794109154388
+tomato,lycopene (FW),Lasso IC,reflectance,150,12.5 mA,-0.3369501333337831
+tomato,lycopene (FW),Lasso IC,reflectance,150,12.5 mA,-0.18522172090619513
+tomato,lycopene (FW),Lasso IC,reflectance,150,12.5 mA,-0.33423576168064795
+tomato,lycopene (FW),Lasso IC,reflectance,150,12.5 mA,-0.23468049224474533
+tomato,lycopene (FW),Lasso IC,reflectance,150,12.5 mA,-0.37632440279154
+tomato,lycopene (FW),Lasso IC,reflectance,150,12.5 mA,-0.4206407460130227
+tomato,lycopene (FW),Lasso IC,reflectance,150,12.5 mA,-0.24290893019651433
+tomato,lycopene (FW),Lasso IC,reflectance,150,12.5 mA,-0.27405045861615374
+tomato,lycopene (FW),Lasso IC,reflectance,150,12.5 mA,-0.3760789270426074
+tomato,lycopene (FW),Lasso IC,reflectance,150,12.5 mA,-0.4093626721630613
+tomato,beta-carotene (FW),Lasso IC,reflectance,150,12.5 mA,-0.08225447712664029
+tomato,beta-carotene (FW),Lasso IC,reflectance,150,12.5 mA,-0.0719315160020628
+tomato,beta-carotene (FW),Lasso IC,reflectance,150,12.5 mA,-0.061168559847652605
+tomato,beta-carotene (FW),Lasso IC,reflectance,150,12.5 mA,-0.04721791385949251
+tomato,beta-carotene (FW),Lasso IC,reflectance,150,12.5 mA,-0.06357341640673068
+tomato,beta-carotene (FW),Lasso IC,reflectance,150,12.5 mA,-0.0759834242389282
+tomato,beta-carotene (FW),Lasso IC,reflectance,150,12.5 mA,-0.07457087566526213
+tomato,beta-carotene (FW),Lasso IC,reflectance,150,12.5 mA,-0.07163508029265239
+tomato,beta-carotene (FW),Lasso IC,reflectance,150,12.5 mA,-0.08413249520472414
+tomato,beta-carotene (FW),Lasso IC,reflectance,150,12.5 mA,-0.05581024431286168
+tomato,lycopene (FW),SVR,reflectance,150,12.5 mA,-0.38074027460782284
+tomato,lycopene (FW),SVR,reflectance,150,12.5 mA,-0.5431205585033746
+tomato,lycopene (FW),SVR,reflectance,150,12.5 mA,-0.33150896598262747
+tomato,lycopene (FW),SVR,reflectance,150,12.5 mA,-0.47918612019653095
+tomato,lycopene (FW),SVR,reflectance,150,12.5 mA,-0.31736923354976254
+tomato,lycopene (FW),SVR,reflectance,150,12.5 mA,-0.39292634141634525
+tomato,lycopene (FW),SVR,reflectance,150,12.5 mA,-0.4721171770888154
+tomato,lycopene (FW),SVR,reflectance,150,12.5 mA,-0.32287030325653654
+tomato,lycopene (FW),SVR,reflectance,150,12.5 mA,-0.4305376248711363
+tomato,lycopene (FW),SVR,reflectance,150,12.5 mA,-0.3767446149245716
+tomato,beta-carotene (FW),SVR,reflectance,150,12.5 mA,-0.07638811446272319
+tomato,beta-carotene (FW),SVR,reflectance,150,12.5 mA,-0.07708197474844182
+tomato,beta-carotene (FW),SVR,reflectance,150,12.5 mA,-0.0748583305347556
+tomato,beta-carotene (FW),SVR,reflectance,150,12.5 mA,-0.06550093262475454
+tomato,beta-carotene (FW),SVR,reflectance,150,12.5 mA,-0.07519648917730878
+tomato,beta-carotene (FW),SVR,reflectance,150,12.5 mA,-0.059664489054079575
+tomato,beta-carotene (FW),SVR,reflectance,150,12.5 mA,-0.06907207984936581
+tomato,beta-carotene (FW),SVR,reflectance,150,12.5 mA,-0.07632301323819307
+tomato,beta-carotene (FW),SVR,reflectance,150,12.5 mA,-0.07175684913969312
+tomato,beta-carotene (FW),SVR,reflectance,150,12.5 mA,-0.06009396131393675
+tomato,lycopene (FW),PLS,reflectance,150,12.5 mA,-0.2551559797256822
+tomato,lycopene (FW),PLS,reflectance,150,12.5 mA,-0.31173583030602103
+tomato,lycopene (FW),PLS,reflectance,150,12.5 mA,-0.35226071749665694
+tomato,lycopene (FW),PLS,reflectance,150,12.5 mA,-0.312551916305185
+tomato,lycopene (FW),PLS,reflectance,150,12.5 mA,-0.38069414765733967
+tomato,lycopene (FW),PLS,reflectance,150,12.5 mA,-0.24719278664175418
+tomato,lycopene (FW),PLS,reflectance,150,12.5 mA,-0.30334672481552777
+tomato,lycopene (FW),PLS,reflectance,150,12.5 mA,-0.20913023447551793
+tomato,lycopene (FW),PLS,reflectance,150,12.5 mA,-0.36115432243115014
+tomato,lycopene (FW),PLS,reflectance,150,12.5 mA,-0.3267861456192204
+tomato,beta-carotene (FW),PLS,reflectance,150,12.5 mA,-0.07120386643879706
+tomato,beta-carotene (FW),PLS,reflectance,150,12.5 mA,-0.08001523265731984
+tomato,beta-carotene (FW),PLS,reflectance,150,12.5 mA,-0.08099260289628425
+tomato,beta-carotene (FW),PLS,reflectance,150,12.5 mA,-0.06717423303633153
+tomato,beta-carotene (FW),PLS,reflectance,150,12.5 mA,-0.035179632513292154
+tomato,beta-carotene (FW),PLS,reflectance,150,12.5 mA,-0.058530433997252676
+tomato,beta-carotene (FW),PLS,reflectance,150,12.5 mA,-0.08171120661410478
+tomato,beta-carotene (FW),PLS,reflectance,150,12.5 mA,-0.07733722670781944
+tomato,beta-carotene (FW),PLS,reflectance,150,12.5 mA,-0.07864948489501361
+tomato,beta-carotene (FW),PLS,reflectance,150,12.5 mA,-0.06437207591942765
+tomato,lycopene (FW),ARD,reflectance,150,25 mA,-0.25278389893237757
+tomato,lycopene (FW),ARD,reflectance,150,25 mA,-0.26359836870189757
+tomato,lycopene (FW),ARD,reflectance,150,25 mA,-0.31912702210507526
+tomato,lycopene (FW),ARD,reflectance,150,25 mA,-0.20525973326640476
+tomato,lycopene (FW),ARD,reflectance,150,25 mA,-0.2532046425562152
+tomato,lycopene (FW),ARD,reflectance,150,25 mA,-0.3115653426215661
+tomato,lycopene (FW),ARD,reflectance,150,25 mA,-0.27850964810718415
+tomato,lycopene (FW),ARD,reflectance,150,25 mA,-0.2995810420099872
+tomato,lycopene (FW),ARD,reflectance,150,25 mA,-0.3054983854151859
+tomato,lycopene (FW),ARD,reflectance,150,25 mA,-0.22843655647465466
+tomato,beta-carotene (FW),ARD,reflectance,150,25 mA,-0.07897087416639591
+tomato,beta-carotene (FW),ARD,reflectance,150,25 mA,-0.08877363526162582
+tomato,beta-carotene (FW),ARD,reflectance,150,25 mA,-0.0778475585656875
+tomato,beta-carotene (FW),ARD,reflectance,150,25 mA,-0.0808525656279755
+tomato,beta-carotene (FW),ARD,reflectance,150,25 mA,-0.06360315910909473
+tomato,beta-carotene (FW),ARD,reflectance,150,25 mA,-0.05829113461259674
+tomato,beta-carotene (FW),ARD,reflectance,150,25 mA,-0.06247083436060148
+tomato,beta-carotene (FW),ARD,reflectance,150,25 mA,-0.07129833630512687
+tomato,beta-carotene (FW),ARD,reflectance,150,25 mA,-0.06401896445263536
+tomato,beta-carotene (FW),ARD,reflectance,150,25 mA,-0.05925406310487306
+tomato,lycopene (FW),Huber Regression,reflectance,150,25 mA,-0.33918048482588276
+tomato,lycopene (FW),Huber Regression,reflectance,150,25 mA,-0.33505327140315083
+tomato,lycopene (FW),Huber Regression,reflectance,150,25 mA,-0.2555779495602227
+tomato,lycopene (FW),Huber Regression,reflectance,150,25 mA,-0.3009424061818003
+tomato,lycopene (FW),Huber Regression,reflectance,150,25 mA,-0.3063922736243427
+tomato,lycopene (FW),Huber Regression,reflectance,150,25 mA,-0.29875997707312807
+tomato,lycopene (FW),Huber Regression,reflectance,150,25 mA,-0.35437968744951287
+tomato,lycopene (FW),Huber Regression,reflectance,150,25 mA,-0.463458927277151
+tomato,lycopene (FW),Huber Regression,reflectance,150,25 mA,-0.2883769817923329
+tomato,lycopene (FW),Huber Regression,reflectance,150,25 mA,-0.3408240043528739
+tomato,beta-carotene (FW),Huber Regression,reflectance,150,25 mA,-0.07824461308718098
+tomato,beta-carotene (FW),Huber Regression,reflectance,150,25 mA,-0.07926795738525447
+tomato,beta-carotene (FW),Huber Regression,reflectance,150,25 mA,-0.051630366177464124
+tomato,beta-carotene (FW),Huber Regression,reflectance,150,25 mA,-0.08181796493900673
+tomato,beta-carotene (FW),Huber Regression,reflectance,150,25 mA,-0.07003634348386598
+tomato,beta-carotene (FW),Huber Regression,reflectance,150,25 mA,-0.06524584558254623
+tomato,beta-carotene (FW),Huber Regression,reflectance,150,25 mA,-0.07758187045990969
+tomato,beta-carotene (FW),Huber Regression,reflectance,150,25 mA,-0.08096206300366997
+tomato,beta-carotene (FW),Huber Regression,reflectance,150,25 mA,-0.06655626038940693
+tomato,beta-carotene (FW),Huber Regression,reflectance,150,25 mA,-0.0668604034710579
+tomato,lycopene (FW),Lasso IC,reflectance,150,25 mA,-0.2594234865599481
+tomato,lycopene (FW),Lasso IC,reflectance,150,25 mA,-0.35515659263487115
+tomato,lycopene (FW),Lasso IC,reflectance,150,25 mA,-0.3488590913138982
+tomato,lycopene (FW),Lasso IC,reflectance,150,25 mA,-0.4268068806815224
+tomato,lycopene (FW),Lasso IC,reflectance,150,25 mA,-0.27594800183826557
+tomato,lycopene (FW),Lasso IC,reflectance,150,25 mA,-0.4593775525989233
+tomato,lycopene (FW),Lasso IC,reflectance,150,25 mA,-0.3681302491389048
+tomato,lycopene (FW),Lasso IC,reflectance,150,25 mA,-0.2411661754710463
+tomato,lycopene (FW),Lasso IC,reflectance,150,25 mA,-0.2717512161872579
+tomato,lycopene (FW),Lasso IC,reflectance,150,25 mA,-0.24817366890961212
+tomato,beta-carotene (FW),Lasso IC,reflectance,150,25 mA,-0.08565439536691898
+tomato,beta-carotene (FW),Lasso IC,reflectance,150,25 mA,-0.055611634212300434
+tomato,beta-carotene (FW),Lasso IC,reflectance,150,25 mA,-0.07249693209252688
+tomato,beta-carotene (FW),Lasso IC,reflectance,150,25 mA,-0.06283269021590847
+tomato,beta-carotene (FW),Lasso IC,reflectance,150,25 mA,-0.0757354281480459
+tomato,beta-carotene (FW),Lasso IC,reflectance,150,25 mA,-0.07415377653245928
+tomato,beta-carotene (FW),Lasso IC,reflectance,150,25 mA,-0.10378518144176994
+tomato,beta-carotene (FW),Lasso IC,reflectance,150,25 mA,-0.10657827780515063
+tomato,beta-carotene (FW),Lasso IC,reflectance,150,25 mA,-0.08229105781072424
+tomato,beta-carotene (FW),Lasso IC,reflectance,150,25 mA,-0.059504633012152267
+tomato,lycopene (FW),SVR,reflectance,150,25 mA,-0.34838195930661947
+tomato,lycopene (FW),SVR,reflectance,150,25 mA,-0.30309542380493915
+tomato,lycopene (FW),SVR,reflectance,150,25 mA,-0.3694009437262505
+tomato,lycopene (FW),SVR,reflectance,150,25 mA,-0.4363796784129534
+tomato,lycopene (FW),SVR,reflectance,150,25 mA,-0.3914986914940001
+tomato,lycopene (FW),SVR,reflectance,150,25 mA,-0.3054363308071433
+tomato,lycopene (FW),SVR,reflectance,150,25 mA,-0.43789089052349256
+tomato,lycopene (FW),SVR,reflectance,150,25 mA,-0.49230687776750753
+tomato,lycopene (FW),SVR,reflectance,150,25 mA,-0.4313216356184751
+tomato,lycopene (FW),SVR,reflectance,150,25 mA,-0.34540907329069204
+tomato,beta-carotene (FW),SVR,reflectance,150,25 mA,-0.07520409920214036
+tomato,beta-carotene (FW),SVR,reflectance,150,25 mA,-0.06984909802426456
+tomato,beta-carotene (FW),SVR,reflectance,150,25 mA,-0.05696210813775108
+tomato,beta-carotene (FW),SVR,reflectance,150,25 mA,-0.08431042014286519
+tomato,beta-carotene (FW),SVR,reflectance,150,25 mA,-0.07484633049582723
+tomato,beta-carotene (FW),SVR,reflectance,150,25 mA,-0.09929523444049318
+tomato,beta-carotene (FW),SVR,reflectance,150,25 mA,-0.0760572190553331
+tomato,beta-carotene (FW),SVR,reflectance,150,25 mA,-0.07164195374863076
+tomato,beta-carotene (FW),SVR,reflectance,150,25 mA,-0.07493337027025382
+tomato,beta-carotene (FW),SVR,reflectance,150,25 mA,-0.07004237001228757
+tomato,lycopene (FW),PLS,reflectance,150,25 mA,-0.3521164373676713
+tomato,lycopene (FW),PLS,reflectance,150,25 mA,-0.35903630537220477
+tomato,lycopene (FW),PLS,reflectance,150,25 mA,-0.3174482508911276
+tomato,lycopene (FW),PLS,reflectance,150,25 mA,-0.29591080058949826
+tomato,lycopene (FW),PLS,reflectance,150,25 mA,-0.19131611106866017
+tomato,lycopene (FW),PLS,reflectance,150,25 mA,-0.26181012906026685
+tomato,lycopene (FW),PLS,reflectance,150,25 mA,-0.2636678568946058
+tomato,lycopene (FW),PLS,reflectance,150,25 mA,-0.3026295874166064
+tomato,lycopene (FW),PLS,reflectance,150,25 mA,-0.22885037245047096
+tomato,lycopene (FW),PLS,reflectance,150,25 mA,-0.21800307879192954
+tomato,beta-carotene (FW),PLS,reflectance,150,25 mA,-0.049253131627971694
+tomato,beta-carotene (FW),PLS,reflectance,150,25 mA,-0.10790797440492134
+tomato,beta-carotene (FW),PLS,reflectance,150,25 mA,-0.07889940907307372
+tomato,beta-carotene (FW),PLS,reflectance,150,25 mA,-0.06361201108518204
+tomato,beta-carotene (FW),PLS,reflectance,150,25 mA,-0.07429348748539447
+tomato,beta-carotene (FW),PLS,reflectance,150,25 mA,-0.058758708492370346
+tomato,beta-carotene (FW),PLS,reflectance,150,25 mA,-0.0720913511378616
+tomato,beta-carotene (FW),PLS,reflectance,150,25 mA,-0.06005288239477017
+tomato,beta-carotene (FW),PLS,reflectance,150,25 mA,-0.08660383741123902
+tomato,beta-carotene (FW),PLS,reflectance,150,25 mA,-0.07053504936946849
+tomato,lycopene (FW),ARD,absorbance,50,12.5 mA,-0.35048919984673677
+tomato,lycopene (FW),ARD,absorbance,50,12.5 mA,-0.37140102118278295
+tomato,lycopene (FW),ARD,absorbance,50,12.5 mA,-0.28326147657641343
+tomato,lycopene (FW),ARD,absorbance,50,12.5 mA,-0.3057267319788755
+tomato,lycopene (FW),ARD,absorbance,50,12.5 mA,-0.2978529643598412
+tomato,lycopene (FW),ARD,absorbance,50,12.5 mA,-0.2522510266154821
+tomato,lycopene (FW),ARD,absorbance,50,12.5 mA,-0.40914789272269414
+tomato,lycopene (FW),ARD,absorbance,50,12.5 mA,-0.2973138456130679
+tomato,lycopene (FW),ARD,absorbance,50,12.5 mA,-0.22610867680528615
+tomato,lycopene (FW),ARD,absorbance,50,12.5 mA,-0.2541019868488313
+tomato,beta-carotene (FW),ARD,absorbance,50,12.5 mA,-0.09863423078031665
+tomato,beta-carotene (FW),ARD,absorbance,50,12.5 mA,-0.08966335652328151
+tomato,beta-carotene (FW),ARD,absorbance,50,12.5 mA,-0.07301720639699445
+tomato,beta-carotene (FW),ARD,absorbance,50,12.5 mA,-0.0657130062041022
+tomato,beta-carotene (FW),ARD,absorbance,50,12.5 mA,-0.07788758417152532
+tomato,beta-carotene (FW),ARD,absorbance,50,12.5 mA,-0.07569299504260928
+tomato,beta-carotene (FW),ARD,absorbance,50,12.5 mA,-0.09749371429518186
+tomato,beta-carotene (FW),ARD,absorbance,50,12.5 mA,-0.07406171485851724
+tomato,beta-carotene (FW),ARD,absorbance,50,12.5 mA,-0.07420915833864994
+tomato,beta-carotene (FW),ARD,absorbance,50,12.5 mA,-0.07056213420905366
+tomato,lycopene (FW),Huber Regression,absorbance,50,12.5 mA,-0.2795780245301162
+tomato,lycopene (FW),Huber Regression,absorbance,50,12.5 mA,-0.25619875782438334
+tomato,lycopene (FW),Huber Regression,absorbance,50,12.5 mA,-0.27129692182416526
+tomato,lycopene (FW),Huber Regression,absorbance,50,12.5 mA,-0.34392952685553385
+tomato,lycopene (FW),Huber Regression,absorbance,50,12.5 mA,-0.24125615864303102
+tomato,lycopene (FW),Huber Regression,absorbance,50,12.5 mA,-0.3877581506496138
+tomato,lycopene (FW),Huber Regression,absorbance,50,12.5 mA,-0.418859024495471
+tomato,lycopene (FW),Huber Regression,absorbance,50,12.5 mA,-0.3723742954365191
+tomato,lycopene (FW),Huber Regression,absorbance,50,12.5 mA,-0.320999963967485
+tomato,lycopene (FW),Huber Regression,absorbance,50,12.5 mA,-0.3250224651861062
+tomato,beta-carotene (FW),Huber Regression,absorbance,50,12.5 mA,-0.06932831968446292
+tomato,beta-carotene (FW),Huber Regression,absorbance,50,12.5 mA,-0.09759112024516395
+tomato,beta-carotene (FW),Huber Regression,absorbance,50,12.5 mA,-0.0670768915575876
+tomato,beta-carotene (FW),Huber Regression,absorbance,50,12.5 mA,-0.09489858977374745
+tomato,beta-carotene (FW),Huber Regression,absorbance,50,12.5 mA,-0.09012392768346364
+tomato,beta-carotene (FW),Huber Regression,absorbance,50,12.5 mA,-0.061048067862226406
+tomato,beta-carotene (FW),Huber Regression,absorbance,50,12.5 mA,-0.09151326920949829
+tomato,beta-carotene (FW),Huber Regression,absorbance,50,12.5 mA,-0.08552063239494352
+tomato,beta-carotene (FW),Huber Regression,absorbance,50,12.5 mA,-0.07581339096210066
+tomato,beta-carotene (FW),Huber Regression,absorbance,50,12.5 mA,-0.06680754516539338
+tomato,lycopene (FW),Lasso IC,absorbance,50,12.5 mA,-0.32770233786671027
+tomato,lycopene (FW),Lasso IC,absorbance,50,12.5 mA,-0.25944026691011063
+tomato,lycopene (FW),Lasso IC,absorbance,50,12.5 mA,-0.29543256347773655
+tomato,lycopene (FW),Lasso IC,absorbance,50,12.5 mA,-0.22229608042834678
+tomato,lycopene (FW),Lasso IC,absorbance,50,12.5 mA,-0.3414344196972212
+tomato,lycopene (FW),Lasso IC,absorbance,50,12.5 mA,-0.33001776940233424
+tomato,lycopene (FW),Lasso IC,absorbance,50,12.5 mA,-0.22269071536350715
+tomato,lycopene (FW),Lasso IC,absorbance,50,12.5 mA,-0.5187221694715571
+tomato,lycopene (FW),Lasso IC,absorbance,50,12.5 mA,-0.41262199990100146
+tomato,lycopene (FW),Lasso IC,absorbance,50,12.5 mA,-0.26641783567909944
+tomato,beta-carotene (FW),Lasso IC,absorbance,50,12.5 mA,-0.08530595999942403
+tomato,beta-carotene (FW),Lasso IC,absorbance,50,12.5 mA,-0.09657920551873425
+tomato,beta-carotene (FW),Lasso IC,absorbance,50,12.5 mA,-0.06661010783782766
+tomato,beta-carotene (FW),Lasso IC,absorbance,50,12.5 mA,-0.06368278849085504
+tomato,beta-carotene (FW),Lasso IC,absorbance,50,12.5 mA,-0.0779361889093697
+tomato,beta-carotene (FW),Lasso IC,absorbance,50,12.5 mA,-0.061678960224448076
+tomato,beta-carotene (FW),Lasso IC,absorbance,50,12.5 mA,-0.07432740395278396
+tomato,beta-carotene (FW),Lasso IC,absorbance,50,12.5 mA,-0.07396489220686091
+tomato,beta-carotene (FW),Lasso IC,absorbance,50,12.5 mA,-0.08973409748431257
+tomato,beta-carotene (FW),Lasso IC,absorbance,50,12.5 mA,-0.07411744182610679
+tomato,lycopene (FW),SVR,absorbance,50,12.5 mA,-0.33521737225492504
+tomato,lycopene (FW),SVR,absorbance,50,12.5 mA,-0.5406223988162503
+tomato,lycopene (FW),SVR,absorbance,50,12.5 mA,-0.46761322747532186
+tomato,lycopene (FW),SVR,absorbance,50,12.5 mA,-0.38643100931184043
+tomato,lycopene (FW),SVR,absorbance,50,12.5 mA,-0.40722856080253045
+tomato,lycopene (FW),SVR,absorbance,50,12.5 mA,-0.3691751607451451
+tomato,lycopene (FW),SVR,absorbance,50,12.5 mA,-0.3202254610795068
+tomato,lycopene (FW),SVR,absorbance,50,12.5 mA,-0.49317347933016453
+tomato,lycopene (FW),SVR,absorbance,50,12.5 mA,-0.4086563519716261
+tomato,lycopene (FW),SVR,absorbance,50,12.5 mA,-0.4209862951594962
+tomato,beta-carotene (FW),SVR,absorbance,50,12.5 mA,-0.05904167594861853
+tomato,beta-carotene (FW),SVR,absorbance,50,12.5 mA,-0.06692414948023415
+tomato,beta-carotene (FW),SVR,absorbance,50,12.5 mA,-0.08542092846175908
+tomato,beta-carotene (FW),SVR,absorbance,50,12.5 mA,-0.056968831526414146
+tomato,beta-carotene (FW),SVR,absorbance,50,12.5 mA,-0.08550787322031152
+tomato,beta-carotene (FW),SVR,absorbance,50,12.5 mA,-0.06861515906841496
+tomato,beta-carotene (FW),SVR,absorbance,50,12.5 mA,-0.07711288970863743
+tomato,beta-carotene (FW),SVR,absorbance,50,12.5 mA,-0.08375048751527618
+tomato,beta-carotene (FW),SVR,absorbance,50,12.5 mA,-0.08741500110117478
+tomato,beta-carotene (FW),SVR,absorbance,50,12.5 mA,-0.07358523139636496
+tomato,lycopene (FW),PLS,absorbance,50,12.5 mA,-0.39563378675689304
+tomato,lycopene (FW),PLS,absorbance,50,12.5 mA,-0.25261351931007764
+tomato,lycopene (FW),PLS,absorbance,50,12.5 mA,-0.2302347870131644
+tomato,lycopene (FW),PLS,absorbance,50,12.5 mA,-0.34007981715294255
+tomato,lycopene (FW),PLS,absorbance,50,12.5 mA,-0.32460246938232595
+tomato,lycopene (FW),PLS,absorbance,50,12.5 mA,-0.30454619513938125
+tomato,lycopene (FW),PLS,absorbance,50,12.5 mA,-0.32005318216859474
+tomato,lycopene (FW),PLS,absorbance,50,12.5 mA,-0.32815365485741976
+tomato,lycopene (FW),PLS,absorbance,50,12.5 mA,-0.3255869887112739
+tomato,lycopene (FW),PLS,absorbance,50,12.5 mA,-0.3741072325564912
+tomato,beta-carotene (FW),PLS,absorbance,50,12.5 mA,-0.08019583893111817
+tomato,beta-carotene (FW),PLS,absorbance,50,12.5 mA,-0.06968119920141742
+tomato,beta-carotene (FW),PLS,absorbance,50,12.5 mA,-0.07023391113109916
+tomato,beta-carotene (FW),PLS,absorbance,50,12.5 mA,-0.06811519733407707
+tomato,beta-carotene (FW),PLS,absorbance,50,12.5 mA,-0.0804579477569175
+tomato,beta-carotene (FW),PLS,absorbance,50,12.5 mA,-0.06081856475804688
+tomato,beta-carotene (FW),PLS,absorbance,50,12.5 mA,-0.06700068816760135
+tomato,beta-carotene (FW),PLS,absorbance,50,12.5 mA,-0.08739467829941779
+tomato,beta-carotene (FW),PLS,absorbance,50,12.5 mA,-0.06492000632811837
+tomato,beta-carotene (FW),PLS,absorbance,50,12.5 mA,-0.07863783745707324
+tomato,lycopene (FW),ARD,absorbance,50,25 mA,-0.3309260241492821
+tomato,lycopene (FW),ARD,absorbance,50,25 mA,-0.21451550801342992
+tomato,lycopene (FW),ARD,absorbance,50,25 mA,-0.28896185245597505
+tomato,lycopene (FW),ARD,absorbance,50,25 mA,-0.3877710742572816
+tomato,lycopene (FW),ARD,absorbance,50,25 mA,-0.3983075866914097
+tomato,lycopene (FW),ARD,absorbance,50,25 mA,-0.22965589390283475
+tomato,lycopene (FW),ARD,absorbance,50,25 mA,-0.2117112101251962
+tomato,lycopene (FW),ARD,absorbance,50,25 mA,-0.35015023811694734
+tomato,lycopene (FW),ARD,absorbance,50,25 mA,-0.2945017668401843
+tomato,lycopene (FW),ARD,absorbance,50,25 mA,-0.3683043117862812
+tomato,beta-carotene (FW),ARD,absorbance,50,25 mA,-0.06243722788118814
+tomato,beta-carotene (FW),ARD,absorbance,50,25 mA,-0.07393682942068608
+tomato,beta-carotene (FW),ARD,absorbance,50,25 mA,-0.06650892152307589
+tomato,beta-carotene (FW),ARD,absorbance,50,25 mA,-0.09187018413833517
+tomato,beta-carotene (FW),ARD,absorbance,50,25 mA,-0.06050830912677996
+tomato,beta-carotene (FW),ARD,absorbance,50,25 mA,-0.05924057290814705
+tomato,beta-carotene (FW),ARD,absorbance,50,25 mA,-0.06549297136184273
+tomato,beta-carotene (FW),ARD,absorbance,50,25 mA,-0.09409204785913469
+tomato,beta-carotene (FW),ARD,absorbance,50,25 mA,-0.07088968060953953
+tomato,beta-carotene (FW),ARD,absorbance,50,25 mA,-0.06296510185630429
+tomato,lycopene (FW),Huber Regression,absorbance,50,25 mA,-0.38699461691123654
+tomato,lycopene (FW),Huber Regression,absorbance,50,25 mA,-0.27091175059521433
+tomato,lycopene (FW),Huber Regression,absorbance,50,25 mA,-0.36660632964382683
+tomato,lycopene (FW),Huber Regression,absorbance,50,25 mA,-0.27431987007974473
+tomato,lycopene (FW),Huber Regression,absorbance,50,25 mA,-0.31839128407968326
+tomato,lycopene (FW),Huber Regression,absorbance,50,25 mA,-0.4301803267611275
+tomato,lycopene (FW),Huber Regression,absorbance,50,25 mA,-0.3212626769079285
+tomato,lycopene (FW),Huber Regression,absorbance,50,25 mA,-0.22288439573560376
+tomato,lycopene (FW),Huber Regression,absorbance,50,25 mA,-0.4398483056943707
+tomato,lycopene (FW),Huber Regression,absorbance,50,25 mA,-0.3836686256939828
+tomato,beta-carotene (FW),Huber Regression,absorbance,50,25 mA,-0.06573109886393558
+tomato,beta-carotene (FW),Huber Regression,absorbance,50,25 mA,-0.06302170179004704
+tomato,beta-carotene (FW),Huber Regression,absorbance,50,25 mA,-0.057976847294063015
+tomato,beta-carotene (FW),Huber Regression,absorbance,50,25 mA,-0.0676812615778908
+tomato,beta-carotene (FW),Huber Regression,absorbance,50,25 mA,-0.05397560286383427
+tomato,beta-carotene (FW),Huber Regression,absorbance,50,25 mA,-0.05587785993335026
+tomato,beta-carotene (FW),Huber Regression,absorbance,50,25 mA,-0.07409570088832274
+tomato,beta-carotene (FW),Huber Regression,absorbance,50,25 mA,-0.053865552965947326
+tomato,beta-carotene (FW),Huber Regression,absorbance,50,25 mA,-0.09410746592768612
+tomato,beta-carotene (FW),Huber Regression,absorbance,50,25 mA,-0.09364382929043735
+tomato,lycopene (FW),Lasso IC,absorbance,50,25 mA,-0.32475070328494593
+tomato,lycopene (FW),Lasso IC,absorbance,50,25 mA,-0.30757511212709554
+tomato,lycopene (FW),Lasso IC,absorbance,50,25 mA,-0.32990247365534797
+tomato,lycopene (FW),Lasso IC,absorbance,50,25 mA,-0.38491635379717476
+tomato,lycopene (FW),Lasso IC,absorbance,50,25 mA,-0.2334685794641662
+tomato,lycopene (FW),Lasso IC,absorbance,50,25 mA,-0.2697945773059217
+tomato,lycopene (FW),Lasso IC,absorbance,50,25 mA,-0.3146895053903803
+tomato,lycopene (FW),Lasso IC,absorbance,50,25 mA,-0.30511728201356003
+tomato,lycopene (FW),Lasso IC,absorbance,50,25 mA,-0.23790365465632604
+tomato,lycopene (FW),Lasso IC,absorbance,50,25 mA,-0.26699887052843313
+tomato,beta-carotene (FW),Lasso IC,absorbance,50,25 mA,-0.09149810132513937
+tomato,beta-carotene (FW),Lasso IC,absorbance,50,25 mA,-0.05632324815554226
+tomato,beta-carotene (FW),Lasso IC,absorbance,50,25 mA,-0.08626063063833965
+tomato,beta-carotene (FW),Lasso IC,absorbance,50,25 mA,-0.07395809397681097
+tomato,beta-carotene (FW),Lasso IC,absorbance,50,25 mA,-0.09576853422569513
+tomato,beta-carotene (FW),Lasso IC,absorbance,50,25 mA,-0.07755845606983251
+tomato,beta-carotene (FW),Lasso IC,absorbance,50,25 mA,-0.06985790481066496
+tomato,beta-carotene (FW),Lasso IC,absorbance,50,25 mA,-0.08189613100505448
+tomato,beta-carotene (FW),Lasso IC,absorbance,50,25 mA,-0.08007076089951803
+tomato,beta-carotene (FW),Lasso IC,absorbance,50,25 mA,-0.05792571938385731
+tomato,lycopene (FW),SVR,absorbance,50,25 mA,-0.3736040566283962
+tomato,lycopene (FW),SVR,absorbance,50,25 mA,-0.3186355270180231
+tomato,lycopene (FW),SVR,absorbance,50,25 mA,-0.3676977966909594
+tomato,lycopene (FW),SVR,absorbance,50,25 mA,-0.32125657793952733
+tomato,lycopene (FW),SVR,absorbance,50,25 mA,-0.3565556961115376
+tomato,lycopene (FW),SVR,absorbance,50,25 mA,-0.33250338705693167
+tomato,lycopene (FW),SVR,absorbance,50,25 mA,-0.2541672110145097
+tomato,lycopene (FW),SVR,absorbance,50,25 mA,-0.3696545054713998
+tomato,lycopene (FW),SVR,absorbance,50,25 mA,-0.38912100167170693
+tomato,lycopene (FW),SVR,absorbance,50,25 mA,-0.3767644474731799
+tomato,beta-carotene (FW),SVR,absorbance,50,25 mA,-0.08309828909575698
+tomato,beta-carotene (FW),SVR,absorbance,50,25 mA,-0.061390556862649714
+tomato,beta-carotene (FW),SVR,absorbance,50,25 mA,-0.07392823167878007
+tomato,beta-carotene (FW),SVR,absorbance,50,25 mA,-0.08442394299750722
+tomato,beta-carotene (FW),SVR,absorbance,50,25 mA,-0.07163824690588967
+tomato,beta-carotene (FW),SVR,absorbance,50,25 mA,-0.08106388188806249
+tomato,beta-carotene (FW),SVR,absorbance,50,25 mA,-0.04880875127734767
+tomato,beta-carotene (FW),SVR,absorbance,50,25 mA,-0.07567956446588166
+tomato,beta-carotene (FW),SVR,absorbance,50,25 mA,-0.09609273703057698
+tomato,beta-carotene (FW),SVR,absorbance,50,25 mA,-0.07569255729806719
+tomato,lycopene (FW),PLS,absorbance,50,25 mA,-0.36249676329016073
+tomato,lycopene (FW),PLS,absorbance,50,25 mA,-0.3279391349726734
+tomato,lycopene (FW),PLS,absorbance,50,25 mA,-0.3454068355423806
+tomato,lycopene (FW),PLS,absorbance,50,25 mA,-0.3911044395014973
+tomato,lycopene (FW),PLS,absorbance,50,25 mA,-0.3277974100772678
+tomato,lycopene (FW),PLS,absorbance,50,25 mA,-0.38374418558984497
+tomato,lycopene (FW),PLS,absorbance,50,25 mA,-0.31064455780535244
+tomato,lycopene (FW),PLS,absorbance,50,25 mA,-0.3678139978660422
+tomato,lycopene (FW),PLS,absorbance,50,25 mA,-0.2750309658155119
+tomato,lycopene (FW),PLS,absorbance,50,25 mA,-0.2947831509632732
+tomato,beta-carotene (FW),PLS,absorbance,50,25 mA,-0.0891307719364102
+tomato,beta-carotene (FW),PLS,absorbance,50,25 mA,-0.09809556927300948
+tomato,beta-carotene (FW),PLS,absorbance,50,25 mA,-0.10616568789354786
+tomato,beta-carotene (FW),PLS,absorbance,50,25 mA,-0.049397664817322016
+tomato,beta-carotene (FW),PLS,absorbance,50,25 mA,-0.07377236683195564
+tomato,beta-carotene (FW),PLS,absorbance,50,25 mA,-0.10792585100943583
+tomato,beta-carotene (FW),PLS,absorbance,50,25 mA,-0.04134803630116844
+tomato,beta-carotene (FW),PLS,absorbance,50,25 mA,-0.07357178884414792
+tomato,beta-carotene (FW),PLS,absorbance,50,25 mA,-0.08398396727501746
+tomato,beta-carotene (FW),PLS,absorbance,50,25 mA,-0.0922215400118425
+tomato,lycopene (FW),ARD,absorbance,100,12.5 mA,-0.2024473910282418
+tomato,lycopene (FW),ARD,absorbance,100,12.5 mA,-0.366868888958195
+tomato,lycopene (FW),ARD,absorbance,100,12.5 mA,-0.24640845033812536
+tomato,lycopene (FW),ARD,absorbance,100,12.5 mA,-0.20502358922691047
+tomato,lycopene (FW),ARD,absorbance,100,12.5 mA,-0.2906200144374285
+tomato,lycopene (FW),ARD,absorbance,100,12.5 mA,-0.35854888204755697
+tomato,lycopene (FW),ARD,absorbance,100,12.5 mA,-0.3815649876296401
+tomato,lycopene (FW),ARD,absorbance,100,12.5 mA,-0.33014027430338794
+tomato,lycopene (FW),ARD,absorbance,100,12.5 mA,-0.3600857831184718
+tomato,lycopene (FW),ARD,absorbance,100,12.5 mA,-0.2588257833573134
+tomato,beta-carotene (FW),ARD,absorbance,100,12.5 mA,-0.09221154392890922
+tomato,beta-carotene (FW),ARD,absorbance,100,12.5 mA,-0.07171906421403332
+tomato,beta-carotene (FW),ARD,absorbance,100,12.5 mA,-0.0743286260147724
+tomato,beta-carotene (FW),ARD,absorbance,100,12.5 mA,-0.08704274165414763
+tomato,beta-carotene (FW),ARD,absorbance,100,12.5 mA,-0.08472098299191808
+tomato,beta-carotene (FW),ARD,absorbance,100,12.5 mA,-0.0636944446143389
+tomato,beta-carotene (FW),ARD,absorbance,100,12.5 mA,-0.06440544943238379
+tomato,beta-carotene (FW),ARD,absorbance,100,12.5 mA,-0.07673145647958665
+tomato,beta-carotene (FW),ARD,absorbance,100,12.5 mA,-0.08553777242910901
+tomato,beta-carotene (FW),ARD,absorbance,100,12.5 mA,-0.0659804752310014
+tomato,lycopene (FW),Huber Regression,absorbance,100,12.5 mA,-0.30843841526125343
+tomato,lycopene (FW),Huber Regression,absorbance,100,12.5 mA,-0.34269188751038326
+tomato,lycopene (FW),Huber Regression,absorbance,100,12.5 mA,-0.24110936078751305
+tomato,lycopene (FW),Huber Regression,absorbance,100,12.5 mA,-0.3010393755389984
+tomato,lycopene (FW),Huber Regression,absorbance,100,12.5 mA,-0.25523396875331866
+tomato,lycopene (FW),Huber Regression,absorbance,100,12.5 mA,-0.32347357646380176
+tomato,lycopene (FW),Huber Regression,absorbance,100,12.5 mA,-0.35367183494462767
+tomato,lycopene (FW),Huber Regression,absorbance,100,12.5 mA,-0.30404942613741515
+tomato,lycopene (FW),Huber Regression,absorbance,100,12.5 mA,-0.326448682543919
+tomato,lycopene (FW),Huber Regression,absorbance,100,12.5 mA,-0.2594509282903568
+tomato,beta-carotene (FW),Huber Regression,absorbance,100,12.5 mA,-0.11714628118580613
+tomato,beta-carotene (FW),Huber Regression,absorbance,100,12.5 mA,-0.0956265625663677
+tomato,beta-carotene (FW),Huber Regression,absorbance,100,12.5 mA,-0.056988108846603526
+tomato,beta-carotene (FW),Huber Regression,absorbance,100,12.5 mA,-0.09733882544076479
+tomato,beta-carotene (FW),Huber Regression,absorbance,100,12.5 mA,-0.07798380548222152
+tomato,beta-carotene (FW),Huber Regression,absorbance,100,12.5 mA,-0.08353863097960902
+tomato,beta-carotene (FW),Huber Regression,absorbance,100,12.5 mA,-0.10844148275722365
+tomato,beta-carotene (FW),Huber Regression,absorbance,100,12.5 mA,-0.06615717528706283
+tomato,beta-carotene (FW),Huber Regression,absorbance,100,12.5 mA,-0.08190498396296257
+tomato,beta-carotene (FW),Huber Regression,absorbance,100,12.5 mA,-0.06050558804928199
+tomato,lycopene (FW),Lasso IC,absorbance,100,12.5 mA,-0.28892229094994076
+tomato,lycopene (FW),Lasso IC,absorbance,100,12.5 mA,-0.40665606472875776
+tomato,lycopene (FW),Lasso IC,absorbance,100,12.5 mA,-0.2957273796078169
+tomato,lycopene (FW),Lasso IC,absorbance,100,12.5 mA,-0.37875550745546416
+tomato,lycopene (FW),Lasso IC,absorbance,100,12.5 mA,-0.2632238305672936
+tomato,lycopene (FW),Lasso IC,absorbance,100,12.5 mA,-0.2686317094408368
+tomato,lycopene (FW),Lasso IC,absorbance,100,12.5 mA,-0.3866761595715526
+tomato,lycopene (FW),Lasso IC,absorbance,100,12.5 mA,-0.2997960791343342
+tomato,lycopene (FW),Lasso IC,absorbance,100,12.5 mA,-0.34082301608747445
+tomato,lycopene (FW),Lasso IC,absorbance,100,12.5 mA,-0.3238973819829964
+tomato,beta-carotene (FW),Lasso IC,absorbance,100,12.5 mA,-0.06454656395065875
+tomato,beta-carotene (FW),Lasso IC,absorbance,100,12.5 mA,-0.07738209924850967
+tomato,beta-carotene (FW),Lasso IC,absorbance,100,12.5 mA,-0.06928430854959122
+tomato,beta-carotene (FW),Lasso IC,absorbance,100,12.5 mA,-0.08454756961757345
+tomato,beta-carotene (FW),Lasso IC,absorbance,100,12.5 mA,-0.09202736244825643
+tomato,beta-carotene (FW),Lasso IC,absorbance,100,12.5 mA,-0.05155892269929496
+tomato,beta-carotene (FW),Lasso IC,absorbance,100,12.5 mA,-0.08210558925593832
+tomato,beta-carotene (FW),Lasso IC,absorbance,100,12.5 mA,-0.08814747486876015
+tomato,beta-carotene (FW),Lasso IC,absorbance,100,12.5 mA,-0.07067150574247187
+tomato,beta-carotene (FW),Lasso IC,absorbance,100,12.5 mA,-0.08740384923835455
+tomato,lycopene (FW),SVR,absorbance,100,12.5 mA,-0.42962592057925364
+tomato,lycopene (FW),SVR,absorbance,100,12.5 mA,-0.2922960205822296
+tomato,lycopene (FW),SVR,absorbance,100,12.5 mA,-0.37158545279277544
+tomato,lycopene (FW),SVR,absorbance,100,12.5 mA,-0.37317869048616203
+tomato,lycopene (FW),SVR,absorbance,100,12.5 mA,-0.3821918399669962
+tomato,lycopene (FW),SVR,absorbance,100,12.5 mA,-0.3601131589059955
+tomato,lycopene (FW),SVR,absorbance,100,12.5 mA,-0.32432280965518767
+tomato,lycopene (FW),SVR,absorbance,100,12.5 mA,-0.41103974741253924
+tomato,lycopene (FW),SVR,absorbance,100,12.5 mA,-0.3676813070108212
+tomato,lycopene (FW),SVR,absorbance,100,12.5 mA,-0.27785384422521997
+tomato,beta-carotene (FW),SVR,absorbance,100,12.5 mA,-0.09429500643480865
+tomato,beta-carotene (FW),SVR,absorbance,100,12.5 mA,-0.07402551926890485
+tomato,beta-carotene (FW),SVR,absorbance,100,12.5 mA,-0.06704346966570425
+tomato,beta-carotene (FW),SVR,absorbance,100,12.5 mA,-0.10041378964600392
+tomato,beta-carotene (FW),SVR,absorbance,100,12.5 mA,-0.08406465483761798
+tomato,beta-carotene (FW),SVR,absorbance,100,12.5 mA,-0.06587442882039796
+tomato,beta-carotene (FW),SVR,absorbance,100,12.5 mA,-0.08013434449924124
+tomato,beta-carotene (FW),SVR,absorbance,100,12.5 mA,-0.08859847049597208
+tomato,beta-carotene (FW),SVR,absorbance,100,12.5 mA,-0.07406800985133838
+tomato,beta-carotene (FW),SVR,absorbance,100,12.5 mA,-0.09928200280559511
+tomato,lycopene (FW),PLS,absorbance,100,12.5 mA,-0.3864552088782521
+tomato,lycopene (FW),PLS,absorbance,100,12.5 mA,-0.2409455029872552
+tomato,lycopene (FW),PLS,absorbance,100,12.5 mA,-0.33451975546812396
+tomato,lycopene (FW),PLS,absorbance,100,12.5 mA,-0.14865078269168558
+tomato,lycopene (FW),PLS,absorbance,100,12.5 mA,-0.2580581061446788
+tomato,lycopene (FW),PLS,absorbance,100,12.5 mA,-0.27903111598749686
+tomato,lycopene (FW),PLS,absorbance,100,12.5 mA,-0.3786274814142782
+tomato,lycopene (FW),PLS,absorbance,100,12.5 mA,-0.36168908166706765
+tomato,lycopene (FW),PLS,absorbance,100,12.5 mA,-0.4019773900553175
+tomato,lycopene (FW),PLS,absorbance,100,12.5 mA,-0.26677457921245123
+tomato,beta-carotene (FW),PLS,absorbance,100,12.5 mA,-0.059863050014120844
+tomato,beta-carotene (FW),PLS,absorbance,100,12.5 mA,-0.06682815453862198
+tomato,beta-carotene (FW),PLS,absorbance,100,12.5 mA,-0.10799619034306875
+tomato,beta-carotene (FW),PLS,absorbance,100,12.5 mA,-0.06488288085615974
+tomato,beta-carotene (FW),PLS,absorbance,100,12.5 mA,-0.056718027378106446
+tomato,beta-carotene (FW),PLS,absorbance,100,12.5 mA,-0.07478983526302525
+tomato,beta-carotene (FW),PLS,absorbance,100,12.5 mA,-0.059804415979870365
+tomato,beta-carotene (FW),PLS,absorbance,100,12.5 mA,-0.0736446134225334
+tomato,beta-carotene (FW),PLS,absorbance,100,12.5 mA,-0.05404002849560546
+tomato,beta-carotene (FW),PLS,absorbance,100,12.5 mA,-0.07453601813231872
+tomato,lycopene (FW),ARD,absorbance,100,25 mA,-0.28138909612689095
+tomato,lycopene (FW),ARD,absorbance,100,25 mA,-0.36927810386945714
+tomato,lycopene (FW),ARD,absorbance,100,25 mA,-0.3491934016159513
+tomato,lycopene (FW),ARD,absorbance,100,25 mA,-0.35559731208077333
+tomato,lycopene (FW),ARD,absorbance,100,25 mA,-0.32262255125366085
+tomato,lycopene (FW),ARD,absorbance,100,25 mA,-0.30478910226564826
+tomato,lycopene (FW),ARD,absorbance,100,25 mA,-0.33295421121524166
+tomato,lycopene (FW),ARD,absorbance,100,25 mA,-0.31631454769882295
+tomato,lycopene (FW),ARD,absorbance,100,25 mA,-0.30202018933100316
+tomato,lycopene (FW),ARD,absorbance,100,25 mA,-0.44343946522493416
+tomato,beta-carotene (FW),ARD,absorbance,100,25 mA,-0.08353903403382223
+tomato,beta-carotene (FW),ARD,absorbance,100,25 mA,-0.0693227703367179
+tomato,beta-carotene (FW),ARD,absorbance,100,25 mA,-0.07374860371867514
+tomato,beta-carotene (FW),ARD,absorbance,100,25 mA,-0.10120414971104016
+tomato,beta-carotene (FW),ARD,absorbance,100,25 mA,-0.06949232765817301
+tomato,beta-carotene (FW),ARD,absorbance,100,25 mA,-0.05135254206179276
+tomato,beta-carotene (FW),ARD,absorbance,100,25 mA,-0.07370709483396962
+tomato,beta-carotene (FW),ARD,absorbance,100,25 mA,-0.06444475005508346
+tomato,beta-carotene (FW),ARD,absorbance,100,25 mA,-0.08191062312485045
+tomato,beta-carotene (FW),ARD,absorbance,100,25 mA,-0.07443552659236453
+tomato,lycopene (FW),Huber Regression,absorbance,100,25 mA,-0.2505688226218429
+tomato,lycopene (FW),Huber Regression,absorbance,100,25 mA,-0.35035789721354915
+tomato,lycopene (FW),Huber Regression,absorbance,100,25 mA,-0.3449099457245578
+tomato,lycopene (FW),Huber Regression,absorbance,100,25 mA,-0.3499126782416534
+tomato,lycopene (FW),Huber Regression,absorbance,100,25 mA,-0.2644059326180582
+tomato,lycopene (FW),Huber Regression,absorbance,100,25 mA,-0.36869281062543197
+tomato,lycopene (FW),Huber Regression,absorbance,100,25 mA,-0.36560817426331
+tomato,lycopene (FW),Huber Regression,absorbance,100,25 mA,-0.35238410294263584
+tomato,lycopene (FW),Huber Regression,absorbance,100,25 mA,-0.32716341457775827
+tomato,lycopene (FW),Huber Regression,absorbance,100,25 mA,-0.31713446471758455
+tomato,beta-carotene (FW),Huber Regression,absorbance,100,25 mA,-0.08149385570611521
+tomato,beta-carotene (FW),Huber Regression,absorbance,100,25 mA,-0.058420112837121604
+tomato,beta-carotene (FW),Huber Regression,absorbance,100,25 mA,-0.07739962237393956
+tomato,beta-carotene (FW),Huber Regression,absorbance,100,25 mA,-0.0793948840388013
+tomato,beta-carotene (FW),Huber Regression,absorbance,100,25 mA,-0.0746522310345602
+tomato,beta-carotene (FW),Huber Regression,absorbance,100,25 mA,-0.07333325703943439
+tomato,beta-carotene (FW),Huber Regression,absorbance,100,25 mA,-0.0749440788822685
+tomato,beta-carotene (FW),Huber Regression,absorbance,100,25 mA,-0.08721836708849573
+tomato,beta-carotene (FW),Huber Regression,absorbance,100,25 mA,-0.0757621876359441
+tomato,beta-carotene (FW),Huber Regression,absorbance,100,25 mA,-0.06450475831925842
+tomato,lycopene (FW),Lasso IC,absorbance,100,25 mA,-0.27520641515056704
+tomato,lycopene (FW),Lasso IC,absorbance,100,25 mA,-0.2822008582384212
+tomato,lycopene (FW),Lasso IC,absorbance,100,25 mA,-0.4069515995359562
+tomato,lycopene (FW),Lasso IC,absorbance,100,25 mA,-0.31311688777048374
+tomato,lycopene (FW),Lasso IC,absorbance,100,25 mA,-0.37267194242931023
+tomato,lycopene (FW),Lasso IC,absorbance,100,25 mA,-0.29924276990173004
+tomato,lycopene (FW),Lasso IC,absorbance,100,25 mA,-0.32482133985427014
+tomato,lycopene (FW),Lasso IC,absorbance,100,25 mA,-0.28746548627224283
+tomato,lycopene (FW),Lasso IC,absorbance,100,25 mA,-0.33827230118222085
+tomato,lycopene (FW),Lasso IC,absorbance,100,25 mA,-0.17744218685439334
+tomato,beta-carotene (FW),Lasso IC,absorbance,100,25 mA,-0.08981933727417796
+tomato,beta-carotene (FW),Lasso IC,absorbance,100,25 mA,-0.07269645076819538
+tomato,beta-carotene (FW),Lasso IC,absorbance,100,25 mA,-0.0520539128687235
+tomato,beta-carotene (FW),Lasso IC,absorbance,100,25 mA,-0.08196265647265213
+tomato,beta-carotene (FW),Lasso IC,absorbance,100,25 mA,-0.07847150208698314
+tomato,beta-carotene (FW),Lasso IC,absorbance,100,25 mA,-0.06606628087118646
+tomato,beta-carotene (FW),Lasso IC,absorbance,100,25 mA,-0.07226567215347376
+tomato,beta-carotene (FW),Lasso IC,absorbance,100,25 mA,-0.07892274695162439
+tomato,beta-carotene (FW),Lasso IC,absorbance,100,25 mA,-0.051756526915156746
+tomato,beta-carotene (FW),Lasso IC,absorbance,100,25 mA,-0.04732381340585063
+tomato,lycopene (FW),SVR,absorbance,100,25 mA,-0.39917254043209544
+tomato,lycopene (FW),SVR,absorbance,100,25 mA,-0.2895891725599528
+tomato,lycopene (FW),SVR,absorbance,100,25 mA,-0.3641981883126563
+tomato,lycopene (FW),SVR,absorbance,100,25 mA,-0.2986347805490823
+tomato,lycopene (FW),SVR,absorbance,100,25 mA,-0.3391811498743738
+tomato,lycopene (FW),SVR,absorbance,100,25 mA,-0.36278236310462997
+tomato,lycopene (FW),SVR,absorbance,100,25 mA,-0.43714680564280656
+tomato,lycopene (FW),SVR,absorbance,100,25 mA,-0.3524737011636184
+tomato,lycopene (FW),SVR,absorbance,100,25 mA,-0.38850017534963444
+tomato,lycopene (FW),SVR,absorbance,100,25 mA,-0.2949888086033766
+tomato,beta-carotene (FW),SVR,absorbance,100,25 mA,-0.06808343275989849
+tomato,beta-carotene (FW),SVR,absorbance,100,25 mA,-0.06778734945595052
+tomato,beta-carotene (FW),SVR,absorbance,100,25 mA,-0.07334449081507
+tomato,beta-carotene (FW),SVR,absorbance,100,25 mA,-0.07542292767284929
+tomato,beta-carotene (FW),SVR,absorbance,100,25 mA,-0.0656607973984438
+tomato,beta-carotene (FW),SVR,absorbance,100,25 mA,-0.09068592156432659
+tomato,beta-carotene (FW),SVR,absorbance,100,25 mA,-0.09173428965837045
+tomato,beta-carotene (FW),SVR,absorbance,100,25 mA,-0.07215362107525673
+tomato,beta-carotene (FW),SVR,absorbance,100,25 mA,-0.07850872634721928
+tomato,beta-carotene (FW),SVR,absorbance,100,25 mA,-0.07147563089632177
+tomato,lycopene (FW),PLS,absorbance,100,25 mA,-0.3444968688271569
+tomato,lycopene (FW),PLS,absorbance,100,25 mA,-0.29795742292007593
+tomato,lycopene (FW),PLS,absorbance,100,25 mA,-0.33657268997044737
+tomato,lycopene (FW),PLS,absorbance,100,25 mA,-0.21126106278666493
+tomato,lycopene (FW),PLS,absorbance,100,25 mA,-0.4318747578955648
+tomato,lycopene (FW),PLS,absorbance,100,25 mA,-0.3410128326921539
+tomato,lycopene (FW),PLS,absorbance,100,25 mA,-0.29654557635208223
+tomato,lycopene (FW),PLS,absorbance,100,25 mA,-0.34072297105622834
+tomato,lycopene (FW),PLS,absorbance,100,25 mA,-0.30289503969254017
+tomato,lycopene (FW),PLS,absorbance,100,25 mA,-0.3069629720598949
+tomato,beta-carotene (FW),PLS,absorbance,100,25 mA,-0.08234006301031724
+tomato,beta-carotene (FW),PLS,absorbance,100,25 mA,-0.08573507276536052
+tomato,beta-carotene (FW),PLS,absorbance,100,25 mA,-0.08069224814386201
+tomato,beta-carotene (FW),PLS,absorbance,100,25 mA,-0.07022098044238315
+tomato,beta-carotene (FW),PLS,absorbance,100,25 mA,-0.08402571020807965
+tomato,beta-carotene (FW),PLS,absorbance,100,25 mA,-0.08793707482092156
+tomato,beta-carotene (FW),PLS,absorbance,100,25 mA,-0.08679835392228766
+tomato,beta-carotene (FW),PLS,absorbance,100,25 mA,-0.07071413776453209
+tomato,beta-carotene (FW),PLS,absorbance,100,25 mA,-0.08120458454645701
+tomato,beta-carotene (FW),PLS,absorbance,100,25 mA,-0.07249064120804996
+tomato,lycopene (FW),ARD,absorbance,150,12.5 mA,-0.35754595970825165
+tomato,lycopene (FW),ARD,absorbance,150,12.5 mA,-0.4058497242479415
+tomato,lycopene (FW),ARD,absorbance,150,12.5 mA,-0.38835967516270375
+tomato,lycopene (FW),ARD,absorbance,150,12.5 mA,-0.2968159776588538
+tomato,lycopene (FW),ARD,absorbance,150,12.5 mA,-0.26198784351017734
+tomato,lycopene (FW),ARD,absorbance,150,12.5 mA,-0.3434155492290512
+tomato,lycopene (FW),ARD,absorbance,150,12.5 mA,-0.24695918864012323
+tomato,lycopene (FW),ARD,absorbance,150,12.5 mA,-0.2755329942269324
+tomato,lycopene (FW),ARD,absorbance,150,12.5 mA,-0.28546682386041217
+tomato,lycopene (FW),ARD,absorbance,150,12.5 mA,-0.1834196015586616
+tomato,beta-carotene (FW),ARD,absorbance,150,12.5 mA,-0.07706070257340537
+tomato,beta-carotene (FW),ARD,absorbance,150,12.5 mA,-0.07782321951551877
+tomato,beta-carotene (FW),ARD,absorbance,150,12.5 mA,-0.07952426419406296
+tomato,beta-carotene (FW),ARD,absorbance,150,12.5 mA,-0.06748331993589299
+tomato,beta-carotene (FW),ARD,absorbance,150,12.5 mA,-0.07084217042665684
+tomato,beta-carotene (FW),ARD,absorbance,150,12.5 mA,-0.06406120506776415
+tomato,beta-carotene (FW),ARD,absorbance,150,12.5 mA,-0.11727057307305785
+tomato,beta-carotene (FW),ARD,absorbance,150,12.5 mA,-0.07168814006456001
+tomato,beta-carotene (FW),ARD,absorbance,150,12.5 mA,-0.0702575807076963
+tomato,beta-carotene (FW),ARD,absorbance,150,12.5 mA,-0.07209062069201465
+tomato,lycopene (FW),Huber Regression,absorbance,150,12.5 mA,-0.3595118632860897
+tomato,lycopene (FW),Huber Regression,absorbance,150,12.5 mA,-0.4564504763573427
+tomato,lycopene (FW),Huber Regression,absorbance,150,12.5 mA,-0.35072008205326705
+tomato,lycopene (FW),Huber Regression,absorbance,150,12.5 mA,-0.36128232428478413
+tomato,lycopene (FW),Huber Regression,absorbance,150,12.5 mA,-0.27378551629930853
+tomato,lycopene (FW),Huber Regression,absorbance,150,12.5 mA,-0.2702245556028964
+tomato,lycopene (FW),Huber Regression,absorbance,150,12.5 mA,-0.34050165087410666
+tomato,lycopene (FW),Huber Regression,absorbance,150,12.5 mA,-0.3279229898920002
+tomato,lycopene (FW),Huber Regression,absorbance,150,12.5 mA,-0.31120812139359505
+tomato,lycopene (FW),Huber Regression,absorbance,150,12.5 mA,-0.3094860876540906
+tomato,beta-carotene (FW),Huber Regression,absorbance,150,12.5 mA,-0.06871820498789503
+tomato,beta-carotene (FW),Huber Regression,absorbance,150,12.5 mA,-0.07683656776417944
+tomato,beta-carotene (FW),Huber Regression,absorbance,150,12.5 mA,-0.08082706407215594
+tomato,beta-carotene (FW),Huber Regression,absorbance,150,12.5 mA,-0.06156574833282586
+tomato,beta-carotene (FW),Huber Regression,absorbance,150,12.5 mA,-0.09864546838636154
+tomato,beta-carotene (FW),Huber Regression,absorbance,150,12.5 mA,-0.08183306684527002
+tomato,beta-carotene (FW),Huber Regression,absorbance,150,12.5 mA,-0.07342462063398196
+tomato,beta-carotene (FW),Huber Regression,absorbance,150,12.5 mA,-0.06400527854367018
+tomato,beta-carotene (FW),Huber Regression,absorbance,150,12.5 mA,-0.07519181039251396
+tomato,beta-carotene (FW),Huber Regression,absorbance,150,12.5 mA,-0.0798973528098604
+tomato,lycopene (FW),Lasso IC,absorbance,150,12.5 mA,-0.39378846673412027
+tomato,lycopene (FW),Lasso IC,absorbance,150,12.5 mA,-0.417784852632456
+tomato,lycopene (FW),Lasso IC,absorbance,150,12.5 mA,-0.3166730213570573
+tomato,lycopene (FW),Lasso IC,absorbance,150,12.5 mA,-0.2595529767375593
+tomato,lycopene (FW),Lasso IC,absorbance,150,12.5 mA,-0.3141213661389109
+tomato,lycopene (FW),Lasso IC,absorbance,150,12.5 mA,-0.2704867277373598
+tomato,lycopene (FW),Lasso IC,absorbance,150,12.5 mA,-0.27120331121878155
+tomato,lycopene (FW),Lasso IC,absorbance,150,12.5 mA,-0.3855565866724472
+tomato,lycopene (FW),Lasso IC,absorbance,150,12.5 mA,-0.3636919063150308
+tomato,lycopene (FW),Lasso IC,absorbance,150,12.5 mA,-0.2800413541610715
+tomato,beta-carotene (FW),Lasso IC,absorbance,150,12.5 mA,-0.06662137908251926
+tomato,beta-carotene (FW),Lasso IC,absorbance,150,12.5 mA,-0.08575819888919997
+tomato,beta-carotene (FW),Lasso IC,absorbance,150,12.5 mA,-0.07292480356645743
+tomato,beta-carotene (FW),Lasso IC,absorbance,150,12.5 mA,-0.08970601412826344
+tomato,beta-carotene (FW),Lasso IC,absorbance,150,12.5 mA,-0.08670822978269303
+tomato,beta-carotene (FW),Lasso IC,absorbance,150,12.5 mA,-0.05684391722536027
+tomato,beta-carotene (FW),Lasso IC,absorbance,150,12.5 mA,-0.06234264799362814
+tomato,beta-carotene (FW),Lasso IC,absorbance,150,12.5 mA,-0.06228283548252186
+tomato,beta-carotene (FW),Lasso IC,absorbance,150,12.5 mA,-0.08254020188843275
+tomato,beta-carotene (FW),Lasso IC,absorbance,150,12.5 mA,-0.07650029214129733
+tomato,lycopene (FW),SVR,absorbance,150,12.5 mA,-0.3235025828204309
+tomato,lycopene (FW),SVR,absorbance,150,12.5 mA,-0.44400488318938885
+tomato,lycopene (FW),SVR,absorbance,150,12.5 mA,-0.3979573162271418
+tomato,lycopene (FW),SVR,absorbance,150,12.5 mA,-0.3403325773520576
+tomato,lycopene (FW),SVR,absorbance,150,12.5 mA,-0.20646289670543272
+tomato,lycopene (FW),SVR,absorbance,150,12.5 mA,-0.397895300516339
+tomato,lycopene (FW),SVR,absorbance,150,12.5 mA,-0.3115126034760966
+tomato,lycopene (FW),SVR,absorbance,150,12.5 mA,-0.32911258147779265
+tomato,lycopene (FW),SVR,absorbance,150,12.5 mA,-0.4266717528278005
+tomato,lycopene (FW),SVR,absorbance,150,12.5 mA,-0.33429080046736354
+tomato,beta-carotene (FW),SVR,absorbance,150,12.5 mA,-0.08759897600506847
+tomato,beta-carotene (FW),SVR,absorbance,150,12.5 mA,-0.07964982608158325
+tomato,beta-carotene (FW),SVR,absorbance,150,12.5 mA,-0.057605651085557
+tomato,beta-carotene (FW),SVR,absorbance,150,12.5 mA,-0.07986187642040739
+tomato,beta-carotene (FW),SVR,absorbance,150,12.5 mA,-0.08233419786868697
+tomato,beta-carotene (FW),SVR,absorbance,150,12.5 mA,-0.07310249584376058
+tomato,beta-carotene (FW),SVR,absorbance,150,12.5 mA,-0.08740111655519459
+tomato,beta-carotene (FW),SVR,absorbance,150,12.5 mA,-0.056792192634565974
+tomato,beta-carotene (FW),SVR,absorbance,150,12.5 mA,-0.06763763755472227
+tomato,beta-carotene (FW),SVR,absorbance,150,12.5 mA,-0.05881815977729656
+tomato,lycopene (FW),PLS,absorbance,150,12.5 mA,-0.4011176977957474
+tomato,lycopene (FW),PLS,absorbance,150,12.5 mA,-0.35281178724217205
+tomato,lycopene (FW),PLS,absorbance,150,12.5 mA,-0.27908401800529076
+tomato,lycopene (FW),PLS,absorbance,150,12.5 mA,-0.2545848469839176
+tomato,lycopene (FW),PLS,absorbance,150,12.5 mA,-0.31846340429270487
+tomato,lycopene (FW),PLS,absorbance,150,12.5 mA,-0.3408093804543534
+tomato,lycopene (FW),PLS,absorbance,150,12.5 mA,-0.35181429745777876
+tomato,lycopene (FW),PLS,absorbance,150,12.5 mA,-0.3006687984766216
+tomato,lycopene (FW),PLS,absorbance,150,12.5 mA,-0.24593640497584568
+tomato,lycopene (FW),PLS,absorbance,150,12.5 mA,-0.3125289473310143
+tomato,beta-carotene (FW),PLS,absorbance,150,12.5 mA,-0.04959887915922788
+tomato,beta-carotene (FW),PLS,absorbance,150,12.5 mA,-0.05731829620476127
+tomato,beta-carotene (FW),PLS,absorbance,150,12.5 mA,-0.07358812917103165
+tomato,beta-carotene (FW),PLS,absorbance,150,12.5 mA,-0.08235300473551004
+tomato,beta-carotene (FW),PLS,absorbance,150,12.5 mA,-0.07137322786393523
+tomato,beta-carotene (FW),PLS,absorbance,150,12.5 mA,-0.07493546490669344
+tomato,beta-carotene (FW),PLS,absorbance,150,12.5 mA,-0.08815609606936647
+tomato,beta-carotene (FW),PLS,absorbance,150,12.5 mA,-0.06951314464890172
+tomato,beta-carotene (FW),PLS,absorbance,150,12.5 mA,-0.07259992059445665
+tomato,beta-carotene (FW),PLS,absorbance,150,12.5 mA,-0.08444916411377387
+tomato,lycopene (FW),ARD,absorbance,150,25 mA,-0.3191384256060748
+tomato,lycopene (FW),ARD,absorbance,150,25 mA,-0.3088102445294315
+tomato,lycopene (FW),ARD,absorbance,150,25 mA,-0.19536134027753926
+tomato,lycopene (FW),ARD,absorbance,150,25 mA,-0.33194858532172317
+tomato,lycopene (FW),ARD,absorbance,150,25 mA,-0.3067570145761448
+tomato,lycopene (FW),ARD,absorbance,150,25 mA,-0.31968248163970925
+tomato,lycopene (FW),ARD,absorbance,150,25 mA,-0.2931676703272082
+tomato,lycopene (FW),ARD,absorbance,150,25 mA,-0.382607913374578
+tomato,lycopene (FW),ARD,absorbance,150,25 mA,-0.332570759587447
+tomato,lycopene (FW),ARD,absorbance,150,25 mA,-0.3457084018848956
+tomato,beta-carotene (FW),ARD,absorbance,150,25 mA,-0.07972992085972383
+tomato,beta-carotene (FW),ARD,absorbance,150,25 mA,-0.07561730225486257
+tomato,beta-carotene (FW),ARD,absorbance,150,25 mA,-0.05511254116393156
+tomato,beta-carotene (FW),ARD,absorbance,150,25 mA,-0.058796208574194854
+tomato,beta-carotene (FW),ARD,absorbance,150,25 mA,-0.07284551892789279
+tomato,beta-carotene (FW),ARD,absorbance,150,25 mA,-0.07860726868881825
+tomato,beta-carotene (FW),ARD,absorbance,150,25 mA,-0.07530144151958437
+tomato,beta-carotene (FW),ARD,absorbance,150,25 mA,-0.08948739122487015
+tomato,beta-carotene (FW),ARD,absorbance,150,25 mA,-0.052367515928025875
+tomato,beta-carotene (FW),ARD,absorbance,150,25 mA,-0.07894939761451691
+tomato,lycopene (FW),Huber Regression,absorbance,150,25 mA,-0.3494883301392212
+tomato,lycopene (FW),Huber Regression,absorbance,150,25 mA,-0.19693144000328397
+tomato,lycopene (FW),Huber Regression,absorbance,150,25 mA,-0.3810241773761616
+tomato,lycopene (FW),Huber Regression,absorbance,150,25 mA,-0.28905833378128654
+tomato,lycopene (FW),Huber Regression,absorbance,150,25 mA,-0.2764382239002003
+tomato,lycopene (FW),Huber Regression,absorbance,150,25 mA,-0.3541786283538471
+tomato,lycopene (FW),Huber Regression,absorbance,150,25 mA,-0.1983517585359632
+tomato,lycopene (FW),Huber Regression,absorbance,150,25 mA,-0.27113414486511456
+tomato,lycopene (FW),Huber Regression,absorbance,150,25 mA,-0.3401420672319156
+tomato,lycopene (FW),Huber Regression,absorbance,150,25 mA,-0.268878740678124
+tomato,beta-carotene (FW),Huber Regression,absorbance,150,25 mA,-0.08735720533543957
+tomato,beta-carotene (FW),Huber Regression,absorbance,150,25 mA,-0.07347450713120454
+tomato,beta-carotene (FW),Huber Regression,absorbance,150,25 mA,-0.05718088718703349
+tomato,beta-carotene (FW),Huber Regression,absorbance,150,25 mA,-0.07282263224312926
+tomato,beta-carotene (FW),Huber Regression,absorbance,150,25 mA,-0.07316270256326965
+tomato,beta-carotene (FW),Huber Regression,absorbance,150,25 mA,-0.05940821298031208
+tomato,beta-carotene (FW),Huber Regression,absorbance,150,25 mA,-0.062211498752526705
+tomato,beta-carotene (FW),Huber Regression,absorbance,150,25 mA,-0.12560072654253845
+tomato,beta-carotene (FW),Huber Regression,absorbance,150,25 mA,-0.06063187700864386
+tomato,beta-carotene (FW),Huber Regression,absorbance,150,25 mA,-0.08758316486995468
+tomato,lycopene (FW),Lasso IC,absorbance,150,25 mA,-0.33774438211850716
+tomato,lycopene (FW),Lasso IC,absorbance,150,25 mA,-0.35170958215007647
+tomato,lycopene (FW),Lasso IC,absorbance,150,25 mA,-0.46575834285128126
+tomato,lycopene (FW),Lasso IC,absorbance,150,25 mA,-0.31355744102568195
+tomato,lycopene (FW),Lasso IC,absorbance,150,25 mA,-0.27615574193658715
+tomato,lycopene (FW),Lasso IC,absorbance,150,25 mA,-0.33633863330057034
+tomato,lycopene (FW),Lasso IC,absorbance,150,25 mA,-0.32648160458696707
+tomato,lycopene (FW),Lasso IC,absorbance,150,25 mA,-0.35327784202035023
+tomato,lycopene (FW),Lasso IC,absorbance,150,25 mA,-0.3151444136908301
+tomato,lycopene (FW),Lasso IC,absorbance,150,25 mA,-0.26597531192175305
+tomato,beta-carotene (FW),Lasso IC,absorbance,150,25 mA,-0.10090780433599617
+tomato,beta-carotene (FW),Lasso IC,absorbance,150,25 mA,-0.06683867275979867
+tomato,beta-carotene (FW),Lasso IC,absorbance,150,25 mA,-0.07396716132349337
+tomato,beta-carotene (FW),Lasso IC,absorbance,150,25 mA,-0.08943735305753582
+tomato,beta-carotene (FW),Lasso IC,absorbance,150,25 mA,-0.07399327503363576
+tomato,beta-carotene (FW),Lasso IC,absorbance,150,25 mA,-0.08208188370403119
+tomato,beta-carotene (FW),Lasso IC,absorbance,150,25 mA,-0.04684520933792524
+tomato,beta-carotene (FW),Lasso IC,absorbance,150,25 mA,-0.05208160139439478
+tomato,beta-carotene (FW),Lasso IC,absorbance,150,25 mA,-0.06848384438318796
+tomato,beta-carotene (FW),Lasso IC,absorbance,150,25 mA,-0.0697034001706546
+tomato,lycopene (FW),SVR,absorbance,150,25 mA,-0.3085594991171765
+tomato,lycopene (FW),SVR,absorbance,150,25 mA,-0.2556737672362625
+tomato,lycopene (FW),SVR,absorbance,150,25 mA,-0.3912939648529645
+tomato,lycopene (FW),SVR,absorbance,150,25 mA,-0.3524797138939319
+tomato,lycopene (FW),SVR,absorbance,150,25 mA,-0.2814289853802198
+tomato,lycopene (FW),SVR,absorbance,150,25 mA,-0.3343657845940398
+tomato,lycopene (FW),SVR,absorbance,150,25 mA,-0.3422605742493266
+tomato,lycopene (FW),SVR,absorbance,150,25 mA,-0.36998508076212644
+tomato,lycopene (FW),SVR,absorbance,150,25 mA,-0.3864611475479182
+tomato,lycopene (FW),SVR,absorbance,150,25 mA,-0.4981779349465018
+tomato,beta-carotene (FW),SVR,absorbance,150,25 mA,-0.059985520765672755
+tomato,beta-carotene (FW),SVR,absorbance,150,25 mA,-0.0871716949778053
+tomato,beta-carotene (FW),SVR,absorbance,150,25 mA,-0.0950465247629512
+tomato,beta-carotene (FW),SVR,absorbance,150,25 mA,-0.07970806593375454
+tomato,beta-carotene (FW),SVR,absorbance,150,25 mA,-0.09118246029268604
+tomato,beta-carotene (FW),SVR,absorbance,150,25 mA,-0.07859685425608928
+tomato,beta-carotene (FW),SVR,absorbance,150,25 mA,-0.0807728538780148
+tomato,beta-carotene (FW),SVR,absorbance,150,25 mA,-0.07170521521179334
+tomato,beta-carotene (FW),SVR,absorbance,150,25 mA,-0.08133147788894006
+tomato,beta-carotene (FW),SVR,absorbance,150,25 mA,-0.07266003683490478
+tomato,lycopene (FW),PLS,absorbance,150,25 mA,-0.2644728655930034
+tomato,lycopene (FW),PLS,absorbance,150,25 mA,-0.33015829107583694
+tomato,lycopene (FW),PLS,absorbance,150,25 mA,-0.3235114411243926
+tomato,lycopene (FW),PLS,absorbance,150,25 mA,-0.2615091988798986
+tomato,lycopene (FW),PLS,absorbance,150,25 mA,-0.4725219325591914
+tomato,lycopene (FW),PLS,absorbance,150,25 mA,-0.37511448576176415
+tomato,lycopene (FW),PLS,absorbance,150,25 mA,-0.30034601375141357
+tomato,lycopene (FW),PLS,absorbance,150,25 mA,-0.24262394584919234
+tomato,lycopene (FW),PLS,absorbance,150,25 mA,-0.3529865583668874
+tomato,lycopene (FW),PLS,absorbance,150,25 mA,-0.3707090655493516
+tomato,beta-carotene (FW),PLS,absorbance,150,25 mA,-0.0669175450088575
+tomato,beta-carotene (FW),PLS,absorbance,150,25 mA,-0.059189071132350744
+tomato,beta-carotene (FW),PLS,absorbance,150,25 mA,-0.056415567781500156
+tomato,beta-carotene (FW),PLS,absorbance,150,25 mA,-0.09983399014412397
+tomato,beta-carotene (FW),PLS,absorbance,150,25 mA,-0.08080366098373079
+tomato,beta-carotene (FW),PLS,absorbance,150,25 mA,-0.0786519285293735
+tomato,beta-carotene (FW),PLS,absorbance,150,25 mA,-0.07854042195895769
+tomato,beta-carotene (FW),PLS,absorbance,150,25 mA,-0.05905975134250452
+tomato,beta-carotene (FW),PLS,absorbance,150,25 mA,-0.08858930258683038
+tomato,beta-carotene (FW),PLS,absorbance,150,25 mA,-0.07093315815382921
+mango,carotene (FW),ARD,reflectance,50,12.5 mA,-1.4547349322465541
+mango,carotene (FW),ARD,reflectance,50,12.5 mA,-1.5382214064292221
+mango,carotene (FW),ARD,reflectance,50,12.5 mA,-1.6669510008611146
+mango,carotene (FW),ARD,reflectance,50,12.5 mA,-0.9700303699837949
+mango,carotene (FW),ARD,reflectance,50,12.5 mA,-1.4075000239804158
+mango,carotene (FW),ARD,reflectance,50,12.5 mA,-1.492876098447518
+mango,carotene (FW),ARD,reflectance,50,12.5 mA,-1.1151153791633674
+mango,carotene (FW),ARD,reflectance,50,12.5 mA,-0.9632987513273146
+mango,carotene (FW),ARD,reflectance,50,12.5 mA,-1.1410157317897924
+mango,carotene (FW),ARD,reflectance,50,12.5 mA,-0.9534097969957047
+mango,phenols (FW),ARD,reflectance,50,12.5 mA,-20.36835620117836
+mango,phenols (FW),ARD,reflectance,50,12.5 mA,-23.56221811936196
+mango,phenols (FW),ARD,reflectance,50,12.5 mA,-24.37427976928478
+mango,phenols (FW),ARD,reflectance,50,12.5 mA,-20.172752082923857
+mango,phenols (FW),ARD,reflectance,50,12.5 mA,-26.87528133066061
+mango,phenols (FW),ARD,reflectance,50,12.5 mA,-19.76189737701828
+mango,phenols (FW),ARD,reflectance,50,12.5 mA,-20.65956474190166
+mango,phenols (FW),ARD,reflectance,50,12.5 mA,-23.983534313692974
+mango,phenols (FW),ARD,reflectance,50,12.5 mA,-17.047403088463955
+mango,phenols (FW),ARD,reflectance,50,12.5 mA,-19.304694238336392
+mango,carotene (FW),Huber Regression,reflectance,50,12.5 mA,-0.9721107691648859
+mango,carotene (FW),Huber Regression,reflectance,50,12.5 mA,-0.978681995764296
+mango,carotene (FW),Huber Regression,reflectance,50,12.5 mA,-1.0702560225247766
+mango,carotene (FW),Huber Regression,reflectance,50,12.5 mA,-1.1699645728653076
+mango,carotene (FW),Huber Regression,reflectance,50,12.5 mA,-0.9873399260796989
+mango,carotene (FW),Huber Regression,reflectance,50,12.5 mA,-1.421932047905073
+mango,carotene (FW),Huber Regression,reflectance,50,12.5 mA,-1.1398950104029135
+mango,carotene (FW),Huber Regression,reflectance,50,12.5 mA,-0.8305082124232133
+mango,carotene (FW),Huber Regression,reflectance,50,12.5 mA,-1.1024190566475465
+mango,carotene (FW),Huber Regression,reflectance,50,12.5 mA,-1.1865048405022873
+mango,phenols (FW),Huber Regression,reflectance,50,12.5 mA,-21.071438013058533
+mango,phenols (FW),Huber Regression,reflectance,50,12.5 mA,-24.770637510317023
+mango,phenols (FW),Huber Regression,reflectance,50,12.5 mA,-25.49537704278779
+mango,phenols (FW),Huber Regression,reflectance,50,12.5 mA,-25.373872794350937
+mango,phenols (FW),Huber Regression,reflectance,50,12.5 mA,-23.64925060407192
+mango,phenols (FW),Huber Regression,reflectance,50,12.5 mA,-15.151455246771267
+mango,phenols (FW),Huber Regression,reflectance,50,12.5 mA,-26.646841801896997
+mango,phenols (FW),Huber Regression,reflectance,50,12.5 mA,-21.3436085580526
+mango,phenols (FW),Huber Regression,reflectance,50,12.5 mA,-18.564000698506028
+mango,phenols (FW),Huber Regression,reflectance,50,12.5 mA,-19.370639953133058
+mango,carotene (FW),Lasso IC,reflectance,50,12.5 mA,-1.2487842734184846
+mango,carotene (FW),Lasso IC,reflectance,50,12.5 mA,-1.2233294196920366
+mango,carotene (FW),Lasso IC,reflectance,50,12.5 mA,-0.8786165899007975
+mango,carotene (FW),Lasso IC,reflectance,50,12.5 mA,-1.141498589876304
+mango,carotene (FW),Lasso IC,reflectance,50,12.5 mA,-1.5293863249615793
+mango,carotene (FW),Lasso IC,reflectance,50,12.5 mA,-1.1371917438292942
+mango,carotene (FW),Lasso IC,reflectance,50,12.5 mA,-1.7833118924737559
+mango,carotene (FW),Lasso IC,reflectance,50,12.5 mA,-1.222303743441418
+mango,carotene (FW),Lasso IC,reflectance,50,12.5 mA,-1.1857404228663473
+mango,carotene (FW),Lasso IC,reflectance,50,12.5 mA,-0.9314803929983083
+mango,phenols (FW),Lasso IC,reflectance,50,12.5 mA,-17.817627099968625
+mango,phenols (FW),Lasso IC,reflectance,50,12.5 mA,-19.485752321659767
+mango,phenols (FW),Lasso IC,reflectance,50,12.5 mA,-18.78580544748022
+mango,phenols (FW),Lasso IC,reflectance,50,12.5 mA,-14.61171924259226
+mango,phenols (FW),Lasso IC,reflectance,50,12.5 mA,-27.279241388456658
+mango,phenols (FW),Lasso IC,reflectance,50,12.5 mA,-20.832995437020394
+mango,phenols (FW),Lasso IC,reflectance,50,12.5 mA,-14.851024258345552
+mango,phenols (FW),Lasso IC,reflectance,50,12.5 mA,-23.025074197055208
+mango,phenols (FW),Lasso IC,reflectance,50,12.5 mA,-17.42463031964707
+mango,phenols (FW),Lasso IC,reflectance,50,12.5 mA,-21.312106513994973
+mango,carotene (FW),SVR,reflectance,50,12.5 mA,-0.8633150086516336
+mango,carotene (FW),SVR,reflectance,50,12.5 mA,-1.1057703409933026
+mango,carotene (FW),SVR,reflectance,50,12.5 mA,-1.252203056072167
+mango,carotene (FW),SVR,reflectance,50,12.5 mA,-0.922140618952212
+mango,carotene (FW),SVR,reflectance,50,12.5 mA,-0.9181478696572224
+mango,carotene (FW),SVR,reflectance,50,12.5 mA,-0.8756416279579268
+mango,carotene (FW),SVR,reflectance,50,12.5 mA,-1.1893029824615557
+mango,carotene (FW),SVR,reflectance,50,12.5 mA,-0.9139964602572539
+mango,carotene (FW),SVR,reflectance,50,12.5 mA,-1.643634965036756
+mango,carotene (FW),SVR,reflectance,50,12.5 mA,-1.0375322655149437
+mango,phenols (FW),SVR,reflectance,50,12.5 mA,-15.096589316174354
+mango,phenols (FW),SVR,reflectance,50,12.5 mA,-15.298538160694056
+mango,phenols (FW),SVR,reflectance,50,12.5 mA,-17.70959213315195
+mango,phenols (FW),SVR,reflectance,50,12.5 mA,-14.264522938355888
+mango,phenols (FW),SVR,reflectance,50,12.5 mA,-19.668143772258354
+mango,phenols (FW),SVR,reflectance,50,12.5 mA,-14.416518514721556
+mango,phenols (FW),SVR,reflectance,50,12.5 mA,-17.04354542248207
+mango,phenols (FW),SVR,reflectance,50,12.5 mA,-20.098793829310917
+mango,phenols (FW),SVR,reflectance,50,12.5 mA,-23.67157287731149
+mango,phenols (FW),SVR,reflectance,50,12.5 mA,-20.44480918032875
+mango,carotene (FW),PLS,reflectance,50,12.5 mA,-1.2562904805982253
+mango,carotene (FW),PLS,reflectance,50,12.5 mA,-1.246147041265957
+mango,carotene (FW),PLS,reflectance,50,12.5 mA,-0.9988264772386917
+mango,carotene (FW),PLS,reflectance,50,12.5 mA,-1.1486358168702293
+mango,carotene (FW),PLS,reflectance,50,12.5 mA,-1.077263586209505
+mango,carotene (FW),PLS,reflectance,50,12.5 mA,-1.133226255608043
+mango,carotene (FW),PLS,reflectance,50,12.5 mA,-1.2048229826805332
+mango,carotene (FW),PLS,reflectance,50,12.5 mA,-1.492175185260973
+mango,carotene (FW),PLS,reflectance,50,12.5 mA,-1.01725472208849
+mango,carotene (FW),PLS,reflectance,50,12.5 mA,-1.108173441568616
+mango,phenols (FW),PLS,reflectance,50,12.5 mA,-22.273136338025466
+mango,phenols (FW),PLS,reflectance,50,12.5 mA,-28.67590089229128
+mango,phenols (FW),PLS,reflectance,50,12.5 mA,-17.868819021224294
+mango,phenols (FW),PLS,reflectance,50,12.5 mA,-22.985269672580436
+mango,phenols (FW),PLS,reflectance,50,12.5 mA,-17.832708207422908
+mango,phenols (FW),PLS,reflectance,50,12.5 mA,-32.624098218732996
+mango,phenols (FW),PLS,reflectance,50,12.5 mA,-21.768597958428415
+mango,phenols (FW),PLS,reflectance,50,12.5 mA,-20.741599272001892
+mango,phenols (FW),PLS,reflectance,50,12.5 mA,-21.25536327468705
+mango,phenols (FW),PLS,reflectance,50,12.5 mA,-23.419027936148964
+mango,carotene (FW),ARD,reflectance,50,25 mA,-1.1831113994416356
+mango,carotene (FW),ARD,reflectance,50,25 mA,-0.924089323489529
+mango,carotene (FW),ARD,reflectance,50,25 mA,-0.9397021350552615
+mango,carotene (FW),ARD,reflectance,50,25 mA,-1.0430367096556035
+mango,carotene (FW),ARD,reflectance,50,25 mA,-0.9607606381558269
+mango,carotene (FW),ARD,reflectance,50,25 mA,-1.1699101815325441
+mango,carotene (FW),ARD,reflectance,50,25 mA,-0.8051803650732638
+mango,carotene (FW),ARD,reflectance,50,25 mA,-0.9867421524791453
+mango,carotene (FW),ARD,reflectance,50,25 mA,-0.9116968011173114
+mango,carotene (FW),ARD,reflectance,50,25 mA,-0.9753663292253414
+mango,phenols (FW),ARD,reflectance,50,25 mA,-22.615221680050663
+mango,phenols (FW),ARD,reflectance,50,25 mA,-18.581843412335445
+mango,phenols (FW),ARD,reflectance,50,25 mA,-20.15102372745981
+mango,phenols (FW),ARD,reflectance,50,25 mA,-19.926964909876673
+mango,phenols (FW),ARD,reflectance,50,25 mA,-21.861503627215026
+mango,phenols (FW),ARD,reflectance,50,25 mA,-23.061681457235373
+mango,phenols (FW),ARD,reflectance,50,25 mA,-31.76661506447304
+mango,phenols (FW),ARD,reflectance,50,25 mA,-27.03497268116141
+mango,phenols (FW),ARD,reflectance,50,25 mA,-24.59926472355117
+mango,phenols (FW),ARD,reflectance,50,25 mA,-18.17688549685633
+mango,carotene (FW),Huber Regression,reflectance,50,25 mA,-0.9005965284120542
+mango,carotene (FW),Huber Regression,reflectance,50,25 mA,-1.136447265356902
+mango,carotene (FW),Huber Regression,reflectance,50,25 mA,-0.9626549987318599
+mango,carotene (FW),Huber Regression,reflectance,50,25 mA,-0.9017819225314608
+mango,carotene (FW),Huber Regression,reflectance,50,25 mA,-0.8794186571129908
+mango,carotene (FW),Huber Regression,reflectance,50,25 mA,-0.8789884645258237
+mango,carotene (FW),Huber Regression,reflectance,50,25 mA,-1.2550509634718026
+mango,carotene (FW),Huber Regression,reflectance,50,25 mA,-1.1689504439976326
+mango,carotene (FW),Huber Regression,reflectance,50,25 mA,-1.3010802467800633
+mango,carotene (FW),Huber Regression,reflectance,50,25 mA,-1.0143264301387642
+mango,phenols (FW),Huber Regression,reflectance,50,25 mA,-18.98462902323456
+mango,phenols (FW),Huber Regression,reflectance,50,25 mA,-17.38323310933854
+mango,phenols (FW),Huber Regression,reflectance,50,25 mA,-23.833181738340333
+mango,phenols (FW),Huber Regression,reflectance,50,25 mA,-14.627920732439039
+mango,phenols (FW),Huber Regression,reflectance,50,25 mA,-17.974879345246734
+mango,phenols (FW),Huber Regression,reflectance,50,25 mA,-16.14904317462783
+mango,phenols (FW),Huber Regression,reflectance,50,25 mA,-21.245903016082742
+mango,phenols (FW),Huber Regression,reflectance,50,25 mA,-19.747699701247683
+mango,phenols (FW),Huber Regression,reflectance,50,25 mA,-20.660638025485127
+mango,phenols (FW),Huber Regression,reflectance,50,25 mA,-21.920559690925842
+mango,carotene (FW),Lasso IC,reflectance,50,25 mA,-1.263678999042802
+mango,carotene (FW),Lasso IC,reflectance,50,25 mA,-1.0660076508364418
+mango,carotene (FW),Lasso IC,reflectance,50,25 mA,-1.0066456957089005
+mango,carotene (FW),Lasso IC,reflectance,50,25 mA,-0.9971144491343018
+mango,carotene (FW),Lasso IC,reflectance,50,25 mA,-0.9189109631878247
+mango,carotene (FW),Lasso IC,reflectance,50,25 mA,-1.1178111940192696
+mango,carotene (FW),Lasso IC,reflectance,50,25 mA,-1.037938307347824
+mango,carotene (FW),Lasso IC,reflectance,50,25 mA,-1.3031018786779183
+mango,carotene (FW),Lasso IC,reflectance,50,25 mA,-1.103394928927524
+mango,carotene (FW),Lasso IC,reflectance,50,25 mA,-0.9066437308269325
+mango,phenols (FW),Lasso IC,reflectance,50,25 mA,-22.52440515019795
+mango,phenols (FW),Lasso IC,reflectance,50,25 mA,-15.397697019333215
+mango,phenols (FW),Lasso IC,reflectance,50,25 mA,-17.558093881352697
+mango,phenols (FW),Lasso IC,reflectance,50,25 mA,-17.413525920519245
+mango,phenols (FW),Lasso IC,reflectance,50,25 mA,-30.989448849011985
+mango,phenols (FW),Lasso IC,reflectance,50,25 mA,-19.569183590891768
+mango,phenols (FW),Lasso IC,reflectance,50,25 mA,-14.008263807727065
+mango,phenols (FW),Lasso IC,reflectance,50,25 mA,-16.09099528542168
+mango,phenols (FW),Lasso IC,reflectance,50,25 mA,-23.36203354041159
+mango,phenols (FW),Lasso IC,reflectance,50,25 mA,-22.348990178417797
+mango,carotene (FW),SVR,reflectance,50,25 mA,-1.282174181211592
+mango,carotene (FW),SVR,reflectance,50,25 mA,-0.5864143002609963
+mango,carotene (FW),SVR,reflectance,50,25 mA,-0.8744231489889107
+mango,carotene (FW),SVR,reflectance,50,25 mA,-0.9385858761993864
+mango,carotene (FW),SVR,reflectance,50,25 mA,-0.9883513305372621
+mango,carotene (FW),SVR,reflectance,50,25 mA,-0.9737687988129182
+mango,carotene (FW),SVR,reflectance,50,25 mA,-0.7862082656284932
+mango,carotene (FW),SVR,reflectance,50,25 mA,-0.9778981842722251
+mango,carotene (FW),SVR,reflectance,50,25 mA,-0.6769601303937169
+mango,carotene (FW),SVR,reflectance,50,25 mA,-0.9617396066301486
+mango,phenols (FW),SVR,reflectance,50,25 mA,-18.5053339140041
+mango,phenols (FW),SVR,reflectance,50,25 mA,-16.31292850436656
+mango,phenols (FW),SVR,reflectance,50,25 mA,-21.46950124602598
+mango,phenols (FW),SVR,reflectance,50,25 mA,-18.00743145672399
+mango,phenols (FW),SVR,reflectance,50,25 mA,-14.608387760533331
+mango,phenols (FW),SVR,reflectance,50,25 mA,-14.011219088598422
+mango,phenols (FW),SVR,reflectance,50,25 mA,-14.52785594512038
+mango,phenols (FW),SVR,reflectance,50,25 mA,-18.213643366886263
+mango,phenols (FW),SVR,reflectance,50,25 mA,-19.036454101332602
+mango,phenols (FW),SVR,reflectance,50,25 mA,-21.881177911869408
+mango,carotene (FW),PLS,reflectance,50,25 mA,-0.8789851497394333
+mango,carotene (FW),PLS,reflectance,50,25 mA,-0.9387032096807613
+mango,carotene (FW),PLS,reflectance,50,25 mA,-0.8184926072232884
+mango,carotene (FW),PLS,reflectance,50,25 mA,-0.8474621516236925
+mango,carotene (FW),PLS,reflectance,50,25 mA,-0.9539083665556668
+mango,carotene (FW),PLS,reflectance,50,25 mA,-1.145764777744364
+mango,carotene (FW),PLS,reflectance,50,25 mA,-1.1631126442478978
+mango,carotene (FW),PLS,reflectance,50,25 mA,-1.1353741547349265
+mango,carotene (FW),PLS,reflectance,50,25 mA,-0.9711605029004617
+mango,carotene (FW),PLS,reflectance,50,25 mA,-0.9789247406423752
+mango,phenols (FW),PLS,reflectance,50,25 mA,-22.630838261100806
+mango,phenols (FW),PLS,reflectance,50,25 mA,-16.597432574959807
+mango,phenols (FW),PLS,reflectance,50,25 mA,-17.567196974242904
+mango,phenols (FW),PLS,reflectance,50,25 mA,-18.163912725034915
+mango,phenols (FW),PLS,reflectance,50,25 mA,-19.22258853295757
+mango,phenols (FW),PLS,reflectance,50,25 mA,-20.183729646373415
+mango,phenols (FW),PLS,reflectance,50,25 mA,-28.09663428836978
+mango,phenols (FW),PLS,reflectance,50,25 mA,-20.124089104269142
+mango,phenols (FW),PLS,reflectance,50,25 mA,-18.621745724824912
+mango,phenols (FW),PLS,reflectance,50,25 mA,-17.70825827539146
+mango,carotene (FW),ARD,reflectance,100,12.5 mA,-0.9564681049137046
+mango,carotene (FW),ARD,reflectance,100,12.5 mA,-1.114737983133643
+mango,carotene (FW),ARD,reflectance,100,12.5 mA,-1.0995134367517485
+mango,carotene (FW),ARD,reflectance,100,12.5 mA,-0.949660808198341
+mango,carotene (FW),ARD,reflectance,100,12.5 mA,-1.0406573324786925
+mango,carotene (FW),ARD,reflectance,100,12.5 mA,-1.2751311734658795
+mango,carotene (FW),ARD,reflectance,100,12.5 mA,-1.431912660535096
+mango,carotene (FW),ARD,reflectance,100,12.5 mA,-0.9070698146580872
+mango,carotene (FW),ARD,reflectance,100,12.5 mA,-0.9691047869749693
+mango,carotene (FW),ARD,reflectance,100,12.5 mA,-0.8119040383438972
+mango,phenols (FW),ARD,reflectance,100,12.5 mA,-24.395483255904484
+mango,phenols (FW),ARD,reflectance,100,12.5 mA,-25.62578065325742
+mango,phenols (FW),ARD,reflectance,100,12.5 mA,-23.255392548426318
+mango,phenols (FW),ARD,reflectance,100,12.5 mA,-23.21964205684674
+mango,phenols (FW),ARD,reflectance,100,12.5 mA,-14.878420478939972
+mango,phenols (FW),ARD,reflectance,100,12.5 mA,-25.36810386350465
+mango,phenols (FW),ARD,reflectance,100,12.5 mA,-23.603782593206056
+mango,phenols (FW),ARD,reflectance,100,12.5 mA,-19.605723295954018
+mango,phenols (FW),ARD,reflectance,100,12.5 mA,-16.75795228859886
+mango,phenols (FW),ARD,reflectance,100,12.5 mA,-24.320044852864246
+mango,carotene (FW),Huber Regression,reflectance,100,12.5 mA,-1.0341999399611228
+mango,carotene (FW),Huber Regression,reflectance,100,12.5 mA,-1.0234356451979312
+mango,carotene (FW),Huber Regression,reflectance,100,12.5 mA,-1.0972461862735077
+mango,carotene (FW),Huber Regression,reflectance,100,12.5 mA,-1.3916867216963966
+mango,carotene (FW),Huber Regression,reflectance,100,12.5 mA,-1.0309091551272327
+mango,carotene (FW),Huber Regression,reflectance,100,12.5 mA,-1.2608145222866933
+mango,carotene (FW),Huber Regression,reflectance,100,12.5 mA,-0.911265079931883
+mango,carotene (FW),Huber Regression,reflectance,100,12.5 mA,-1.121525392453869
+mango,carotene (FW),Huber Regression,reflectance,100,12.5 mA,-1.3737209212108217
+mango,carotene (FW),Huber Regression,reflectance,100,12.5 mA,-1.3543175140116335
+mango,phenols (FW),Huber Regression,reflectance,100,12.5 mA,-14.522199970373318
+mango,phenols (FW),Huber Regression,reflectance,100,12.5 mA,-19.28897186398876
+mango,phenols (FW),Huber Regression,reflectance,100,12.5 mA,-24.947390275652715
+mango,phenols (FW),Huber Regression,reflectance,100,12.5 mA,-20.41076821186749
+mango,phenols (FW),Huber Regression,reflectance,100,12.5 mA,-25.157730061704562
+mango,phenols (FW),Huber Regression,reflectance,100,12.5 mA,-16.198910274485755
+mango,phenols (FW),Huber Regression,reflectance,100,12.5 mA,-19.20629863168526
+mango,phenols (FW),Huber Regression,reflectance,100,12.5 mA,-25.0811302920231
+mango,phenols (FW),Huber Regression,reflectance,100,12.5 mA,-14.323602049101394
+mango,phenols (FW),Huber Regression,reflectance,100,12.5 mA,-17.99846186916742
+mango,carotene (FW),Lasso IC,reflectance,100,12.5 mA,-1.1923429208245446
+mango,carotene (FW),Lasso IC,reflectance,100,12.5 mA,-1.5452565675306145
+mango,carotene (FW),Lasso IC,reflectance,100,12.5 mA,-0.8873271836298965
+mango,carotene (FW),Lasso IC,reflectance,100,12.5 mA,-0.9437185104916777
+mango,carotene (FW),Lasso IC,reflectance,100,12.5 mA,-1.6788385216093773
+mango,carotene (FW),Lasso IC,reflectance,100,12.5 mA,-1.1114426573462208
+mango,carotene (FW),Lasso IC,reflectance,100,12.5 mA,-1.0489913875051609
+mango,carotene (FW),Lasso IC,reflectance,100,12.5 mA,-0.9937135934950488
+mango,carotene (FW),Lasso IC,reflectance,100,12.5 mA,-1.2446544895402456
+mango,carotene (FW),Lasso IC,reflectance,100,12.5 mA,-1.0870331744005852
+mango,phenols (FW),Lasso IC,reflectance,100,12.5 mA,-22.89585622132858
+mango,phenols (FW),Lasso IC,reflectance,100,12.5 mA,-23.748852997319172
+mango,phenols (FW),Lasso IC,reflectance,100,12.5 mA,-12.537982651386127
+mango,phenols (FW),Lasso IC,reflectance,100,12.5 mA,-18.877449968464493
+mango,phenols (FW),Lasso IC,reflectance,100,12.5 mA,-24.65063173300716
+mango,phenols (FW),Lasso IC,reflectance,100,12.5 mA,-20.748748167165274
+mango,phenols (FW),Lasso IC,reflectance,100,12.5 mA,-18.327947893927764
+mango,phenols (FW),Lasso IC,reflectance,100,12.5 mA,-21.892008627623852
+mango,phenols (FW),Lasso IC,reflectance,100,12.5 mA,-30.263000175775577
+mango,phenols (FW),Lasso IC,reflectance,100,12.5 mA,-27.256643069115082
+mango,carotene (FW),SVR,reflectance,100,12.5 mA,-0.8950891771416484
+mango,carotene (FW),SVR,reflectance,100,12.5 mA,-1.04326776026905
+mango,carotene (FW),SVR,reflectance,100,12.5 mA,-0.8886016216745484
+mango,carotene (FW),SVR,reflectance,100,12.5 mA,-0.9562308693920889
+mango,carotene (FW),SVR,reflectance,100,12.5 mA,-0.7772371633656382
+mango,carotene (FW),SVR,reflectance,100,12.5 mA,-0.8844558832944361
+mango,carotene (FW),SVR,reflectance,100,12.5 mA,-1.1600508205183977
+mango,carotene (FW),SVR,reflectance,100,12.5 mA,-0.8990864322438958
+mango,carotene (FW),SVR,reflectance,100,12.5 mA,-1.0078704167772627
+mango,carotene (FW),SVR,reflectance,100,12.5 mA,-1.1351019490814525
+mango,phenols (FW),SVR,reflectance,100,12.5 mA,-14.64215593125485
+mango,phenols (FW),SVR,reflectance,100,12.5 mA,-24.829012666172723
+mango,phenols (FW),SVR,reflectance,100,12.5 mA,-15.539857219761709
+mango,phenols (FW),SVR,reflectance,100,12.5 mA,-14.389901715553831
+mango,phenols (FW),SVR,reflectance,100,12.5 mA,-15.882194577416241
+mango,phenols (FW),SVR,reflectance,100,12.5 mA,-17.637707505769054
+mango,phenols (FW),SVR,reflectance,100,12.5 mA,-16.401667319742028
+mango,phenols (FW),SVR,reflectance,100,12.5 mA,-16.107061117718917
+mango,phenols (FW),SVR,reflectance,100,12.5 mA,-19.433588293552425
+mango,phenols (FW),SVR,reflectance,100,12.5 mA,-14.962177182747546
+mango,carotene (FW),PLS,reflectance,100,12.5 mA,-0.9207773758687381
+mango,carotene (FW),PLS,reflectance,100,12.5 mA,-1.0528696960152213
+mango,carotene (FW),PLS,reflectance,100,12.5 mA,-1.0742303478684225
+mango,carotene (FW),PLS,reflectance,100,12.5 mA,-1.5070811079273798
+mango,carotene (FW),PLS,reflectance,100,12.5 mA,-1.0266672197322848
+mango,carotene (FW),PLS,reflectance,100,12.5 mA,-0.9565407127545686
+mango,carotene (FW),PLS,reflectance,100,12.5 mA,-1.1401315059833963
+mango,carotene (FW),PLS,reflectance,100,12.5 mA,-0.9379812070302614
+mango,carotene (FW),PLS,reflectance,100,12.5 mA,-1.198296772429101
+mango,carotene (FW),PLS,reflectance,100,12.5 mA,-1.18068054581339
+mango,phenols (FW),PLS,reflectance,100,12.5 mA,-20.278658696264504
+mango,phenols (FW),PLS,reflectance,100,12.5 mA,-18.806004607564912
+mango,phenols (FW),PLS,reflectance,100,12.5 mA,-23.897604057087545
+mango,phenols (FW),PLS,reflectance,100,12.5 mA,-24.553663441191286
+mango,phenols (FW),PLS,reflectance,100,12.5 mA,-26.656557014839454
+mango,phenols (FW),PLS,reflectance,100,12.5 mA,-13.79810081709469
+mango,phenols (FW),PLS,reflectance,100,12.5 mA,-18.809640405141913
+mango,phenols (FW),PLS,reflectance,100,12.5 mA,-19.912806089357517
+mango,phenols (FW),PLS,reflectance,100,12.5 mA,-16.50965984804275
+mango,phenols (FW),PLS,reflectance,100,12.5 mA,-28.38653426969405
+mango,carotene (FW),ARD,reflectance,100,25 mA,-0.8741170469990329
+mango,carotene (FW),ARD,reflectance,100,25 mA,-1.2641635389448644
+mango,carotene (FW),ARD,reflectance,100,25 mA,-1.0913710138164525
+mango,carotene (FW),ARD,reflectance,100,25 mA,-1.180933591034391
+mango,carotene (FW),ARD,reflectance,100,25 mA,-1.2905855200740968
+mango,carotene (FW),ARD,reflectance,100,25 mA,-0.9046497967773353
+mango,carotene (FW),ARD,reflectance,100,25 mA,-0.9937437213626211
+mango,carotene (FW),ARD,reflectance,100,25 mA,-1.2081220405492377
+mango,carotene (FW),ARD,reflectance,100,25 mA,-1.156140419261967
+mango,carotene (FW),ARD,reflectance,100,25 mA,-1.5510456657813994
+mango,phenols (FW),ARD,reflectance,100,25 mA,-23.301393108466396
+mango,phenols (FW),ARD,reflectance,100,25 mA,-15.043713840420244
+mango,phenols (FW),ARD,reflectance,100,25 mA,-20.855075333416764
+mango,phenols (FW),ARD,reflectance,100,25 mA,-24.457307653276516
+mango,phenols (FW),ARD,reflectance,100,25 mA,-25.480023371827
+mango,phenols (FW),ARD,reflectance,100,25 mA,-22.139566732718468
+mango,phenols (FW),ARD,reflectance,100,25 mA,-15.605352439156505
+mango,phenols (FW),ARD,reflectance,100,25 mA,-18.554168749680695
+mango,phenols (FW),ARD,reflectance,100,25 mA,-21.307623555197715
+mango,phenols (FW),ARD,reflectance,100,25 mA,-22.952110599524644
+mango,carotene (FW),Huber Regression,reflectance,100,25 mA,-1.3001673926094126
+mango,carotene (FW),Huber Regression,reflectance,100,25 mA,-1.1818276140126582
+mango,carotene (FW),Huber Regression,reflectance,100,25 mA,-1.0177112731141673
+mango,carotene (FW),Huber Regression,reflectance,100,25 mA,-1.0888536767214914
+mango,carotene (FW),Huber Regression,reflectance,100,25 mA,-1.0904355682662454
+mango,carotene (FW),Huber Regression,reflectance,100,25 mA,-0.9626592680149659
+mango,carotene (FW),Huber Regression,reflectance,100,25 mA,-0.903483267563734
+mango,carotene (FW),Huber Regression,reflectance,100,25 mA,-1.0923791314209852
+mango,carotene (FW),Huber Regression,reflectance,100,25 mA,-1.0444405724760204
+mango,carotene (FW),Huber Regression,reflectance,100,25 mA,-1.173201111668527
+mango,phenols (FW),Huber Regression,reflectance,100,25 mA,-13.57723179688733
+mango,phenols (FW),Huber Regression,reflectance,100,25 mA,-14.660009623384058
+mango,phenols (FW),Huber Regression,reflectance,100,25 mA,-17.149297595191136
+mango,phenols (FW),Huber Regression,reflectance,100,25 mA,-15.289756166525885
+mango,phenols (FW),Huber Regression,reflectance,100,25 mA,-20.35712364633866
+mango,phenols (FW),Huber Regression,reflectance,100,25 mA,-20.527491554706867
+mango,phenols (FW),Huber Regression,reflectance,100,25 mA,-23.906340256928633
+mango,phenols (FW),Huber Regression,reflectance,100,25 mA,-17.856685910042373
+mango,phenols (FW),Huber Regression,reflectance,100,25 mA,-20.621213238810146
+mango,phenols (FW),Huber Regression,reflectance,100,25 mA,-23.839604760540496
+mango,carotene (FW),Lasso IC,reflectance,100,25 mA,-0.8743138065787844
+mango,carotene (FW),Lasso IC,reflectance,100,25 mA,-1.1403581865407717
+mango,carotene (FW),Lasso IC,reflectance,100,25 mA,-1.0513544149801206
+mango,carotene (FW),Lasso IC,reflectance,100,25 mA,-1.0043911896848499
+mango,carotene (FW),Lasso IC,reflectance,100,25 mA,-1.1456151496125417
+mango,carotene (FW),Lasso IC,reflectance,100,25 mA,-0.7350363422970942
+mango,carotene (FW),Lasso IC,reflectance,100,25 mA,-0.9365252559164362
+mango,carotene (FW),Lasso IC,reflectance,100,25 mA,-0.9523877290433831
+mango,carotene (FW),Lasso IC,reflectance,100,25 mA,-0.9251935000212288
+mango,carotene (FW),Lasso IC,reflectance,100,25 mA,-1.4839076583562685
+mango,phenols (FW),Lasso IC,reflectance,100,25 mA,-21.25355370951959
+mango,phenols (FW),Lasso IC,reflectance,100,25 mA,-25.846189738036053
+mango,phenols (FW),Lasso IC,reflectance,100,25 mA,-21.65375172519566
+mango,phenols (FW),Lasso IC,reflectance,100,25 mA,-23.754794591153775
+mango,phenols (FW),Lasso IC,reflectance,100,25 mA,-21.72931609600248
+mango,phenols (FW),Lasso IC,reflectance,100,25 mA,-20.76221843434877
+mango,phenols (FW),Lasso IC,reflectance,100,25 mA,-15.170380120245625
+mango,phenols (FW),Lasso IC,reflectance,100,25 mA,-14.057047255755409
+mango,phenols (FW),Lasso IC,reflectance,100,25 mA,-12.365352093185518
+mango,phenols (FW),Lasso IC,reflectance,100,25 mA,-19.249043434170908
+mango,carotene (FW),SVR,reflectance,100,25 mA,-0.832262898805034
+mango,carotene (FW),SVR,reflectance,100,25 mA,-0.9467393490353141
+mango,carotene (FW),SVR,reflectance,100,25 mA,-0.8019324753446676
+mango,carotene (FW),SVR,reflectance,100,25 mA,-0.9791372980758669
+mango,carotene (FW),SVR,reflectance,100,25 mA,-1.0874444280986109
+mango,carotene (FW),SVR,reflectance,100,25 mA,-1.0563552026284735
+mango,carotene (FW),SVR,reflectance,100,25 mA,-1.0237815871399287
+mango,carotene (FW),SVR,reflectance,100,25 mA,-0.890678710141232
+mango,carotene (FW),SVR,reflectance,100,25 mA,-0.6453947984281245
+mango,carotene (FW),SVR,reflectance,100,25 mA,-1.0989205121566878
+mango,phenols (FW),SVR,reflectance,100,25 mA,-13.080181042872166
+mango,phenols (FW),SVR,reflectance,100,25 mA,-19.67250773508563
+mango,phenols (FW),SVR,reflectance,100,25 mA,-15.604346506873226
+mango,phenols (FW),SVR,reflectance,100,25 mA,-16.454680270202907
+mango,phenols (FW),SVR,reflectance,100,25 mA,-21.4996845915159
+mango,phenols (FW),SVR,reflectance,100,25 mA,-21.238661290347217
+mango,phenols (FW),SVR,reflectance,100,25 mA,-18.036559041919926
+mango,phenols (FW),SVR,reflectance,100,25 mA,-17.12784655549059
+mango,phenols (FW),SVR,reflectance,100,25 mA,-15.577383995748216
+mango,phenols (FW),SVR,reflectance,100,25 mA,-15.267458867627763
+mango,carotene (FW),PLS,reflectance,100,25 mA,-0.886230773750546
+mango,carotene (FW),PLS,reflectance,100,25 mA,-0.9635956265747041
+mango,carotene (FW),PLS,reflectance,100,25 mA,-0.9927395065402279
+mango,carotene (FW),PLS,reflectance,100,25 mA,-1.2342449827536748
+mango,carotene (FW),PLS,reflectance,100,25 mA,-1.1000029837661154
+mango,carotene (FW),PLS,reflectance,100,25 mA,-0.9093775593073116
+mango,carotene (FW),PLS,reflectance,100,25 mA,-0.9932186542197025
+mango,carotene (FW),PLS,reflectance,100,25 mA,-0.7731339896547827
+mango,carotene (FW),PLS,reflectance,100,25 mA,-0.9761329161382027
+mango,carotene (FW),PLS,reflectance,100,25 mA,-0.8138321071299395
+mango,phenols (FW),PLS,reflectance,100,25 mA,-16.851753574524533
+mango,phenols (FW),PLS,reflectance,100,25 mA,-19.491622838729647
+mango,phenols (FW),PLS,reflectance,100,25 mA,-19.452751076559988
+mango,phenols (FW),PLS,reflectance,100,25 mA,-25.529628247196648
+mango,phenols (FW),PLS,reflectance,100,25 mA,-21.811822764909824
+mango,phenols (FW),PLS,reflectance,100,25 mA,-25.331820278186946
+mango,phenols (FW),PLS,reflectance,100,25 mA,-13.959877063778325
+mango,phenols (FW),PLS,reflectance,100,25 mA,-19.07593922690848
+mango,phenols (FW),PLS,reflectance,100,25 mA,-21.822320878018534
+mango,phenols (FW),PLS,reflectance,100,25 mA,-24.514238844516722
+mango,carotene (FW),ARD,reflectance,150,12.5 mA,-1.0910684422949635
+mango,carotene (FW),ARD,reflectance,150,12.5 mA,-1.199850155850179
+mango,carotene (FW),ARD,reflectance,150,12.5 mA,-1.3272620983731132
+mango,carotene (FW),ARD,reflectance,150,12.5 mA,-1.0887477789977849
+mango,carotene (FW),ARD,reflectance,150,12.5 mA,-0.9974516374819393
+mango,carotene (FW),ARD,reflectance,150,12.5 mA,-1.189807293732597
+mango,carotene (FW),ARD,reflectance,150,12.5 mA,-1.2893166574881818
+mango,carotene (FW),ARD,reflectance,150,12.5 mA,-1.3665268371181725
+mango,carotene (FW),ARD,reflectance,150,12.5 mA,-1.0458381692341572
+mango,carotene (FW),ARD,reflectance,150,12.5 mA,-1.225198578082527
+mango,phenols (FW),ARD,reflectance,150,12.5 mA,-22.298989801109563
+mango,phenols (FW),ARD,reflectance,150,12.5 mA,-21.894385195277213
+mango,phenols (FW),ARD,reflectance,150,12.5 mA,-19.80741428697868
+mango,phenols (FW),ARD,reflectance,150,12.5 mA,-20.596381875937116
+mango,phenols (FW),ARD,reflectance,150,12.5 mA,-27.015472571777902
+mango,phenols (FW),ARD,reflectance,150,12.5 mA,-22.05850093401698
+mango,phenols (FW),ARD,reflectance,150,12.5 mA,-15.533372624284263
+mango,phenols (FW),ARD,reflectance,150,12.5 mA,-22.42380505765336
+mango,phenols (FW),ARD,reflectance,150,12.5 mA,-16.46038582306941
+mango,phenols (FW),ARD,reflectance,150,12.5 mA,-24.6621854854852
+mango,carotene (FW),Huber Regression,reflectance,150,12.5 mA,-0.8907308262809326
+mango,carotene (FW),Huber Regression,reflectance,150,12.5 mA,-1.3550546242456483
+mango,carotene (FW),Huber Regression,reflectance,150,12.5 mA,-1.3460699379627497
+mango,carotene (FW),Huber Regression,reflectance,150,12.5 mA,-0.8920486394253391
+mango,carotene (FW),Huber Regression,reflectance,150,12.5 mA,-1.1836397432630033
+mango,carotene (FW),Huber Regression,reflectance,150,12.5 mA,-1.0609759494262616
+mango,carotene (FW),Huber Regression,reflectance,150,12.5 mA,-1.3089572904110107
+mango,carotene (FW),Huber Regression,reflectance,150,12.5 mA,-1.4242740966558318
+mango,carotene (FW),Huber Regression,reflectance,150,12.5 mA,-1.1282018130934746
+mango,carotene (FW),Huber Regression,reflectance,150,12.5 mA,-1.2735919459218688
+mango,phenols (FW),Huber Regression,reflectance,150,12.5 mA,-22.96485818371688
+mango,phenols (FW),Huber Regression,reflectance,150,12.5 mA,-24.26091749034428
+mango,phenols (FW),Huber Regression,reflectance,150,12.5 mA,-18.06372715864543
+mango,phenols (FW),Huber Regression,reflectance,150,12.5 mA,-16.801625378746593
+mango,phenols (FW),Huber Regression,reflectance,150,12.5 mA,-19.71812369787789
+mango,phenols (FW),Huber Regression,reflectance,150,12.5 mA,-17.69052786800729
+mango,phenols (FW),Huber Regression,reflectance,150,12.5 mA,-20.604149549207623
+mango,phenols (FW),Huber Regression,reflectance,150,12.5 mA,-21.544576537611633
+mango,phenols (FW),Huber Regression,reflectance,150,12.5 mA,-18.81579084049765
+mango,phenols (FW),Huber Regression,reflectance,150,12.5 mA,-20.97407844098965
+mango,carotene (FW),Lasso IC,reflectance,150,12.5 mA,-1.2194723222375115
+mango,carotene (FW),Lasso IC,reflectance,150,12.5 mA,-1.0403761030997942
+mango,carotene (FW),Lasso IC,reflectance,150,12.5 mA,-1.040486013754998
+mango,carotene (FW),Lasso IC,reflectance,150,12.5 mA,-1.029672266568762
+mango,carotene (FW),Lasso IC,reflectance,150,12.5 mA,-1.196462651454642
+mango,carotene (FW),Lasso IC,reflectance,150,12.5 mA,-1.3335412636129182
+mango,carotene (FW),Lasso IC,reflectance,150,12.5 mA,-1.0518916052002734
+mango,carotene (FW),Lasso IC,reflectance,150,12.5 mA,-1.1789276713197805
+mango,carotene (FW),Lasso IC,reflectance,150,12.5 mA,-1.1855182106416478
+mango,carotene (FW),Lasso IC,reflectance,150,12.5 mA,-1.0817596313346278
+mango,phenols (FW),Lasso IC,reflectance,150,12.5 mA,-17.097132598436836
+mango,phenols (FW),Lasso IC,reflectance,150,12.5 mA,-22.270883303286634
+mango,phenols (FW),Lasso IC,reflectance,150,12.5 mA,-21.027889668673897
+mango,phenols (FW),Lasso IC,reflectance,150,12.5 mA,-18.685694229147472
+mango,phenols (FW),Lasso IC,reflectance,150,12.5 mA,-22.396156281959247
+mango,phenols (FW),Lasso IC,reflectance,150,12.5 mA,-18.64521626301513
+mango,phenols (FW),Lasso IC,reflectance,150,12.5 mA,-15.85661891731634
+mango,phenols (FW),Lasso IC,reflectance,150,12.5 mA,-20.775238950534895
+mango,phenols (FW),Lasso IC,reflectance,150,12.5 mA,-20.250199631477106
+mango,phenols (FW),Lasso IC,reflectance,150,12.5 mA,-28.66814935844743
+mango,carotene (FW),SVR,reflectance,150,12.5 mA,-1.5730455302899213
+mango,carotene (FW),SVR,reflectance,150,12.5 mA,-1.0138437169994567
+mango,carotene (FW),SVR,reflectance,150,12.5 mA,-0.9211274427684706
+mango,carotene (FW),SVR,reflectance,150,12.5 mA,-0.6882772111298319
+mango,carotene (FW),SVR,reflectance,150,12.5 mA,-1.4324139294838136
+mango,carotene (FW),SVR,reflectance,150,12.5 mA,-1.1298733612620917
+mango,carotene (FW),SVR,reflectance,150,12.5 mA,-0.9463566004343134
+mango,carotene (FW),SVR,reflectance,150,12.5 mA,-1.274516856028031
+mango,carotene (FW),SVR,reflectance,150,12.5 mA,-1.0927803607660551
+mango,carotene (FW),SVR,reflectance,150,12.5 mA,-1.33755127546933
+mango,phenols (FW),SVR,reflectance,150,12.5 mA,-20.872879690424547
+mango,phenols (FW),SVR,reflectance,150,12.5 mA,-23.373133704317553
+mango,phenols (FW),SVR,reflectance,150,12.5 mA,-19.44979699180265
+mango,phenols (FW),SVR,reflectance,150,12.5 mA,-18.79821834183954
+mango,phenols (FW),SVR,reflectance,150,12.5 mA,-13.649050258724122
+mango,phenols (FW),SVR,reflectance,150,12.5 mA,-13.194573128238686
+mango,phenols (FW),SVR,reflectance,150,12.5 mA,-16.599544393149305
+mango,phenols (FW),SVR,reflectance,150,12.5 mA,-12.429339698462307
+mango,phenols (FW),SVR,reflectance,150,12.5 mA,-26.39974847377431
+mango,phenols (FW),SVR,reflectance,150,12.5 mA,-14.514520096297623
+mango,carotene (FW),PLS,reflectance,150,12.5 mA,-1.153191300098239
+mango,carotene (FW),PLS,reflectance,150,12.5 mA,-1.4207929724222466
+mango,carotene (FW),PLS,reflectance,150,12.5 mA,-1.2247772567369108
+mango,carotene (FW),PLS,reflectance,150,12.5 mA,-1.3914002662856584
+mango,carotene (FW),PLS,reflectance,150,12.5 mA,-1.4119712721769642
+mango,carotene (FW),PLS,reflectance,150,12.5 mA,-1.7769795903902752
+mango,carotene (FW),PLS,reflectance,150,12.5 mA,-1.3854481902441862
+mango,carotene (FW),PLS,reflectance,150,12.5 mA,-1.043628012061963
+mango,carotene (FW),PLS,reflectance,150,12.5 mA,-1.027444145673602
+mango,carotene (FW),PLS,reflectance,150,12.5 mA,-1.0346243687470404
+mango,phenols (FW),PLS,reflectance,150,12.5 mA,-18.91862755667187
+mango,phenols (FW),PLS,reflectance,150,12.5 mA,-13.43575311925285
+mango,phenols (FW),PLS,reflectance,150,12.5 mA,-32.16439731124602
+mango,phenols (FW),PLS,reflectance,150,12.5 mA,-22.09358445266479
+mango,phenols (FW),PLS,reflectance,150,12.5 mA,-24.441329146696884
+mango,phenols (FW),PLS,reflectance,150,12.5 mA,-23.35699717876379
+mango,phenols (FW),PLS,reflectance,150,12.5 mA,-15.539206213127526
+mango,phenols (FW),PLS,reflectance,150,12.5 mA,-23.06147078526708
+mango,phenols (FW),PLS,reflectance,150,12.5 mA,-23.881418503524237
+mango,phenols (FW),PLS,reflectance,150,12.5 mA,-20.6128292813015
+mango,carotene (FW),ARD,reflectance,150,25 mA,-1.073236110304148
+mango,carotene (FW),ARD,reflectance,150,25 mA,-1.0187275760067167
+mango,carotene (FW),ARD,reflectance,150,25 mA,-1.0450255666206063
+mango,carotene (FW),ARD,reflectance,150,25 mA,-0.9747788759209579
+mango,carotene (FW),ARD,reflectance,150,25 mA,-1.1236984922292543
+mango,carotene (FW),ARD,reflectance,150,25 mA,-1.1856931610053059
+mango,carotene (FW),ARD,reflectance,150,25 mA,-1.1255322590755175
+mango,carotene (FW),ARD,reflectance,150,25 mA,-1.2632236497953784
+mango,carotene (FW),ARD,reflectance,150,25 mA,-1.1783306774018352
+mango,carotene (FW),ARD,reflectance,150,25 mA,-1.1847912742853859
+mango,phenols (FW),ARD,reflectance,150,25 mA,-22.24770073804858
+mango,phenols (FW),ARD,reflectance,150,25 mA,-18.882762410811747
+mango,phenols (FW),ARD,reflectance,150,25 mA,-20.117714814590304
+mango,phenols (FW),ARD,reflectance,150,25 mA,-21.983442555202945
+mango,phenols (FW),ARD,reflectance,150,25 mA,-24.423232716403835
+mango,phenols (FW),ARD,reflectance,150,25 mA,-14.865632265940679
+mango,phenols (FW),ARD,reflectance,150,25 mA,-20.93843818195256
+mango,phenols (FW),ARD,reflectance,150,25 mA,-24.924896610999465
+mango,phenols (FW),ARD,reflectance,150,25 mA,-20.281404040897932
+mango,phenols (FW),ARD,reflectance,150,25 mA,-19.178753255111566
+mango,carotene (FW),Huber Regression,reflectance,150,25 mA,-1.2258177416913052
+mango,carotene (FW),Huber Regression,reflectance,150,25 mA,-1.1929291498375316
+mango,carotene (FW),Huber Regression,reflectance,150,25 mA,-1.1939971108676826
+mango,carotene (FW),Huber Regression,reflectance,150,25 mA,-0.8529838923542088
+mango,carotene (FW),Huber Regression,reflectance,150,25 mA,-1.4978373696716878
+mango,carotene (FW),Huber Regression,reflectance,150,25 mA,-1.1077155759235093
+mango,carotene (FW),Huber Regression,reflectance,150,25 mA,-1.1215617966170388
+mango,carotene (FW),Huber Regression,reflectance,150,25 mA,-0.8367143989600215
+mango,carotene (FW),Huber Regression,reflectance,150,25 mA,-0.8952092540357396
+mango,carotene (FW),Huber Regression,reflectance,150,25 mA,-1.1068692133342148
+mango,phenols (FW),Huber Regression,reflectance,150,25 mA,-19.355845753097256
+mango,phenols (FW),Huber Regression,reflectance,150,25 mA,-19.716103267472395
+mango,phenols (FW),Huber Regression,reflectance,150,25 mA,-14.846973539979752
+mango,phenols (FW),Huber Regression,reflectance,150,25 mA,-22.25257881720858
+mango,phenols (FW),Huber Regression,reflectance,150,25 mA,-21.26606553099949
+mango,phenols (FW),Huber Regression,reflectance,150,25 mA,-24.0775894959396
+mango,phenols (FW),Huber Regression,reflectance,150,25 mA,-24.386707896515617
+mango,phenols (FW),Huber Regression,reflectance,150,25 mA,-15.816475446144818
+mango,phenols (FW),Huber Regression,reflectance,150,25 mA,-17.948688839013386
+mango,phenols (FW),Huber Regression,reflectance,150,25 mA,-22.718353563940354
+mango,carotene (FW),Lasso IC,reflectance,150,25 mA,-1.1839605250822416
+mango,carotene (FW),Lasso IC,reflectance,150,25 mA,-1.1782272897611625
+mango,carotene (FW),Lasso IC,reflectance,150,25 mA,-1.2891589660809644
+mango,carotene (FW),Lasso IC,reflectance,150,25 mA,-1.2895828424284463
+mango,carotene (FW),Lasso IC,reflectance,150,25 mA,-1.0086629904347804
+mango,carotene (FW),Lasso IC,reflectance,150,25 mA,-1.218055921778903
+mango,carotene (FW),Lasso IC,reflectance,150,25 mA,-0.871279257445545
+mango,carotene (FW),Lasso IC,reflectance,150,25 mA,-1.264591358266806
+mango,carotene (FW),Lasso IC,reflectance,150,25 mA,-1.1791570917964398
+mango,carotene (FW),Lasso IC,reflectance,150,25 mA,-1.2642959397383524
+mango,phenols (FW),Lasso IC,reflectance,150,25 mA,-19.283006267592974
+mango,phenols (FW),Lasso IC,reflectance,150,25 mA,-22.5896863034123
+mango,phenols (FW),Lasso IC,reflectance,150,25 mA,-22.392353037804373
+mango,phenols (FW),Lasso IC,reflectance,150,25 mA,-18.342700715706393
+mango,phenols (FW),Lasso IC,reflectance,150,25 mA,-20.720024360157165
+mango,phenols (FW),Lasso IC,reflectance,150,25 mA,-19.890510614659203
+mango,phenols (FW),Lasso IC,reflectance,150,25 mA,-18.244693595262582
+mango,phenols (FW),Lasso IC,reflectance,150,25 mA,-20.082593553991163
+mango,phenols (FW),Lasso IC,reflectance,150,25 mA,-14.899400620198378
+mango,phenols (FW),Lasso IC,reflectance,150,25 mA,-22.317213273494342
+mango,carotene (FW),SVR,reflectance,150,25 mA,-0.6888490744852733
+mango,carotene (FW),SVR,reflectance,150,25 mA,-1.1715072099563528
+mango,carotene (FW),SVR,reflectance,150,25 mA,-1.1970266231644702
+mango,carotene (FW),SVR,reflectance,150,25 mA,-0.9499527372129328
+mango,carotene (FW),SVR,reflectance,150,25 mA,-1.069588650377951
+mango,carotene (FW),SVR,reflectance,150,25 mA,-0.969009540197308
+mango,carotene (FW),SVR,reflectance,150,25 mA,-1.1324138096116179
+mango,carotene (FW),SVR,reflectance,150,25 mA,-1.0373294863255205
+mango,carotene (FW),SVR,reflectance,150,25 mA,-0.9255757973720053
+mango,carotene (FW),SVR,reflectance,150,25 mA,-0.9407928592690884
+mango,phenols (FW),SVR,reflectance,150,25 mA,-12.874627623719677
+mango,phenols (FW),SVR,reflectance,150,25 mA,-14.932076258013673
+mango,phenols (FW),SVR,reflectance,150,25 mA,-14.076196055803708
+mango,phenols (FW),SVR,reflectance,150,25 mA,-15.987682553479987
+mango,phenols (FW),SVR,reflectance,150,25 mA,-19.475388228413568
+mango,phenols (FW),SVR,reflectance,150,25 mA,-23.75458309177356
+mango,phenols (FW),SVR,reflectance,150,25 mA,-19.722339995495844
+mango,phenols (FW),SVR,reflectance,150,25 mA,-22.939137994492718
+mango,phenols (FW),SVR,reflectance,150,25 mA,-19.218967031379723
+mango,phenols (FW),SVR,reflectance,150,25 mA,-16.68033124434096
+mango,carotene (FW),PLS,reflectance,150,25 mA,-1.08013330355768
+mango,carotene (FW),PLS,reflectance,150,25 mA,-1.0358196848238677
+mango,carotene (FW),PLS,reflectance,150,25 mA,-1.2800139653692548
+mango,carotene (FW),PLS,reflectance,150,25 mA,-1.1419047920057095
+mango,carotene (FW),PLS,reflectance,150,25 mA,-1.4725312083066822
+mango,carotene (FW),PLS,reflectance,150,25 mA,-0.9351235413144864
+mango,carotene (FW),PLS,reflectance,150,25 mA,-1.1731583643846715
+mango,carotene (FW),PLS,reflectance,150,25 mA,-1.3555268046209363
+mango,carotene (FW),PLS,reflectance,150,25 mA,-1.477604055538653
+mango,carotene (FW),PLS,reflectance,150,25 mA,-1.0709531227058586
+mango,phenols (FW),PLS,reflectance,150,25 mA,-21.2233773672731
+mango,phenols (FW),PLS,reflectance,150,25 mA,-14.266388378217819
+mango,phenols (FW),PLS,reflectance,150,25 mA,-20.2025803270511
+mango,phenols (FW),PLS,reflectance,150,25 mA,-19.19802336152847
+mango,phenols (FW),PLS,reflectance,150,25 mA,-16.06804549564409
+mango,phenols (FW),PLS,reflectance,150,25 mA,-15.525701104209922
+mango,phenols (FW),PLS,reflectance,150,25 mA,-28.17498006106306
+mango,phenols (FW),PLS,reflectance,150,25 mA,-22.551695955213543
+mango,phenols (FW),PLS,reflectance,150,25 mA,-17.44002777090867
+mango,phenols (FW),PLS,reflectance,150,25 mA,-21.992970697464404
+mango,carotene (FW),ARD,absorbance,50,12.5 mA,-0.9545610418494169
+mango,carotene (FW),ARD,absorbance,50,12.5 mA,-1.2767803042990218
+mango,carotene (FW),ARD,absorbance,50,12.5 mA,-0.9074900181512728
+mango,carotene (FW),ARD,absorbance,50,12.5 mA,-1.1291425169949363
+mango,carotene (FW),ARD,absorbance,50,12.5 mA,-1.233516231206558
+mango,carotene (FW),ARD,absorbance,50,12.5 mA,-0.8246834686583759
+mango,carotene (FW),ARD,absorbance,50,12.5 mA,-0.8974256543449509
+mango,carotene (FW),ARD,absorbance,50,12.5 mA,-1.22559791358673
+mango,carotene (FW),ARD,absorbance,50,12.5 mA,-1.1762977255237168
+mango,carotene (FW),ARD,absorbance,50,12.5 mA,-1.0346493473356546
+mango,phenols (FW),ARD,absorbance,50,12.5 mA,-27.744104764727773
+mango,phenols (FW),ARD,absorbance,50,12.5 mA,-25.409480482629814
+mango,phenols (FW),ARD,absorbance,50,12.5 mA,-27.20836833688127
+mango,phenols (FW),ARD,absorbance,50,12.5 mA,-21.446031076784774
+mango,phenols (FW),ARD,absorbance,50,12.5 mA,-21.61701889476254
+mango,phenols (FW),ARD,absorbance,50,12.5 mA,-18.203624619499692
+mango,phenols (FW),ARD,absorbance,50,12.5 mA,-22.517029183637813
+mango,phenols (FW),ARD,absorbance,50,12.5 mA,-22.347607848670087
+mango,phenols (FW),ARD,absorbance,50,12.5 mA,-19.42266871018652
+mango,phenols (FW),ARD,absorbance,50,12.5 mA,-30.70770067566841
+mango,carotene (FW),Huber Regression,absorbance,50,12.5 mA,-0.9382054435770075
+mango,carotene (FW),Huber Regression,absorbance,50,12.5 mA,-1.066944495350482
+mango,carotene (FW),Huber Regression,absorbance,50,12.5 mA,-1.0484197137772784
+mango,carotene (FW),Huber Regression,absorbance,50,12.5 mA,-0.9117138894415378
+mango,carotene (FW),Huber Regression,absorbance,50,12.5 mA,-0.8894775815420305
+mango,carotene (FW),Huber Regression,absorbance,50,12.5 mA,-1.089284883757048
+mango,carotene (FW),Huber Regression,absorbance,50,12.5 mA,-1.394237620703017
+mango,carotene (FW),Huber Regression,absorbance,50,12.5 mA,-0.9494859786348854
+mango,carotene (FW),Huber Regression,absorbance,50,12.5 mA,-0.9146445423730574
+mango,carotene (FW),Huber Regression,absorbance,50,12.5 mA,-0.7772214344857227
+mango,phenols (FW),Huber Regression,absorbance,50,12.5 mA,-22.35227270897345
+mango,phenols (FW),Huber Regression,absorbance,50,12.5 mA,-22.297101557820397
+mango,phenols (FW),Huber Regression,absorbance,50,12.5 mA,-20.300132853007586
+mango,phenols (FW),Huber Regression,absorbance,50,12.5 mA,-22.571165329564238
+mango,phenols (FW),Huber Regression,absorbance,50,12.5 mA,-19.61696386876037
+mango,phenols (FW),Huber Regression,absorbance,50,12.5 mA,-17.761902509486497
+mango,phenols (FW),Huber Regression,absorbance,50,12.5 mA,-23.537671807478148
+mango,phenols (FW),Huber Regression,absorbance,50,12.5 mA,-20.071608823430324
+mango,phenols (FW),Huber Regression,absorbance,50,12.5 mA,-19.737216966067624
+mango,phenols (FW),Huber Regression,absorbance,50,12.5 mA,-16.705435513057427
+mango,carotene (FW),Lasso IC,absorbance,50,12.5 mA,-0.7161350213125482
+mango,carotene (FW),Lasso IC,absorbance,50,12.5 mA,-1.3611217261654007
+mango,carotene (FW),Lasso IC,absorbance,50,12.5 mA,-1.1958578227589918
+mango,carotene (FW),Lasso IC,absorbance,50,12.5 mA,-0.9239198361707528
+mango,carotene (FW),Lasso IC,absorbance,50,12.5 mA,-1.1875568429500678
+mango,carotene (FW),Lasso IC,absorbance,50,12.5 mA,-0.8577271810137638
+mango,carotene (FW),Lasso IC,absorbance,50,12.5 mA,-1.1752013191005453
+mango,carotene (FW),Lasso IC,absorbance,50,12.5 mA,-0.9879801885314698
+mango,carotene (FW),Lasso IC,absorbance,50,12.5 mA,-1.3073756378392511
+mango,carotene (FW),Lasso IC,absorbance,50,12.5 mA,-1.393559027834594
+mango,phenols (FW),Lasso IC,absorbance,50,12.5 mA,-12.499892691997927
+mango,phenols (FW),Lasso IC,absorbance,50,12.5 mA,-19.032622869642697
+mango,phenols (FW),Lasso IC,absorbance,50,12.5 mA,-15.055531317639781
+mango,phenols (FW),Lasso IC,absorbance,50,12.5 mA,-15.205129489276203
+mango,phenols (FW),Lasso IC,absorbance,50,12.5 mA,-22.80179654468365
+mango,phenols (FW),Lasso IC,absorbance,50,12.5 mA,-26.298557412712046
+mango,phenols (FW),Lasso IC,absorbance,50,12.5 mA,-21.00920113430238
+mango,phenols (FW),Lasso IC,absorbance,50,12.5 mA,-18.371124256697794
+mango,phenols (FW),Lasso IC,absorbance,50,12.5 mA,-23.847476110863745
+mango,phenols (FW),Lasso IC,absorbance,50,12.5 mA,-20.55678513175915
+mango,carotene (FW),SVR,absorbance,50,12.5 mA,-1.1346010059971552
+mango,carotene (FW),SVR,absorbance,50,12.5 mA,-0.9589296427300258
+mango,carotene (FW),SVR,absorbance,50,12.5 mA,-0.9216936799242974
+mango,carotene (FW),SVR,absorbance,50,12.5 mA,-1.1910608269219105
+mango,carotene (FW),SVR,absorbance,50,12.5 mA,-1.05994969476204
+mango,carotene (FW),SVR,absorbance,50,12.5 mA,-0.8317794945769778
+mango,carotene (FW),SVR,absorbance,50,12.5 mA,-1.0274097578000396
+mango,carotene (FW),SVR,absorbance,50,12.5 mA,-1.1903564297490639
+mango,carotene (FW),SVR,absorbance,50,12.5 mA,-0.8578743565824535
+mango,carotene (FW),SVR,absorbance,50,12.5 mA,-0.9177192679282729
+mango,phenols (FW),SVR,absorbance,50,12.5 mA,-16.347704041495817
+mango,phenols (FW),SVR,absorbance,50,12.5 mA,-17.85501091429434
+mango,phenols (FW),SVR,absorbance,50,12.5 mA,-15.289350549938368
+mango,phenols (FW),SVR,absorbance,50,12.5 mA,-15.514691208768616
+mango,phenols (FW),SVR,absorbance,50,12.5 mA,-17.20657426771709
+mango,phenols (FW),SVR,absorbance,50,12.5 mA,-17.52585886735707
+mango,phenols (FW),SVR,absorbance,50,12.5 mA,-16.193034427620702
+mango,phenols (FW),SVR,absorbance,50,12.5 mA,-26.696847551834942
+mango,phenols (FW),SVR,absorbance,50,12.5 mA,-22.109925341684413
+mango,phenols (FW),SVR,absorbance,50,12.5 mA,-12.841528899659105
+mango,carotene (FW),PLS,absorbance,50,12.5 mA,-0.9770224753135263
+mango,carotene (FW),PLS,absorbance,50,12.5 mA,-1.056251119508857
+mango,carotene (FW),PLS,absorbance,50,12.5 mA,-1.1204575560337
+mango,carotene (FW),PLS,absorbance,50,12.5 mA,-0.937268953112655
+mango,carotene (FW),PLS,absorbance,50,12.5 mA,-0.9854539049769546
+mango,carotene (FW),PLS,absorbance,50,12.5 mA,-1.332573352173631
+mango,carotene (FW),PLS,absorbance,50,12.5 mA,-1.2266732070629855
+mango,carotene (FW),PLS,absorbance,50,12.5 mA,-1.0843571229328366
+mango,carotene (FW),PLS,absorbance,50,12.5 mA,-1.0331374508100954
+mango,carotene (FW),PLS,absorbance,50,12.5 mA,-1.0601878823477402
+mango,phenols (FW),PLS,absorbance,50,12.5 mA,-22.678138599923468
+mango,phenols (FW),PLS,absorbance,50,12.5 mA,-17.631976858825677
+mango,phenols (FW),PLS,absorbance,50,12.5 mA,-18.44987502132896
+mango,phenols (FW),PLS,absorbance,50,12.5 mA,-17.428892045129615
+mango,phenols (FW),PLS,absorbance,50,12.5 mA,-16.849148748489682
+mango,phenols (FW),PLS,absorbance,50,12.5 mA,-18.002645527733925
+mango,phenols (FW),PLS,absorbance,50,12.5 mA,-23.77191632508193
+mango,phenols (FW),PLS,absorbance,50,12.5 mA,-24.444267782025847
+mango,phenols (FW),PLS,absorbance,50,12.5 mA,-19.83324491326482
+mango,phenols (FW),PLS,absorbance,50,12.5 mA,-25.718552584111606
+mango,carotene (FW),ARD,absorbance,50,25 mA,-1.1167084103075788
+mango,carotene (FW),ARD,absorbance,50,25 mA,-0.8284864578576447
+mango,carotene (FW),ARD,absorbance,50,25 mA,-1.105917699493399
+mango,carotene (FW),ARD,absorbance,50,25 mA,-1.2652955619500985
+mango,carotene (FW),ARD,absorbance,50,25 mA,-0.7227462549465556
+mango,carotene (FW),ARD,absorbance,50,25 mA,-1.0528941430083443
+mango,carotene (FW),ARD,absorbance,50,25 mA,-0.9587726558201543
+mango,carotene (FW),ARD,absorbance,50,25 mA,-0.9254485579928761
+mango,carotene (FW),ARD,absorbance,50,25 mA,-1.0464180047852654
+mango,carotene (FW),ARD,absorbance,50,25 mA,-1.11019429222822
+mango,phenols (FW),ARD,absorbance,50,25 mA,-25.051019186909425
+mango,phenols (FW),ARD,absorbance,50,25 mA,-27.799208721240156
+mango,phenols (FW),ARD,absorbance,50,25 mA,-16.11029380739162
+mango,phenols (FW),ARD,absorbance,50,25 mA,-18.64621042544673
+mango,phenols (FW),ARD,absorbance,50,25 mA,-22.077007808369533
+mango,phenols (FW),ARD,absorbance,50,25 mA,-18.03515086450169
+mango,phenols (FW),ARD,absorbance,50,25 mA,-19.44449956965864
+mango,phenols (FW),ARD,absorbance,50,25 mA,-27.081323262623858
+mango,phenols (FW),ARD,absorbance,50,25 mA,-18.18177807625532
+mango,phenols (FW),ARD,absorbance,50,25 mA,-17.29251290501756
+mango,carotene (FW),Huber Regression,absorbance,50,25 mA,-0.9542197441398671
+mango,carotene (FW),Huber Regression,absorbance,50,25 mA,-0.972410172588727
+mango,carotene (FW),Huber Regression,absorbance,50,25 mA,-1.0561196833349507
+mango,carotene (FW),Huber Regression,absorbance,50,25 mA,-1.0855568704317602
+mango,carotene (FW),Huber Regression,absorbance,50,25 mA,-0.8716734706826481
+mango,carotene (FW),Huber Regression,absorbance,50,25 mA,-1.090042361542003
+mango,carotene (FW),Huber Regression,absorbance,50,25 mA,-0.7734979921791632
+mango,carotene (FW),Huber Regression,absorbance,50,25 mA,-0.8453644545511522
+mango,carotene (FW),Huber Regression,absorbance,50,25 mA,-1.2991977565777557
+mango,carotene (FW),Huber Regression,absorbance,50,25 mA,-1.1537106370934793
+mango,phenols (FW),Huber Regression,absorbance,50,25 mA,-19.101631488622758
+mango,phenols (FW),Huber Regression,absorbance,50,25 mA,-14.213335347283662
+mango,phenols (FW),Huber Regression,absorbance,50,25 mA,-20.475368695836014
+mango,phenols (FW),Huber Regression,absorbance,50,25 mA,-17.27990105386288
+mango,phenols (FW),Huber Regression,absorbance,50,25 mA,-25.332781613971274
+mango,phenols (FW),Huber Regression,absorbance,50,25 mA,-18.880281593513903
+mango,phenols (FW),Huber Regression,absorbance,50,25 mA,-14.47117731389103
+mango,phenols (FW),Huber Regression,absorbance,50,25 mA,-18.919710997066325
+mango,phenols (FW),Huber Regression,absorbance,50,25 mA,-16.322559297257083
+mango,phenols (FW),Huber Regression,absorbance,50,25 mA,-23.10328481747736
+mango,carotene (FW),Lasso IC,absorbance,50,25 mA,-1.1433134513779757
+mango,carotene (FW),Lasso IC,absorbance,50,25 mA,-0.8328618066578498
+mango,carotene (FW),Lasso IC,absorbance,50,25 mA,-1.1581226568025031
+mango,carotene (FW),Lasso IC,absorbance,50,25 mA,-0.944520603883931
+mango,carotene (FW),Lasso IC,absorbance,50,25 mA,-0.8688135128814718
+mango,carotene (FW),Lasso IC,absorbance,50,25 mA,-1.278962802166433
+mango,carotene (FW),Lasso IC,absorbance,50,25 mA,-1.1297710391114881
+mango,carotene (FW),Lasso IC,absorbance,50,25 mA,-0.8055150387269258
+mango,carotene (FW),Lasso IC,absorbance,50,25 mA,-0.9358620577557673
+mango,carotene (FW),Lasso IC,absorbance,50,25 mA,-1.2026855878906824
+mango,phenols (FW),Lasso IC,absorbance,50,25 mA,-15.91027658376196
+mango,phenols (FW),Lasso IC,absorbance,50,25 mA,-25.118305942479832
+mango,phenols (FW),Lasso IC,absorbance,50,25 mA,-16.52703605685164
+mango,phenols (FW),Lasso IC,absorbance,50,25 mA,-18.20587457881813
+mango,phenols (FW),Lasso IC,absorbance,50,25 mA,-19.754224109769233
+mango,phenols (FW),Lasso IC,absorbance,50,25 mA,-23.868498341393266
+mango,phenols (FW),Lasso IC,absorbance,50,25 mA,-19.878990656109934
+mango,phenols (FW),Lasso IC,absorbance,50,25 mA,-18.551052136734157
+mango,phenols (FW),Lasso IC,absorbance,50,25 mA,-15.040794902368713
+mango,phenols (FW),Lasso IC,absorbance,50,25 mA,-12.683426606056582
+mango,carotene (FW),SVR,absorbance,50,25 mA,-0.9214279766754697
+mango,carotene (FW),SVR,absorbance,50,25 mA,-0.9622570687144665
+mango,carotene (FW),SVR,absorbance,50,25 mA,-1.1234889182501353
+mango,carotene (FW),SVR,absorbance,50,25 mA,-0.8086207969374903
+mango,carotene (FW),SVR,absorbance,50,25 mA,-0.8520863733066272
+mango,carotene (FW),SVR,absorbance,50,25 mA,-1.0403463067795462
+mango,carotene (FW),SVR,absorbance,50,25 mA,-1.4598477913064447
+mango,carotene (FW),SVR,absorbance,50,25 mA,-0.7242144783409006
+mango,carotene (FW),SVR,absorbance,50,25 mA,-0.7710419945917407
+mango,carotene (FW),SVR,absorbance,50,25 mA,-0.8863093900192609
+mango,phenols (FW),SVR,absorbance,50,25 mA,-21.569969344561123
+mango,phenols (FW),SVR,absorbance,50,25 mA,-19.25237630731285
+mango,phenols (FW),SVR,absorbance,50,25 mA,-22.495143036840265
+mango,phenols (FW),SVR,absorbance,50,25 mA,-19.122706184566322
+mango,phenols (FW),SVR,absorbance,50,25 mA,-16.280471177414746
+mango,phenols (FW),SVR,absorbance,50,25 mA,-16.754314164270788
+mango,phenols (FW),SVR,absorbance,50,25 mA,-19.770713431097565
+mango,phenols (FW),SVR,absorbance,50,25 mA,-18.795944618268276
+mango,phenols (FW),SVR,absorbance,50,25 mA,-15.248108671210092
+mango,phenols (FW),SVR,absorbance,50,25 mA,-18.53565079661598
+mango,carotene (FW),PLS,absorbance,50,25 mA,-0.9729012828748044
+mango,carotene (FW),PLS,absorbance,50,25 mA,-0.9420322712107791
+mango,carotene (FW),PLS,absorbance,50,25 mA,-1.209858256889966
+mango,carotene (FW),PLS,absorbance,50,25 mA,-0.9302532114279217
+mango,carotene (FW),PLS,absorbance,50,25 mA,-1.017039138483681
+mango,carotene (FW),PLS,absorbance,50,25 mA,-1.0382298924883038
+mango,carotene (FW),PLS,absorbance,50,25 mA,-1.0037090096878034
+mango,carotene (FW),PLS,absorbance,50,25 mA,-1.2271020666204233
+mango,carotene (FW),PLS,absorbance,50,25 mA,-1.0496696649268589
+mango,carotene (FW),PLS,absorbance,50,25 mA,-1.052198912609127
+mango,phenols (FW),PLS,absorbance,50,25 mA,-23.091814364912704
+mango,phenols (FW),PLS,absorbance,50,25 mA,-28.495927901019176
+mango,phenols (FW),PLS,absorbance,50,25 mA,-21.913624938286805
+mango,phenols (FW),PLS,absorbance,50,25 mA,-17.33776657375476
+mango,phenols (FW),PLS,absorbance,50,25 mA,-23.837552212280865
+mango,phenols (FW),PLS,absorbance,50,25 mA,-26.69982020614501
+mango,phenols (FW),PLS,absorbance,50,25 mA,-25.172680979558216
+mango,phenols (FW),PLS,absorbance,50,25 mA,-24.11066408129265
+mango,phenols (FW),PLS,absorbance,50,25 mA,-16.459757612065964
+mango,phenols (FW),PLS,absorbance,50,25 mA,-20.953481216641784
+mango,carotene (FW),ARD,absorbance,100,12.5 mA,-1.51307485942029
+mango,carotene (FW),ARD,absorbance,100,12.5 mA,-1.147416311197092
+mango,carotene (FW),ARD,absorbance,100,12.5 mA,-1.1037740281388466
+mango,carotene (FW),ARD,absorbance,100,12.5 mA,-1.17503538246561
+mango,carotene (FW),ARD,absorbance,100,12.5 mA,-1.0652239065727547
+mango,carotene (FW),ARD,absorbance,100,12.5 mA,-1.0712504352859815
+mango,carotene (FW),ARD,absorbance,100,12.5 mA,-0.9126321744732913
+mango,carotene (FW),ARD,absorbance,100,12.5 mA,-1.1394674369049231
+mango,carotene (FW),ARD,absorbance,100,12.5 mA,-1.1438102112234034
+mango,carotene (FW),ARD,absorbance,100,12.5 mA,-0.8156634231394023
+mango,phenols (FW),ARD,absorbance,100,12.5 mA,-18.08566324305158
+mango,phenols (FW),ARD,absorbance,100,12.5 mA,-21.56955094667972
+mango,phenols (FW),ARD,absorbance,100,12.5 mA,-25.89089508269851
+mango,phenols (FW),ARD,absorbance,100,12.5 mA,-27.333380665892246
+mango,phenols (FW),ARD,absorbance,100,12.5 mA,-20.9897442330227
+mango,phenols (FW),ARD,absorbance,100,12.5 mA,-24.29087575417028
+mango,phenols (FW),ARD,absorbance,100,12.5 mA,-21.268109940675398
+mango,phenols (FW),ARD,absorbance,100,12.5 mA,-24.415453632407875
+mango,phenols (FW),ARD,absorbance,100,12.5 mA,-23.63331628077321
+mango,phenols (FW),ARD,absorbance,100,12.5 mA,-17.464013123226437
+mango,carotene (FW),Huber Regression,absorbance,100,12.5 mA,-0.842973592192288
+mango,carotene (FW),Huber Regression,absorbance,100,12.5 mA,-1.09493602571027
+mango,carotene (FW),Huber Regression,absorbance,100,12.5 mA,-0.6904762265667249
+mango,carotene (FW),Huber Regression,absorbance,100,12.5 mA,-0.8942097304682903
+mango,carotene (FW),Huber Regression,absorbance,100,12.5 mA,-0.8842663552458198
+mango,carotene (FW),Huber Regression,absorbance,100,12.5 mA,-0.8466990024680457
+mango,carotene (FW),Huber Regression,absorbance,100,12.5 mA,-0.6543613872651076
+mango,carotene (FW),Huber Regression,absorbance,100,12.5 mA,-0.6877415209660981
+mango,carotene (FW),Huber Regression,absorbance,100,12.5 mA,-1.3683218718082313
+mango,carotene (FW),Huber Regression,absorbance,100,12.5 mA,-1.08504273602679
+mango,phenols (FW),Huber Regression,absorbance,100,12.5 mA,-16.6198618677246
+mango,phenols (FW),Huber Regression,absorbance,100,12.5 mA,-25.031737033280756
+mango,phenols (FW),Huber Regression,absorbance,100,12.5 mA,-21.109793905654456
+mango,phenols (FW),Huber Regression,absorbance,100,12.5 mA,-25.590233384099975
+mango,phenols (FW),Huber Regression,absorbance,100,12.5 mA,-25.222964520682613
+mango,phenols (FW),Huber Regression,absorbance,100,12.5 mA,-16.718522703760147
+mango,phenols (FW),Huber Regression,absorbance,100,12.5 mA,-20.333848364709645
+mango,phenols (FW),Huber Regression,absorbance,100,12.5 mA,-24.31552974157649
+mango,phenols (FW),Huber Regression,absorbance,100,12.5 mA,-20.78913710333257
+mango,phenols (FW),Huber Regression,absorbance,100,12.5 mA,-20.559789966489046
+mango,carotene (FW),Lasso IC,absorbance,100,12.5 mA,-1.1434622960282907
+mango,carotene (FW),Lasso IC,absorbance,100,12.5 mA,-0.7662964194206326
+mango,carotene (FW),Lasso IC,absorbance,100,12.5 mA,-1.2775754639917372
+mango,carotene (FW),Lasso IC,absorbance,100,12.5 mA,-1.118437031431071
+mango,carotene (FW),Lasso IC,absorbance,100,12.5 mA,-0.9032709641741125
+mango,carotene (FW),Lasso IC,absorbance,100,12.5 mA,-1.1884775285802056
+mango,carotene (FW),Lasso IC,absorbance,100,12.5 mA,-1.2916958715625326
+mango,carotene (FW),Lasso IC,absorbance,100,12.5 mA,-1.3277492323589624
+mango,carotene (FW),Lasso IC,absorbance,100,12.5 mA,-1.0082107551230417
+mango,carotene (FW),Lasso IC,absorbance,100,12.5 mA,-1.0290041175454692
+mango,phenols (FW),Lasso IC,absorbance,100,12.5 mA,-22.788461188594
+mango,phenols (FW),Lasso IC,absorbance,100,12.5 mA,-20.127560737809684
+mango,phenols (FW),Lasso IC,absorbance,100,12.5 mA,-20.778323850300485
+mango,phenols (FW),Lasso IC,absorbance,100,12.5 mA,-17.911975480033945
+mango,phenols (FW),Lasso IC,absorbance,100,12.5 mA,-17.84926580749938
+mango,phenols (FW),Lasso IC,absorbance,100,12.5 mA,-16.995063950177308
+mango,phenols (FW),Lasso IC,absorbance,100,12.5 mA,-20.601554174513474
+mango,phenols (FW),Lasso IC,absorbance,100,12.5 mA,-14.089744323288949
+mango,phenols (FW),Lasso IC,absorbance,100,12.5 mA,-12.833411497272413
+mango,phenols (FW),Lasso IC,absorbance,100,12.5 mA,-16.862796951498176
+mango,carotene (FW),SVR,absorbance,100,12.5 mA,-1.0924321410564122
+mango,carotene (FW),SVR,absorbance,100,12.5 mA,-0.9124321901319357
+mango,carotene (FW),SVR,absorbance,100,12.5 mA,-1.0021289185679303
+mango,carotene (FW),SVR,absorbance,100,12.5 mA,-1.0013390028793123
+mango,carotene (FW),SVR,absorbance,100,12.5 mA,-0.9734120025873835
+mango,carotene (FW),SVR,absorbance,100,12.5 mA,-1.2761263836355072
+mango,carotene (FW),SVR,absorbance,100,12.5 mA,-0.9124167715597244
+mango,carotene (FW),SVR,absorbance,100,12.5 mA,-1.1464773184128811
+mango,carotene (FW),SVR,absorbance,100,12.5 mA,-1.0611234606867266
+mango,carotene (FW),SVR,absorbance,100,12.5 mA,-0.9478638133208687
+mango,phenols (FW),SVR,absorbance,100,12.5 mA,-18.042456594863456
+mango,phenols (FW),SVR,absorbance,100,12.5 mA,-23.18869928309366
+mango,phenols (FW),SVR,absorbance,100,12.5 mA,-15.265899631579241
+mango,phenols (FW),SVR,absorbance,100,12.5 mA,-13.350897085286025
+mango,phenols (FW),SVR,absorbance,100,12.5 mA,-21.468241527906976
+mango,phenols (FW),SVR,absorbance,100,12.5 mA,-16.430660563928416
+mango,phenols (FW),SVR,absorbance,100,12.5 mA,-19.417103503622947
+mango,phenols (FW),SVR,absorbance,100,12.5 mA,-14.472712843151198
+mango,phenols (FW),SVR,absorbance,100,12.5 mA,-13.006900900615346
+mango,phenols (FW),SVR,absorbance,100,12.5 mA,-18.102761809981306
+mango,carotene (FW),PLS,absorbance,100,12.5 mA,-0.9187505477765795
+mango,carotene (FW),PLS,absorbance,100,12.5 mA,-0.973664197920409
+mango,carotene (FW),PLS,absorbance,100,12.5 mA,-1.044383029517291
+mango,carotene (FW),PLS,absorbance,100,12.5 mA,-1.1259761691493424
+mango,carotene (FW),PLS,absorbance,100,12.5 mA,-1.2113428060919769
+mango,carotene (FW),PLS,absorbance,100,12.5 mA,-1.0829759113332056
+mango,carotene (FW),PLS,absorbance,100,12.5 mA,-0.963384297760575
+mango,carotene (FW),PLS,absorbance,100,12.5 mA,-1.1077551415883535
+mango,carotene (FW),PLS,absorbance,100,12.5 mA,-0.990732260337094
+mango,carotene (FW),PLS,absorbance,100,12.5 mA,-1.1193313407501102
+mango,phenols (FW),PLS,absorbance,100,12.5 mA,-13.534230432389924
+mango,phenols (FW),PLS,absorbance,100,12.5 mA,-20.99937296609113
+mango,phenols (FW),PLS,absorbance,100,12.5 mA,-23.502028826066994
+mango,phenols (FW),PLS,absorbance,100,12.5 mA,-15.262625157086733
+mango,phenols (FW),PLS,absorbance,100,12.5 mA,-22.324391413361823
+mango,phenols (FW),PLS,absorbance,100,12.5 mA,-17.611284200302112
+mango,phenols (FW),PLS,absorbance,100,12.5 mA,-17.07994901138314
+mango,phenols (FW),PLS,absorbance,100,12.5 mA,-20.980973104251685
+mango,phenols (FW),PLS,absorbance,100,12.5 mA,-16.820684153647946
+mango,phenols (FW),PLS,absorbance,100,12.5 mA,-21.963513074029873
+mango,carotene (FW),ARD,absorbance,100,25 mA,-0.9933752597300379
+mango,carotene (FW),ARD,absorbance,100,25 mA,-1.3605417028727416
+mango,carotene (FW),ARD,absorbance,100,25 mA,-0.9332289691739729
+mango,carotene (FW),ARD,absorbance,100,25 mA,-1.1989081905632002
+mango,carotene (FW),ARD,absorbance,100,25 mA,-0.9782651481233436
+mango,carotene (FW),ARD,absorbance,100,25 mA,-1.004949357720803
+mango,carotene (FW),ARD,absorbance,100,25 mA,-0.69979970370498
+mango,carotene (FW),ARD,absorbance,100,25 mA,-0.9983609813139083
+mango,carotene (FW),ARD,absorbance,100,25 mA,-0.8115655518817078
+mango,carotene (FW),ARD,absorbance,100,25 mA,-1.2845528498746894
+mango,phenols (FW),ARD,absorbance,100,25 mA,-19.482935986757344
+mango,phenols (FW),ARD,absorbance,100,25 mA,-22.180189266238344
+mango,phenols (FW),ARD,absorbance,100,25 mA,-20.063052252135314
+mango,phenols (FW),ARD,absorbance,100,25 mA,-14.009559470030581
+mango,phenols (FW),ARD,absorbance,100,25 mA,-22.740938601662247
+mango,phenols (FW),ARD,absorbance,100,25 mA,-18.414056782243108
+mango,phenols (FW),ARD,absorbance,100,25 mA,-19.834276686275533
+mango,phenols (FW),ARD,absorbance,100,25 mA,-22.206514171684812
+mango,phenols (FW),ARD,absorbance,100,25 mA,-15.565284359401456
+mango,phenols (FW),ARD,absorbance,100,25 mA,-19.842297975088062
+mango,carotene (FW),Huber Regression,absorbance,100,25 mA,-0.8406322856291768
+mango,carotene (FW),Huber Regression,absorbance,100,25 mA,-0.807964382777823
+mango,carotene (FW),Huber Regression,absorbance,100,25 mA,-0.8689112877143074
+mango,carotene (FW),Huber Regression,absorbance,100,25 mA,-0.792312209242706
+mango,carotene (FW),Huber Regression,absorbance,100,25 mA,-0.8706678134775289
+mango,carotene (FW),Huber Regression,absorbance,100,25 mA,-0.9086798141054967
+mango,carotene (FW),Huber Regression,absorbance,100,25 mA,-0.950136785511903
+mango,carotene (FW),Huber Regression,absorbance,100,25 mA,-1.084514020756044
+mango,carotene (FW),Huber Regression,absorbance,100,25 mA,-1.133471862789991
+mango,carotene (FW),Huber Regression,absorbance,100,25 mA,-0.8714550731922946
+mango,phenols (FW),Huber Regression,absorbance,100,25 mA,-15.886412018989114
+mango,phenols (FW),Huber Regression,absorbance,100,25 mA,-13.621790498901602
+mango,phenols (FW),Huber Regression,absorbance,100,25 mA,-14.505189013771464
+mango,phenols (FW),Huber Regression,absorbance,100,25 mA,-20.87816125424711
+mango,phenols (FW),Huber Regression,absorbance,100,25 mA,-16.185369324973358
+mango,phenols (FW),Huber Regression,absorbance,100,25 mA,-15.446393439579522
+mango,phenols (FW),Huber Regression,absorbance,100,25 mA,-19.752338601351493
+mango,phenols (FW),Huber Regression,absorbance,100,25 mA,-22.98627087007125
+mango,phenols (FW),Huber Regression,absorbance,100,25 mA,-16.94584780636127
+mango,phenols (FW),Huber Regression,absorbance,100,25 mA,-15.778803254173848
+mango,carotene (FW),Lasso IC,absorbance,100,25 mA,-1.0438333607413692
+mango,carotene (FW),Lasso IC,absorbance,100,25 mA,-1.062641176770778
+mango,carotene (FW),Lasso IC,absorbance,100,25 mA,-1.0224497425530057
+mango,carotene (FW),Lasso IC,absorbance,100,25 mA,-0.9908030601108725
+mango,carotene (FW),Lasso IC,absorbance,100,25 mA,-0.9579318842694308
+mango,carotene (FW),Lasso IC,absorbance,100,25 mA,-1.0926959735283437
+mango,carotene (FW),Lasso IC,absorbance,100,25 mA,-1.1403776484876738
+mango,carotene (FW),Lasso IC,absorbance,100,25 mA,-0.985854791201764
+mango,carotene (FW),Lasso IC,absorbance,100,25 mA,-0.7690088905111677
+mango,carotene (FW),Lasso IC,absorbance,100,25 mA,-1.1544614586365511
+mango,phenols (FW),Lasso IC,absorbance,100,25 mA,-17.719134345268852
+mango,phenols (FW),Lasso IC,absorbance,100,25 mA,-23.847363713559336
+mango,phenols (FW),Lasso IC,absorbance,100,25 mA,-21.4812704943782
+mango,phenols (FW),Lasso IC,absorbance,100,25 mA,-16.991245726291307
+mango,phenols (FW),Lasso IC,absorbance,100,25 mA,-19.646183756041943
+mango,phenols (FW),Lasso IC,absorbance,100,25 mA,-22.421189175700327
+mango,phenols (FW),Lasso IC,absorbance,100,25 mA,-18.49079325717805
+mango,phenols (FW),Lasso IC,absorbance,100,25 mA,-23.092243036567115
+mango,phenols (FW),Lasso IC,absorbance,100,25 mA,-16.843675609020064
+mango,phenols (FW),Lasso IC,absorbance,100,25 mA,-23.02968163948689
+mango,carotene (FW),SVR,absorbance,100,25 mA,-0.8989037940790998
+mango,carotene (FW),SVR,absorbance,100,25 mA,-0.9584199197656316
+mango,carotene (FW),SVR,absorbance,100,25 mA,-0.9564096657155754
+mango,carotene (FW),SVR,absorbance,100,25 mA,-0.7554065299691387
+mango,carotene (FW),SVR,absorbance,100,25 mA,-1.0480613346346423
+mango,carotene (FW),SVR,absorbance,100,25 mA,-0.766313723561756
+mango,carotene (FW),SVR,absorbance,100,25 mA,-1.097378915897358
+mango,carotene (FW),SVR,absorbance,100,25 mA,-0.7447934533695156
+mango,carotene (FW),SVR,absorbance,100,25 mA,-0.9751444668775476
+mango,carotene (FW),SVR,absorbance,100,25 mA,-0.6776901245767418
+mango,phenols (FW),SVR,absorbance,100,25 mA,-17.9343398605313
+mango,phenols (FW),SVR,absorbance,100,25 mA,-14.746491653993568
+mango,phenols (FW),SVR,absorbance,100,25 mA,-16.32733224652799
+mango,phenols (FW),SVR,absorbance,100,25 mA,-18.148307752006453
+mango,phenols (FW),SVR,absorbance,100,25 mA,-18.28602615448471
+mango,phenols (FW),SVR,absorbance,100,25 mA,-16.13869728827979
+mango,phenols (FW),SVR,absorbance,100,25 mA,-14.881350212949373
+mango,phenols (FW),SVR,absorbance,100,25 mA,-19.114885133519994
+mango,phenols (FW),SVR,absorbance,100,25 mA,-25.400283888219054
+mango,phenols (FW),SVR,absorbance,100,25 mA,-18.9663280387267
+mango,carotene (FW),PLS,absorbance,100,25 mA,-1.1560726135826902
+mango,carotene (FW),PLS,absorbance,100,25 mA,-0.8574572661879484
+mango,carotene (FW),PLS,absorbance,100,25 mA,-1.0321075105576627
+mango,carotene (FW),PLS,absorbance,100,25 mA,-0.7875826835984474
+mango,carotene (FW),PLS,absorbance,100,25 mA,-1.0585303388446543
+mango,carotene (FW),PLS,absorbance,100,25 mA,-1.0082085108338013
+mango,carotene (FW),PLS,absorbance,100,25 mA,-1.0181162865960034
+mango,carotene (FW),PLS,absorbance,100,25 mA,-0.9326823283148684
+mango,carotene (FW),PLS,absorbance,100,25 mA,-1.0424440542341882
+mango,carotene (FW),PLS,absorbance,100,25 mA,-1.023278829578911
+mango,phenols (FW),PLS,absorbance,100,25 mA,-22.32638978394049
+mango,phenols (FW),PLS,absorbance,100,25 mA,-15.448872315544612
+mango,phenols (FW),PLS,absorbance,100,25 mA,-16.75748981905074
+mango,phenols (FW),PLS,absorbance,100,25 mA,-20.010241189193444
+mango,phenols (FW),PLS,absorbance,100,25 mA,-17.766956110891705
+mango,phenols (FW),PLS,absorbance,100,25 mA,-15.325864695161574
+mango,phenols (FW),PLS,absorbance,100,25 mA,-17.57300093984299
+mango,phenols (FW),PLS,absorbance,100,25 mA,-17.586140953719987
+mango,phenols (FW),PLS,absorbance,100,25 mA,-18.926719827727425
+mango,phenols (FW),PLS,absorbance,100,25 mA,-24.610887016655024
+mango,carotene (FW),ARD,absorbance,150,12.5 mA,-0.8985143177065468
+mango,carotene (FW),ARD,absorbance,150,12.5 mA,-0.8157374062283224
+mango,carotene (FW),ARD,absorbance,150,12.5 mA,-1.0604120874900127
+mango,carotene (FW),ARD,absorbance,150,12.5 mA,-1.2863635150778265
+mango,carotene (FW),ARD,absorbance,150,12.5 mA,-0.807942090473873
+mango,carotene (FW),ARD,absorbance,150,12.5 mA,-0.9055786067800199
+mango,carotene (FW),ARD,absorbance,150,12.5 mA,-1.1358842746822684
+mango,carotene (FW),ARD,absorbance,150,12.5 mA,-0.7344590572119716
+mango,carotene (FW),ARD,absorbance,150,12.5 mA,-0.6700625374873752
+mango,carotene (FW),ARD,absorbance,150,12.5 mA,-1.0819133782677306
+mango,phenols (FW),ARD,absorbance,150,12.5 mA,-18.53779005080655
+mango,phenols (FW),ARD,absorbance,150,12.5 mA,-24.304897479215523
+mango,phenols (FW),ARD,absorbance,150,12.5 mA,-19.02665961354797
+mango,phenols (FW),ARD,absorbance,150,12.5 mA,-21.143479002242138
+mango,phenols (FW),ARD,absorbance,150,12.5 mA,-29.1609748679233
+mango,phenols (FW),ARD,absorbance,150,12.5 mA,-18.829080281844156
+mango,phenols (FW),ARD,absorbance,150,12.5 mA,-22.823603866207268
+mango,phenols (FW),ARD,absorbance,150,12.5 mA,-24.030958036954097
+mango,phenols (FW),ARD,absorbance,150,12.5 mA,-26.512309618445297
+mango,phenols (FW),ARD,absorbance,150,12.5 mA,-19.861412255789993
+mango,carotene (FW),Huber Regression,absorbance,150,12.5 mA,-1.0724785065165088
+mango,carotene (FW),Huber Regression,absorbance,150,12.5 mA,-0.9304191759628722
+mango,carotene (FW),Huber Regression,absorbance,150,12.5 mA,-0.7329477598528151
+mango,carotene (FW),Huber Regression,absorbance,150,12.5 mA,-0.6918974623374864
+mango,carotene (FW),Huber Regression,absorbance,150,12.5 mA,-1.0508800510780423
+mango,carotene (FW),Huber Regression,absorbance,150,12.5 mA,-0.9310692628171098
+mango,carotene (FW),Huber Regression,absorbance,150,12.5 mA,-1.30316978118541
+mango,carotene (FW),Huber Regression,absorbance,150,12.5 mA,-1.1598678601934556
+mango,carotene (FW),Huber Regression,absorbance,150,12.5 mA,-1.2380138888393166
+mango,carotene (FW),Huber Regression,absorbance,150,12.5 mA,-0.9662399652926386
+mango,phenols (FW),Huber Regression,absorbance,150,12.5 mA,-20.878914869857958
+mango,phenols (FW),Huber Regression,absorbance,150,12.5 mA,-14.601312828881733
+mango,phenols (FW),Huber Regression,absorbance,150,12.5 mA,-17.329303761733765
+mango,phenols (FW),Huber Regression,absorbance,150,12.5 mA,-27.857124664749087
+mango,phenols (FW),Huber Regression,absorbance,150,12.5 mA,-20.255426160823422
+mango,phenols (FW),Huber Regression,absorbance,150,12.5 mA,-18.474268182767112
+mango,phenols (FW),Huber Regression,absorbance,150,12.5 mA,-23.260943701762542
+mango,phenols (FW),Huber Regression,absorbance,150,12.5 mA,-22.382334740345023
+mango,phenols (FW),Huber Regression,absorbance,150,12.5 mA,-21.62345207106612
+mango,phenols (FW),Huber Regression,absorbance,150,12.5 mA,-22.15178954280047
+mango,carotene (FW),Lasso IC,absorbance,150,12.5 mA,-0.8270983572118482
+mango,carotene (FW),Lasso IC,absorbance,150,12.5 mA,-1.0025970880091646
+mango,carotene (FW),Lasso IC,absorbance,150,12.5 mA,-0.7830043840811284
+mango,carotene (FW),Lasso IC,absorbance,150,12.5 mA,-0.8720295617675213
+mango,carotene (FW),Lasso IC,absorbance,150,12.5 mA,-1.1797266319991662
+mango,carotene (FW),Lasso IC,absorbance,150,12.5 mA,-0.9150484901833488
+mango,carotene (FW),Lasso IC,absorbance,150,12.5 mA,-1.1231011128999322
+mango,carotene (FW),Lasso IC,absorbance,150,12.5 mA,-1.0089211542918461
+mango,carotene (FW),Lasso IC,absorbance,150,12.5 mA,-1.097605121126962
+mango,carotene (FW),Lasso IC,absorbance,150,12.5 mA,-1.1179048565630951
+mango,phenols (FW),Lasso IC,absorbance,150,12.5 mA,-14.538011834630966
+mango,phenols (FW),Lasso IC,absorbance,150,12.5 mA,-23.768959030924297
+mango,phenols (FW),Lasso IC,absorbance,150,12.5 mA,-16.03973164373959
+mango,phenols (FW),Lasso IC,absorbance,150,12.5 mA,-21.968138245197114
+mango,phenols (FW),Lasso IC,absorbance,150,12.5 mA,-19.01936364562027
+mango,phenols (FW),Lasso IC,absorbance,150,12.5 mA,-16.12009553718736
+mango,phenols (FW),Lasso IC,absorbance,150,12.5 mA,-24.92650218292284
+mango,phenols (FW),Lasso IC,absorbance,150,12.5 mA,-17.47470632455356
+mango,phenols (FW),Lasso IC,absorbance,150,12.5 mA,-27.307287791457092
+mango,phenols (FW),Lasso IC,absorbance,150,12.5 mA,-22.422798331248725
+mango,carotene (FW),SVR,absorbance,150,12.5 mA,-1.0612985654899754
+mango,carotene (FW),SVR,absorbance,150,12.5 mA,-1.1742113944119337
+mango,carotene (FW),SVR,absorbance,150,12.5 mA,-1.2774808930555464
+mango,carotene (FW),SVR,absorbance,150,12.5 mA,-0.8548204252760282
+mango,carotene (FW),SVR,absorbance,150,12.5 mA,-1.0037584965249349
+mango,carotene (FW),SVR,absorbance,150,12.5 mA,-1.1322741860595598
+mango,carotene (FW),SVR,absorbance,150,12.5 mA,-1.124964024136654
+mango,carotene (FW),SVR,absorbance,150,12.5 mA,-1.1061873716452288
+mango,carotene (FW),SVR,absorbance,150,12.5 mA,-1.324872958744346
+mango,carotene (FW),SVR,absorbance,150,12.5 mA,-1.2024520828568268
+mango,phenols (FW),SVR,absorbance,150,12.5 mA,-17.34179854761757
+mango,phenols (FW),SVR,absorbance,150,12.5 mA,-16.164920608393622
+mango,phenols (FW),SVR,absorbance,150,12.5 mA,-17.705105232806847
+mango,phenols (FW),SVR,absorbance,150,12.5 mA,-17.698801847670918
+mango,phenols (FW),SVR,absorbance,150,12.5 mA,-15.163154231342984
+mango,phenols (FW),SVR,absorbance,150,12.5 mA,-21.036756871805963
+mango,phenols (FW),SVR,absorbance,150,12.5 mA,-19.50578607807784
+mango,phenols (FW),SVR,absorbance,150,12.5 mA,-20.9710288495486
+mango,phenols (FW),SVR,absorbance,150,12.5 mA,-17.84228108810577
+mango,phenols (FW),SVR,absorbance,150,12.5 mA,-17.710131703695172
+mango,carotene (FW),PLS,absorbance,150,12.5 mA,-1.1471935368872936
+mango,carotene (FW),PLS,absorbance,150,12.5 mA,-1.0191476817503557
+mango,carotene (FW),PLS,absorbance,150,12.5 mA,-1.023377486304969
+mango,carotene (FW),PLS,absorbance,150,12.5 mA,-1.353815413245492
+mango,carotene (FW),PLS,absorbance,150,12.5 mA,-0.9899069650312087
+mango,carotene (FW),PLS,absorbance,150,12.5 mA,-0.8189141559999682
+mango,carotene (FW),PLS,absorbance,150,12.5 mA,-0.7335855738489154
+mango,carotene (FW),PLS,absorbance,150,12.5 mA,-1.0480421328484597
+mango,carotene (FW),PLS,absorbance,150,12.5 mA,-1.15385511733004
+mango,carotene (FW),PLS,absorbance,150,12.5 mA,-0.9866245720700414
+mango,phenols (FW),PLS,absorbance,150,12.5 mA,-15.473181263524005
+mango,phenols (FW),PLS,absorbance,150,12.5 mA,-18.924202196205105
+mango,phenols (FW),PLS,absorbance,150,12.5 mA,-18.108361918133753
+mango,phenols (FW),PLS,absorbance,150,12.5 mA,-16.306704016187517
+mango,phenols (FW),PLS,absorbance,150,12.5 mA,-15.797807579348849
+mango,phenols (FW),PLS,absorbance,150,12.5 mA,-16.533043268580645
+mango,phenols (FW),PLS,absorbance,150,12.5 mA,-21.010551739289443
+mango,phenols (FW),PLS,absorbance,150,12.5 mA,-22.28152453027401
+mango,phenols (FW),PLS,absorbance,150,12.5 mA,-20.509908047221288
+mango,phenols (FW),PLS,absorbance,150,12.5 mA,-14.424743070652301
+mango,carotene (FW),ARD,absorbance,150,25 mA,-1.3427040622282487
+mango,carotene (FW),ARD,absorbance,150,25 mA,-0.9472399057798275
+mango,carotene (FW),ARD,absorbance,150,25 mA,-1.1094566716300167
+mango,carotene (FW),ARD,absorbance,150,25 mA,-1.0887605313622555
+mango,carotene (FW),ARD,absorbance,150,25 mA,-0.9040371164326956
+mango,carotene (FW),ARD,absorbance,150,25 mA,-0.7045610177930856
+mango,carotene (FW),ARD,absorbance,150,25 mA,-1.1765461538734114
+mango,carotene (FW),ARD,absorbance,150,25 mA,-1.042209689584959
+mango,carotene (FW),ARD,absorbance,150,25 mA,-1.036069188911536
+mango,carotene (FW),ARD,absorbance,150,25 mA,-1.061813696265555
+mango,phenols (FW),ARD,absorbance,150,25 mA,-26.19943230985266
+mango,phenols (FW),ARD,absorbance,150,25 mA,-21.74754803284134
+mango,phenols (FW),ARD,absorbance,150,25 mA,-19.38535190212648
+mango,phenols (FW),ARD,absorbance,150,25 mA,-26.158490672867522
+mango,phenols (FW),ARD,absorbance,150,25 mA,-21.51565015342615
+mango,phenols (FW),ARD,absorbance,150,25 mA,-16.523583363602015
+mango,phenols (FW),ARD,absorbance,150,25 mA,-21.87644973265614
+mango,phenols (FW),ARD,absorbance,150,25 mA,-21.954935706091227
+mango,phenols (FW),ARD,absorbance,150,25 mA,-19.58533073871533
+mango,phenols (FW),ARD,absorbance,150,25 mA,-19.789080122921128
+mango,carotene (FW),Huber Regression,absorbance,150,25 mA,-0.8993944046470708
+mango,carotene (FW),Huber Regression,absorbance,150,25 mA,-1.3828584578916039
+mango,carotene (FW),Huber Regression,absorbance,150,25 mA,-0.990142969674841
+mango,carotene (FW),Huber Regression,absorbance,150,25 mA,-1.0481573500112416
+mango,carotene (FW),Huber Regression,absorbance,150,25 mA,-1.0655575877784627
+mango,carotene (FW),Huber Regression,absorbance,150,25 mA,-1.1199081019309323
+mango,carotene (FW),Huber Regression,absorbance,150,25 mA,-0.7324306356953416
+mango,carotene (FW),Huber Regression,absorbance,150,25 mA,-1.0208613089248484
+mango,carotene (FW),Huber Regression,absorbance,150,25 mA,-0.8836337567134509
+mango,carotene (FW),Huber Regression,absorbance,150,25 mA,-1.023690223237091
+mango,phenols (FW),Huber Regression,absorbance,150,25 mA,-21.855582955975596
+mango,phenols (FW),Huber Regression,absorbance,150,25 mA,-22.30239297222447
+mango,phenols (FW),Huber Regression,absorbance,150,25 mA,-18.760022656704365
+mango,phenols (FW),Huber Regression,absorbance,150,25 mA,-13.692071376749206
+mango,phenols (FW),Huber Regression,absorbance,150,25 mA,-22.025262348801867
+mango,phenols (FW),Huber Regression,absorbance,150,25 mA,-21.399545198395337
+mango,phenols (FW),Huber Regression,absorbance,150,25 mA,-23.92479964999174
+mango,phenols (FW),Huber Regression,absorbance,150,25 mA,-23.880303260726027
+mango,phenols (FW),Huber Regression,absorbance,150,25 mA,-19.590225527094333
+mango,phenols (FW),Huber Regression,absorbance,150,25 mA,-21.436637006940096
+mango,carotene (FW),Lasso IC,absorbance,150,25 mA,-1.044545263784493
+mango,carotene (FW),Lasso IC,absorbance,150,25 mA,-1.431701244883537
+mango,carotene (FW),Lasso IC,absorbance,150,25 mA,-0.960215550024472
+mango,carotene (FW),Lasso IC,absorbance,150,25 mA,-1.1253805038701603
+mango,carotene (FW),Lasso IC,absorbance,150,25 mA,-0.8043251102927399
+mango,carotene (FW),Lasso IC,absorbance,150,25 mA,-1.0324946568696842
+mango,carotene (FW),Lasso IC,absorbance,150,25 mA,-1.2543572221416928
+mango,carotene (FW),Lasso IC,absorbance,150,25 mA,-1.0132322935474305
+mango,carotene (FW),Lasso IC,absorbance,150,25 mA,-1.0438371810484577
+mango,carotene (FW),Lasso IC,absorbance,150,25 mA,-0.9468151507132289
+mango,phenols (FW),Lasso IC,absorbance,150,25 mA,-19.622383350094683
+mango,phenols (FW),Lasso IC,absorbance,150,25 mA,-16.96307417327821
+mango,phenols (FW),Lasso IC,absorbance,150,25 mA,-19.147546732609708
+mango,phenols (FW),Lasso IC,absorbance,150,25 mA,-30.8231740684693
+mango,phenols (FW),Lasso IC,absorbance,150,25 mA,-20.234589811466417
+mango,phenols (FW),Lasso IC,absorbance,150,25 mA,-14.465502552706486
+mango,phenols (FW),Lasso IC,absorbance,150,25 mA,-19.282539045144517
+mango,phenols (FW),Lasso IC,absorbance,150,25 mA,-16.125549371686954
+mango,phenols (FW),Lasso IC,absorbance,150,25 mA,-15.932612257787671
+mango,phenols (FW),Lasso IC,absorbance,150,25 mA,-21.1175481242956
+mango,carotene (FW),SVR,absorbance,150,25 mA,-0.8552334853061668
+mango,carotene (FW),SVR,absorbance,150,25 mA,-0.781040925185831
+mango,carotene (FW),SVR,absorbance,150,25 mA,-0.7437616691739476
+mango,carotene (FW),SVR,absorbance,150,25 mA,-1.0291971974914105
+mango,carotene (FW),SVR,absorbance,150,25 mA,-0.8425589276018948
+mango,carotene (FW),SVR,absorbance,150,25 mA,-0.8583486605195592
+mango,carotene (FW),SVR,absorbance,150,25 mA,-1.031909555141061
+mango,carotene (FW),SVR,absorbance,150,25 mA,-0.8359319675443221
+mango,carotene (FW),SVR,absorbance,150,25 mA,-1.2922315777680369
+mango,carotene (FW),SVR,absorbance,150,25 mA,-1.0712011066905773
+mango,phenols (FW),SVR,absorbance,150,25 mA,-19.2135233839312
+mango,phenols (FW),SVR,absorbance,150,25 mA,-22.929531768431563
+mango,phenols (FW),SVR,absorbance,150,25 mA,-19.720503908412333
+mango,phenols (FW),SVR,absorbance,150,25 mA,-19.751398044461382
+mango,phenols (FW),SVR,absorbance,150,25 mA,-19.328681095210978
+mango,phenols (FW),SVR,absorbance,150,25 mA,-15.902651829125402
+mango,phenols (FW),SVR,absorbance,150,25 mA,-15.430698944825474
+mango,phenols (FW),SVR,absorbance,150,25 mA,-27.926413072973656
+mango,phenols (FW),SVR,absorbance,150,25 mA,-16.034553234498137
+mango,phenols (FW),SVR,absorbance,150,25 mA,-14.353964605150923
+mango,carotene (FW),PLS,absorbance,150,25 mA,-1.070162986896911
+mango,carotene (FW),PLS,absorbance,150,25 mA,-1.2634687359369705
+mango,carotene (FW),PLS,absorbance,150,25 mA,-1.5958834257072727
+mango,carotene (FW),PLS,absorbance,150,25 mA,-0.9557080786431277
+mango,carotene (FW),PLS,absorbance,150,25 mA,-0.9918775325060935
+mango,carotene (FW),PLS,absorbance,150,25 mA,-1.103311717000094
+mango,carotene (FW),PLS,absorbance,150,25 mA,-1.1419275069350194
+mango,carotene (FW),PLS,absorbance,150,25 mA,-1.0090601283290441
+mango,carotene (FW),PLS,absorbance,150,25 mA,-1.4309407811071986
+mango,carotene (FW),PLS,absorbance,150,25 mA,-1.0914824045850757
+mango,phenols (FW),PLS,absorbance,150,25 mA,-18.204738271917257
+mango,phenols (FW),PLS,absorbance,150,25 mA,-22.18645342719195
+mango,phenols (FW),PLS,absorbance,150,25 mA,-16.84332371799415
+mango,phenols (FW),PLS,absorbance,150,25 mA,-17.292604187337282
+mango,phenols (FW),PLS,absorbance,150,25 mA,-24.00922049869728
+mango,phenols (FW),PLS,absorbance,150,25 mA,-19.367118925257678
+mango,phenols (FW),PLS,absorbance,150,25 mA,-12.676462321232327
+mango,phenols (FW),PLS,absorbance,150,25 mA,-15.650614676880801
+mango,phenols (FW),PLS,absorbance,150,25 mA,-19.752261285272482
+mango,phenols (FW),PLS,absorbance,150,25 mA,-19.526530426024376
