@@ -28,6 +28,12 @@ def print_pg_anova_table(sensor: str, fruit: str = None, target: str = None):
     ----------
     sensor : str
         The sensor type for which the ANOVA analysis is performed.
+    fruit : str
+        Which fruit to use, tomato or mango
+    target : str
+        Which target to use, tomato or mango.
+        For tomato these are available: '%DM', 'lycopene (DW)', 'lycopene (FW)', 'beta-carotene (DW)', 'beta-carotene (FW)'
+        Form mango these are available: 'phenols (FW)', 'phenols (DW)', 'carotene (FW)', 'carotene (DW)', '%DM'
 
     Returns
     -------
@@ -93,19 +99,19 @@ def print_pg_anova_table(sensor: str, fruit: str = None, target: str = None):
     print(f"anova for {sensor}")
     filename = f"ANOVA_data/ANOVA_{sensor}.csv"
     df = pd.read_csv(filename)
+    # print(df.shape)
+    # print(df["Target"].unique())
 
     between_columns = ['Fruit', 'Measurement Type', 'Integration Time', 'Target',
                        'LED Current', 'Regressor']
     if fruit:
         df = df[df['Fruit'] == fruit]
         between_columns.remove('Fruit')
+    # print(df.shape)
     if target:
         df = df[df['Target'] == target]
         between_columns.remove('Target')
-    if False:  # filter the AS7263 data, its super confusing
-        if sensor == "as7263":
-            df = df[df['Measurement Type'] == "absorbance"]
-            between_columns = ['Leaf', 'Integration Time', 'LED Current']
+    # print(df.shape)
 
     # Perform the ANOVA test
     aov = pg.anova(dv='Score',
@@ -149,7 +155,8 @@ def print_pg_anova_table(sensor: str, fruit: str = None, target: str = None):
         posthoc = posthoc.rename(columns={'p-unc': 'p-corrected'})
         pairwise_results[factor] = posthoc
         #
-        print(posthoc[["Contrast", "A", "B", "T", "p-corr", "BF10"]])
+        print(posthoc.columns)
+        print(posthoc[["Contrast", "A", "B", "T", "p-corrected", "BF10"]])
         # for column in ['p-unc', 'p-corr']:
         #     # Scientific notation
         #     posthoc[column] = posthoc[column].map(
@@ -210,5 +217,7 @@ def print_best_condition(sensor: str, fruit: str, target: str) -> None:
 
 
 if __name__ == '__main__':
-    print_best_condition("as7262", "tomato", "lycopene (FW)")
-    # print_pg_anova_table("as7262", "tomato", "lycopene (FW)")
+    sensor_ = "c12880"
+    fruit_, target_ = "mango", "carotene (FW)"
+    print_best_condition(sensor_, fruit_, target_)
+    print_pg_anova_table(sensor_, fruit_, target_)
